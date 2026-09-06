@@ -152,9 +152,24 @@
     "structure": {"status": "pass", "evidence": "evidence/artifact-structure.json"},
     "sanitization": {"status": "pass", "evidence": "evidence/sanitization.json"},
     "cuda_graphs": {"status": "pass", "evidence": "evidence/runtime-startup.json"},
-    "text": {"status": "pass", "evidence": null},
-    "tools": {"status": "pass", "evidence": null},
-    "multilingual_smoke": {"status": "pass", "evidence": null},
+    "text": {
+      "status": "pass",
+      "evidence": null,
+      "evidence_status": "observed_live_but_raw_sanitized_payload_not_preserved",
+      "remaining": "fresh public-release replay and evidence seal"
+    },
+    "tools": {
+      "status": "pass",
+      "evidence": null,
+      "evidence_status": "observed_live_but_raw_sanitized_payload_not_preserved",
+      "remaining": "fresh public-release replay and evidence seal"
+    },
+    "multilingual_smoke": {
+      "status": "pass",
+      "evidence": null,
+      "evidence_status": "observed_live_but_raw_sanitized_payload_not_preserved",
+      "remaining": "fresh public-release replay and evidence seal"
+    },
     "image": {"status": "pass", "evidence": "evidence/vision-final.json", "result": "4_of_4"},
     "video": {"status": "pass", "evidence": "evidence/vision-final.json", "result": "2_of_2"},
     "long_context": {"status": "pass", "evidence": "evidence/long-context-final.json", "result": "4_of_4_at_200012_prompt_tokens"},
