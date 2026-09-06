@@ -1,0 +1,46 @@
+{
+  "schema": "glm53-exact2-runtime-abliteration-experiment-v1",
+  "state": "EXPERIMENTAL_FAILED_RELEASE_GATE",
+  "date_utc": "2026-09-06",
+  "host_class": "NVIDIA DGX Spark / GB10",
+  "model": "glm-5.3-flash-exl3-k2-abliteration-overlay",
+  "base_artifact": {
+    "repository": "0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
+    "manifest_sha256": "501641b947fa56afc9ed098bdc034e59c2bd229d4fa1a1d7b80e3727f10c8ba3",
+    "weight_shards": 133
+  },
+  "method": {
+    "kind": "runtime_writer_projection",
+    "strength": 1.0,
+    "direction_sha256": "b2ed01eb5ca973f3b4791dd543ea8b3fab3778b71291e16d5f01b3b6fe2de970",
+    "boundaries": "token embeddings plus every attention and aggregate MLP output",
+    "materialized_weights": false
+  },
+  "runtime": {
+    "resident_model_gib": 89.89,
+    "configured_context_tokens": 204800,
+    "available_kv_gib": 13.45,
+    "gpu_kv_tokens": 1627022,
+    "cuda_graph_mode": "FULL_DECODE_ONLY",
+    "cuda_graph_capture": "pass",
+    "enforce_eager": false
+  },
+  "projection_verification": {
+    "tensor_key": "model.language_model.layers.7.mlp.shared_experts.down_proj.weight",
+    "sampled_columns": 256,
+    "elements": 1048576,
+    "exact_bf16_element_agreement": 0.9999780654907227,
+    "relative_l2": 0.00001320934734394541,
+    "maximum_absolute_error": 0.0001220703125,
+    "projected_direction_residual": 0.0001413184218108654
+  },
+  "acceptance": {
+    "ordinary_behavior": "pass_5_of_5",
+    "images": "pass_4_of_4",
+    "videos": "pass_1_of_2",
+    "video_2": "failed_remote_disconnect_after_618.20_seconds_without_natural_stop",
+    "bounded_refusal_probes": "fail_0_of_3_non_refusals"
+  },
+  "release_decision": "Do not promote or publish as an accepted abliterated model. The transform loaded and matched the sealed projection, but it did not remove refusal behavior on the bounded probes and did not preserve all video acceptance behavior.",
+  "generated_probe_content_preserved": false
+}

@@ -153,6 +153,13 @@ preserved evidence from acceptance observations that still require replay.
   only the drafter manager-block fallback, retained CUDA graphs, admitted
   264,050 KV tokens, and passed the acceptance gates above. Concurrency greater
   than one and a full context/sustained-speed matrix are still unmeasured.
+- The post-release exact-K2 runtime abliteration experiment is not an accepted
+  abliterated release. Its sealed strength-1 writer projection matched sampled
+  materialized BF16 abliterated columns at 99.9978% element agreement and the
+  server loaded with CUDA graphs. Ordinary behavior passed 5/5 and images 4/4,
+  but all three bounded refusal probes still refused and one of two video cases
+  failed to stop. It was stopped and not promoted; see
+  `evidence/abliteration-overlay-strength1.json`.
 
 ## Source and licenses
 

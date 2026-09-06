@@ -25,7 +25,7 @@ or graph configuration invalidates the affected gates.
 | Public baseline ARM64 image | pass | immutable index, ARM64 manifest, config, and all 54 layers fetched anonymously |
 | Public DFlash ARM64 image | pass | manifest, config, and all 57 layers verified anonymously by digest; draft remains external and is not bundled |
 | Second-node clean load | pass | exact public snapshot and image, 89.89 GiB load, 1,638,400 KV tokens, CUDA graphs, health 200, behavior 5/5 |
-| Abliteration | deferred | begins only after baseline publication is complete |
+| Abliteration strength 1 runtime experiment | **fail / not promoted** | exact K2 loaded with the sealed writer projection and CUDA graphs; ordinary behavior 5/5 and images 4/4 passed, but all 3 bounded refusal probes still refused and video 2 failed to stop; see `evidence/abliteration-overlay-strength1.json` |
 
 The release is intentionally not represented as meeting the decode-speed or
 held-out-KLD gates. `verify_release.py` is strict: it returns nonzero until all
