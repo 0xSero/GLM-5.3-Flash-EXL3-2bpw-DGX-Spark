@@ -62,6 +62,13 @@ digests, the structural-manifest hash, anonymous GHCR access to both the OCI
 index and its Linux/ARM64 manifest, and the pinned public GitHub revision. It
 fails closed while any publication gate is still pending.
 
+Seal the short text, tool-call, and language checks after launch without a
+token-cap request field:
+
+```bash
+python3 behavior_acceptance.py --output evidence/behavior-final.json
+```
+
 To rebuild the small runtime overlay rather than pulling the release image:
 
 ```bash
