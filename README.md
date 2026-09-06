@@ -9,7 +9,9 @@ video, and a real 200k-token request.
 > **Weights published; image visibility pending:** the baseline was accepted
 > and then stopped as requested. Hugging Face now exposes all 133 weight shards
 > at immutable revision `56621460be056cec1d30dd13e64cadb46d55b5bd`, with the
-> full manifest closure verified anonymously. The GHCR package is not yet
+> full manifest closure verified anonymously. A clean second DGX Spark also
+> loaded the exact image and snapshot, captured CUDA graphs, reached a healthy
+> API, and passed the five-case behavior replay. The GHCR package is not yet
 > anonymously pullable, so the complete public handoff remains pending until
 > `python3 verify_public_release.py .` passes.
 
@@ -87,13 +89,13 @@ docker build --platform linux/arm64 \
 
 ## What passed
 
-- Exact natural-stop text response and structured tool-call parsing were
-  observed in the original acceptance session. Their sanitized raw payloads
-  were not preserved, so the public-release replay remains pending.
+- Exact natural-stop text response and structured tool-call parsing passed a
+  fresh clean second-Spark replay; the sanitized payloads are preserved in
+  `evidence/behavior-final.json`.
 - Four of four paired image fixtures and two of two paired native-video
   fixtures.
-- Arabic, Chinese, and Polish language-constrained smoke prompts were observed
-  in that session; their public-release replay evidence also remains pending.
+- Arabic, Chinese, and Polish language-constrained smoke prompts passed in the
+  same fresh replay.
 - A fresh 200,012-token server-reported prompt with four random records at
   approximately 5%, 35%, 65%, and 95%; all four were retrieved exactly. It
   took 498.40 seconds end to end and 474.04 seconds to first streamed token.

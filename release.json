@@ -155,21 +155,18 @@
     "cuda_graphs": {"status": "pass", "evidence": "evidence/runtime-startup.json"},
     "text": {
       "status": "pass",
-      "evidence": null,
-      "evidence_status": "observed_live_but_raw_sanitized_payload_not_preserved",
-      "remaining": "fresh public-release replay and evidence seal"
+      "evidence": "evidence/behavior-final.json",
+      "evidence_status": "clean_second_spark_replay_preserved"
     },
     "tools": {
       "status": "pass",
-      "evidence": null,
-      "evidence_status": "observed_live_but_raw_sanitized_payload_not_preserved",
-      "remaining": "fresh public-release replay and evidence seal"
+      "evidence": "evidence/behavior-final.json",
+      "evidence_status": "clean_second_spark_replay_preserved"
     },
     "multilingual_smoke": {
       "status": "pass",
-      "evidence": null,
-      "evidence_status": "observed_live_but_raw_sanitized_payload_not_preserved",
-      "remaining": "fresh public-release replay and evidence seal"
+      "evidence": "evidence/behavior-final.json",
+      "evidence_status": "clean_second_spark_replay_preserved"
     },
     "image": {"status": "pass", "evidence": "evidence/vision-final.json", "result": "4_of_4"},
     "video": {"status": "pass", "evidence": "evidence/vision-final.json", "result": "2_of_2"},
@@ -185,11 +182,26 @@
     "dflash2": {"status": "rejected", "evidence": null, "reason": "not_in_release"},
     "anonymous_model_download": {"status": "pass", "evidence": "evidence/hf-publication.json"},
     "anonymous_image_pull": {"status": "pending_visibility_confirmation", "evidence": null},
-    "clean_deployment": {"status": "pending_second_node", "evidence": null},
+    "clean_deployment": {"status": "pass", "evidence": "evidence/clean-deployment.json"},
     "public_documentation": {"status": "pass", "evidence": "evidence/hf-publication.json"},
-    "secret_audit": {"status": "pending_final_commit", "evidence": null}
+    "secret_audit": {"status": "pass", "evidence": "evidence/public-repo-secret-audit.json"}
   },
   "files": [
+    {
+      "path": "evidence/public-repo-secret-audit.json",
+      "bytes": 287,
+      "sha256": "2e58115762fef54e1c69de668c23209c312f1c44a5a50da654e4e68ece04a20a"
+    },
+    {
+      "path": "evidence/behavior-final.json",
+      "bytes": 2318,
+      "sha256": "79b32cf8a269aff389bd98ca58285774ced91b1d2bf47bf242cbf88254591bb6"
+    },
+    {
+      "path": "evidence/clean-deployment.json",
+      "bytes": 1778,
+      "sha256": "b6c776c5eba9e1ec43566e9145b1c4f857df04394e1bdca8fc2c9cacdd22d45a"
+    },
     {
       "path": "evidence/hf-publication.json",
       "bytes": 658,

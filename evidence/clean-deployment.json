@@ -1,0 +1,48 @@
+{
+  "schema": "glm53-exact2-clean-deployment-v1",
+  "status": "pass",
+  "verified_at": "2026-09-06T03:12:02Z",
+  "hardware": "second NVIDIA DGX Spark with one GB10 GPU",
+  "public_model_revision": "56621460be056cec1d30dd13e64cadb46d55b5bd",
+  "public_reproduction_revision": "ee21c6a3b04a0c60c402e7f1706986a187b28774",
+  "staging": {
+    "files": 336,
+    "bytes": 111500626882,
+    "weight_files": 133,
+    "weight_bytes": 111352026456,
+    "all_public_file_hashes_verified": true,
+    "receipt_sha256": "c6cad0f9139e77dddaf9ee1d67eb736dea4c85e12d44f6a6687453d335a08db1"
+  },
+  "image": {
+    "oci_index_digest": "sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a",
+    "arm64_manifest_digest": "sha256:c1d0bf2f72da0995eb795d85edb62fe6bd149d740f1dfd8481a1fbd72ebb6a78",
+    "arm64_config_digest": "sha256:b5e7b2af44c8561b98edf227bb37c37f6356ba0dd80dd3a316146a3222decf9f",
+    "rootfs_layers": 54,
+    "rootfs_diff_ids_sha256": "6f6e613adebb77a44a7415e1781882cf7dc6bd13536d59cd8b5138ca22a9e9fb",
+    "source_and_destination_rootfs_match": true
+  },
+  "runtime": {
+    "served_model": "glm-5.3-flash-exl3-k2-single-spark",
+    "vllm_version": "0.1.dev20051+g487ecf187",
+    "tensor_parallel_size": 1,
+    "decode_context_parallel_size": 1,
+    "configured_context_tokens": 204800,
+    "model_load_gib": 89.89,
+    "model_load_seconds": 713.917561,
+    "kv_cache_tokens": 1638400,
+    "cuda_graph_mode": "FULL_DECODE_ONLY",
+    "cuda_graph_capture_sizes": [1],
+    "cuda_graph_capture_passed": true,
+    "health_http_status": 200,
+    "model_discovery_http_status": 200
+  },
+  "behavior": {
+    "evidence": "evidence/behavior-final.json",
+    "cases": 5,
+    "text": true,
+    "tools": true,
+    "arabic": true,
+    "chinese": true,
+    "polish": true
+  }
+}
