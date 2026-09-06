@@ -16,7 +16,7 @@
   },
   "release": {
     "model_repository": "0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
-    "model_revision": "063c9e6f890835169ffb0e34643a758b7b183290",
+    "model_revision": "63b5d5a199cef5ac9f1f8f752cfe4407b824c95b",
     "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1:2026-09-05",
     "docker_digest": "sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a",
     "docker_arm64_manifest_digest": "sha256:c1d0bf2f72da0995eb795d85edb62fe6bd149d740f1dfd8481a1fbd72ebb6a78",
@@ -284,7 +284,7 @@
     {
       "path": "evidence/hf-publication.json",
       "bytes": 658,
-      "sha256": "528e626632fe40ae1801ec9a74196de8908a4b27eee4aad4a0e3e5499b49f7c3"
+      "sha256": "212af1843c0a36de2b7c8b268649d5897a88d6805a80af40ec6fc2f932cfcd24"
     },
     {
       "path": "evidence/runtime.spdx.json",
