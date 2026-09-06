@@ -10,9 +10,9 @@
   "per_file_size_and_sha256_match": true,
   "private": false,
   "repository": "0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
-  "revision": "56621460be056cec1d30dd13e64cadb46d55b5bd",
+  "revision": "063c9e6f890835169ffb0e34643a758b7b183290",
   "schema": "glm53-hf-publication-verification-v1",
-  "verified_at": "2026-09-06T02:30:00Z",
+  "verified_at": "2026-09-06T05:00:00Z",
   "weight_bytes": 111352026456,
   "weight_closure_matches_manifest": true,
   "weight_file_count": 133
