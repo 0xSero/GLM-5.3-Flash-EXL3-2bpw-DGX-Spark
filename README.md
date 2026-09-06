@@ -18,7 +18,11 @@ video, and a real 200k-token request.
 
 The accepted baseline was usable, but it did not meet the requested 25–50
 tok/s target. The measured natural-stop decode estimates were consistently
-about 9.3 tok/s.
+about 9.3 tok/s. A later DFlash2 Candidate D also passed CUDA-graph, behavior,
+vision/video, and fresh 200k-context acceptance. Its sustained 1k-input sample
+measured 15.57 tok/s; a short 186-token response after the 200k prefill measured
+27.12 tok/s. The latter is not a sustained sweep, so the overall 25–50 tok/s
+target remains unproven.
 
 ## Exact release facts
 
@@ -78,6 +82,24 @@ token-cap request field:
 python3 behavior_acceptance.py --output evidence/behavior-final.json
 ```
 
+For the accepted DFlash2 configuration, first download the external draft at
+its pinned revision. It is not bundled because it has a separate
+CC-BY-NC-ND-4.0 license.
+
+```bash
+hf download IncoAI/GLM-5.3-Flash-DFlash2 \
+  --revision bf582e4eacc1810f76656d1811693ff6c6737d2a \
+  --local-dir "$PWD/GLM-5.3-Flash-DFlash2"
+
+export GLM53_DFLASH_ROOT="$PWD/GLM-5.3-Flash-DFlash2"
+export GLM53_IMAGE="ghcr.io/0xsero/glm53-flash-exl3-k2-dflash:20260906-accepted-arm64"
+./runtime/spark/start-dflash2.sh
+```
+
+Use the immutable image digest recorded in `release.json` once publication
+verification is complete; the mutable tag above is provided only for
+discoverability.
+
 To rebuild the small runtime overlay rather than pulling the release image:
 
 ```bash
@@ -102,6 +124,10 @@ docker build --platform linux/arm64 \
   retrieved exactly. It took 507.43 seconds end to end and 475.78 seconds to
   first streamed token; see `evidence/long-context-clean.json`.
 - Full-decode CUDA graph capture and health/model-discovery checks.
+- DFlash2 Candidate D captured both target and draft full-decode graphs, passed
+  the five behavior cases, all four image and both video fixtures, and exact
+  four-of-four retrieval from a fresh 200,013-token prompt. See
+  `evidence/dflash-accepted.json`.
 
 Preserved sanitized evidence is under [`evidence/`](evidence/). `BENCHMARKS.md`
 explains the timing method and its limits. `release.json` distinguishes the
@@ -123,16 +149,15 @@ preserved evidence from acceptance observations that still require replay.
   other pruning candidates are not attributed to it.
 - The visual fixtures are controlled discrimination checks, not a broad
   multimodal benchmark.
-- DFlash was tested twice and rejected from this release. The first draft
-  inherited an incompatible target MLA KV format. A corrected, matched public
-  draft then loaded successfully, but left only 11.54 GiB for KV while the
-  204,800-token configuration required 22.68 GiB. Context was not reduced and
-  eager mode or graph disabling was not used as a workaround; see
-  `evidence/dflash-capacity.json`.
+- Earlier DFlash attempts failed target-KV compatibility and then KV admission;
+  those failures remain in `evidence/dflash-capacity.json`. Candidate D fixed
+  only the drafter manager-block fallback, retained CUDA graphs, admitted
+  264,050 KV tokens, and passed the acceptance gates above. Concurrency greater
+  than one and a full context/sustained-speed matrix are still unmeasured.
 
 ## Source and licenses
 
 The model weights follow the source model's MIT license. The runtime overlay is
 also MIT. The container inherits third-party packages and their own licenses;
 see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). The optional external
-DFlash2 draft is not bundled.
+DFlash2 draft is accepted at the pinned revision above but is not bundled.

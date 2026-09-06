@@ -6,7 +6,7 @@
   `c5d9c657966ffeeaa9353f0cc899f18629da4a13`; ExLlamaV3 is MIT licensed.
 - Dione: independent selective-conversion workflow lineage.
 - Brandon M. Music: earlier MIT GLM-5.2 EXL3/TR3 lineage and reproducibility methods. Permitted reference artifact: brandonmusic/GLM-5.2-EXL3-TR3-3.0bpw at f79c9167690ca705e877ae4dc55a841d1aae1247. Do not imply use of later GLM-5.3 materials.
-- Inco: the optional [GLM-5.3-Flash-DFlash2 draft](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2/tree/bf582e4eacc1810f76656d1811693ff6c6737d2a), revision `bf582e4eacc1810f76656d1811693ff6c6737d2a`, is separately licensed under CC-BY-NC-ND-4.0. It is an external dependency of the acceleration experiment, not part of the MIT model weights or a bundled Docker image. The accelerated configuration has not passed release acceptance.
+- Inco: the optional [GLM-5.3-Flash-DFlash2 draft](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2/tree/bf582e4eacc1810f76656d1811693ff6c6737d2a), revision `bf582e4eacc1810f76656d1811693ff6c6737d2a`, is separately licensed under CC-BY-NC-ND-4.0. It is an external dependency of the accepted acceleration configuration, not part of the MIT model weights and not bundled in the Docker image.
 
 No private calibration payload, ShapleyMCG source, weights, corpus, or generated
 artifact is included in this repository.

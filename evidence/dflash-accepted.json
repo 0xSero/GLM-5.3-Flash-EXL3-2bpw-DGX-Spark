@@ -1,0 +1,70 @@
+{
+  "status": "accepted_on_one_dgx_spark",
+  "scope": "DFlash2 Candidate D, max_num_seqs=1",
+  "target_model": {
+    "repository": "0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
+    "revision": "063c9e6f890835169ffb0e34643a758b7b183290",
+    "manifest_sha256": "501641b947fa56afc9ed098bdc034e59c2bd229d4fa1a1d7b80e3727f10c8ba3"
+  },
+  "draft_model": {
+    "repository": "IncoAI/GLM-5.3-Flash-DFlash2",
+    "revision": "bf582e4eacc1810f76656d1811693ff6c6737d2a",
+    "weight_sha256": "b038e1d9d1e7833fa3880c2c0135ba9b673013f03da1b29fb831931584759dac",
+    "license": "CC-BY-NC-ND-4.0",
+    "bundled_in_image": false
+  },
+  "runtime": {
+    "image_id": "sha256:3d2e379b1bd8b18c5ecdbd6a1fba0b80f2964c94ecc642a69b9432f966727a36",
+    "served_model_id": "glm-5.3-flash-exl3-k2-dflash-candidate",
+    "configured_context_tokens": 204800,
+    "max_num_seqs": 1,
+    "target_kv_dtype": "fp8_ds_mla",
+    "draft_kv_dtype": "fp8_e4m3",
+    "target_block_size": 64,
+    "draft_manager_block_size": 64,
+    "cuda_graph_mode": "FULL_DECODE_ONLY",
+    "cuda_graph_capture_sizes": [8],
+    "target_cuda_graphs": "1_of_1_captured",
+    "draft_cuda_graphs": "1_of_1_captured",
+    "available_kv_gib": 10.51,
+    "kv_capacity_tokens": 264050,
+    "max_204800_token_concurrency": 1.29
+  },
+  "acceptance": {
+    "behavior": "5_of_5",
+    "image": "4_of_4",
+    "video": "2_of_2",
+    "fresh_long_context": {
+      "prompt_tokens": 200013,
+      "completion_tokens": 186,
+      "exact_retrievals": "4_of_4",
+      "time_to_first_token_seconds": 475.621852,
+      "total_seconds": 482.442429,
+      "decode_tokens_per_second_estimate": 27.124228,
+      "sample_note": "Short 186-token retrieval response; not a sustained decode sweep."
+    },
+    "short_1k_speed": {
+      "prompt_tokens": 1037,
+      "completion_tokens": 1226,
+      "client_decode_tokens_per_second_estimate": 15.569706046812076,
+      "output_tokens_per_wall_second": 15.068813913825235,
+      "native_prefill_seconds": 2.6367838389996905,
+      "native_decode_seconds": 78.69669132502167,
+      "failures": 0
+    }
+  },
+  "limitations": {
+    "requested_25_to_50_tokens_per_second": "not_sustained_or_full_sweep_validated",
+    "concurrency_greater_than_one": "not_tested",
+    "exact_held_out_kld": "unmeasured",
+    "code_responsiveness": "baseline_failure_not_retested"
+  },
+  "source_evidence_sha256": {
+    "speed_run": "41130f67f60f59ea441cc4fb3d0d626a049131fee8ab1c9aa73d7fbf4bfaccd8",
+    "speed_warmup": "6528e283a6cb7dce45a881ca1f2429912053427f09391bfa4a6ce6a40b5e60d3",
+    "speed_cell": "f25541405ddb9bba630f461669cd7f15aeb5f52ac28c64978f8277a827259559",
+    "speed_summary": "7710af9472638d9e494df201e3a364e86b6e8a49416dbdf5bc5930168fd50e57",
+    "vision": "b7d183c4109e411023c487325bff063b1190770c8d3744b49e68f5c2a6bd7d14",
+    "long_context": "f44e3a36568642746edd4aadd43a9588a2f9a2b7b4f2e2fca33ce7db97e4587f"
+  }
+}

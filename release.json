@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "model": "GLM-5.3-Flash-EXL3-TR3-2.0bpw",
-  "status": "public_baseline_release_verified_with_known_quality_and_speed_failures",
+  "status": "public_baseline_and_dflash_candidate_accepted_with_known_quality_and_speed_failures",
   "source": {
     "repository": "zai-org/GLM-5.3-Flash-BF16",
     "revision": "a6c167b62691b2bac901344b65cb651a70f53e43"
@@ -25,6 +25,17 @@
     "github_repository": "https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark",
     "github_revision": "c838093d260f6fe6163bc8d02b292afb66f8a4a0",
     "github_revision_scope": "runtime source and pre-publication evidence"
+  },
+  "dflash_release": {
+    "draft_repository": "IncoAI/GLM-5.3-Flash-DFlash2",
+    "draft_revision": "bf582e4eacc1810f76656d1811693ff6c6737d2a",
+    "draft_bundled": false,
+    "draft_license": "CC-BY-NC-ND-4.0",
+    "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-dflash:20260906-accepted-arm64",
+    "docker_digest": null,
+    "docker_platforms": ["linux/arm64"],
+    "launcher": "runtime/spark/start-dflash2.sh",
+    "publication_status": "push_in_progress"
   },
   "requirements": {
     "hardware": "one NVIDIA DGX Spark",
@@ -160,6 +171,25 @@
       "long_context_elapsed_seconds": 507.43129311100347,
       "long_context_ttft_seconds": 475.7772193349956,
       "long_context_decode_tokens_per_second_estimate": 9.26105639844268
+    },
+    "dflash_candidate_d": {
+      "status": "accepted_max_num_seqs_1",
+      "resident_model_gib": 92.4,
+      "available_kv_gib": 10.51,
+      "kv_tokens": 264050,
+      "cuda_graph_capture_sizes": [8],
+      "behavior_cases": "5_of_5",
+      "image_cases": "4_of_4",
+      "video_cases": "2_of_2",
+      "short_1k_decode_tokens_per_second_estimate": 15.569706046812076,
+      "short_1k_output_tokens_per_wall_second": 15.068813913825235,
+      "long_context_prompt_tokens": 200013,
+      "long_context_exact_retrievals": "4_of_4",
+      "long_context_ttft_seconds": 475.621852,
+      "long_context_total_seconds": 482.442429,
+      "long_context_decode_tokens_per_second_estimate": 27.124228,
+      "long_context_decode_note": "short 186-token retrieval response, not a sustained sweep",
+      "evidence": "evidence/dflash-accepted.json"
     }
   },
   "gates": {
@@ -193,9 +223,11 @@
       "reason": "a valid KLD run requires aligned BF16 and exact-2.0 full-vocabulary logits, but the pinned 642652070880-byte BF16 weights exceed the complete four-Spark 512-GiB pool before runtime, activations, KV cache, and logits"
     },
     "dflash2": {
-      "status": "rejected",
-      "evidence": "evidence/dflash-capacity.json",
-      "reason": "matched candidate loaded 92.4 GiB but had only 11.54 GiB available KV versus 22.68 GiB required at 204800 tokens"
+      "status": "pass_max_num_seqs_1",
+      "evidence": "evidence/dflash-accepted.json",
+      "prior_failure_evidence": "evidence/dflash-capacity.json",
+      "result": "CUDA graphs, 5_of_5 behavior, 4_of_4 images, 2_of_2 videos, and exact 4_of_4 retrieval at 200013 prompt tokens",
+      "speed_scope": "15.57 tok/s on the sustained 1k-input sample; 27.12 tok/s on a short 186-token post-200k retrieval response; full sweep and concurrency remain unmeasured"
     },
     "anonymous_model_download": {"status": "pass", "evidence": "evidence/hf-publication.json"},
     "anonymous_image_pull": {
@@ -228,6 +260,11 @@
       "path": "evidence/dflash-capacity.json",
       "bytes": 1299,
       "sha256": "2d22bbabb0af2329b6cea47b8460dacff93225836b69219118f4b5bd27fb0371"
+    },
+    {
+      "path": "evidence/dflash-accepted.json",
+      "bytes": 2874,
+      "sha256": "31a6560dc148e6bd7756c42be338556f0368b5115f4a765a26f28dd94235a0cc"
     },
     {
       "path": "evidence/public-repo-secret-audit.json",
