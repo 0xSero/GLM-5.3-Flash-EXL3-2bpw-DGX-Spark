@@ -8,7 +8,7 @@ video, and a real 200k-token request.
 
 > **Public baseline release verified:** the baseline was accepted
 > and then stopped as requested. Hugging Face now exposes all 133 weight shards
-> at immutable revision `063c9e6f890835169ffb0e34643a758b7b183290`, with the
+> at immutable revision `ab209d2b0a9b822b5caba326c7def8704c97e571`, with the
 > full manifest closure verified anonymously. A clean second DGX Spark also
 > loaded the exact image and snapshot, captured CUDA graphs, reached a healthy
 > API, and passed the five-case behavior replay. The immutable Linux/ARM64 GHCR

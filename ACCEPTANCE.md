@@ -21,7 +21,7 @@ or graph configuration invalidates the affected gates.
 | Exact held-out KLD | unmeasured | pinned BF16 weights are 642.65 GB, exceeding the four-Spark 512 GiB pool before runtime/logits; see `evidence/kld-feasibility.json` |
 | DFlash2 Candidate D | pass at max sequences 1 | target and draft CUDA graphs, behavior 5/5, images 4/4, videos 2/2, fresh 200,013-token exact retrieval 4/4; see `evidence/dflash-accepted.json` |
 | DFlash2 sustained speed | below target / partial | 15.57 tok/s at 1k input; a short 186-token post-200k response measured 27.12 tok/s, but no full sweep or concurrency result exists |
-| Public HF weights | pass | 133 shards and exact manifest closure verified anonymously at revision `063c9e6f…` |
+| Public HF weights | pass | 133 shards and exact manifest closure verified anonymously at revision `ab209d2b…` |
 | Public baseline ARM64 image | pass | immutable index, ARM64 manifest, config, and all 54 layers fetched anonymously |
 | Public DFlash ARM64 image | pass | manifest, config, and all 57 layers verified anonymously by digest; draft remains external and is not bundled |
 | Second-node clean load | pass | exact public snapshot and image, 89.89 GiB load, 1,638,400 KV tokens, CUDA graphs, health 200, behavior 5/5 |

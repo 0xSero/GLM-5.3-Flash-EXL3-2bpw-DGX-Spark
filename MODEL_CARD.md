@@ -4,7 +4,7 @@ The canonical Hugging Face model card is published with the weights at
 [`0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw`](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw).
 
 All 133 weight shards are public and anonymously verified at immutable Hub
-revision `063c9e6f890835169ffb0e34643a758b7b183290`. The accepted baseline
+revision `ab209d2b0a9b822b5caba326c7def8704c97e571`. The accepted baseline
 server was stopped as requested, then the exact public snapshot and image were
 loaded cleanly on a second Spark. CUDA graphs, API readiness, text, tools, and
 Arabic/Chinese/Polish replay all passed there. The immutable Linux/ARM64 GHCR
