@@ -66,8 +66,87 @@
     "decode_target_tokens_per_second": [25, 50],
     "decode_target_met": false,
     "exact_held_out_kld": null,
-    "speed_trials": [],
-    "speed_matrix": []
+    "speed_trials": [
+      {
+        "target_input_tokens": 1024,
+        "incoming_concurrency": 1,
+        "success": true,
+        "finish_reason": "stop",
+        "decode_tokens_per_second": 9.156191367875719,
+        "decode_seconds": 12.343773978005629,
+        "evidence": "evidence/bounded-speed-c1.json"
+      },
+      {
+        "target_input_tokens": 32768,
+        "incoming_concurrency": 1,
+        "success": true,
+        "finish_reason": "stop",
+        "decode_tokens_per_second": 9.468603182914144,
+        "decode_seconds": 4.544005387986428,
+        "evidence": "evidence/bounded-speed-c1.json"
+      },
+      {
+        "target_input_tokens": 131072,
+        "incoming_concurrency": 1,
+        "success": true,
+        "finish_reason": "stop",
+        "decode_tokens_per_second": 9.275677548715068,
+        "decode_seconds": 16.715160814026594,
+        "evidence": "evidence/bounded-speed-c1.json"
+      },
+      {
+        "target_input_tokens": 1024,
+        "incoming_concurrency": 2,
+        "success": true,
+        "finish_reason": "stop",
+        "decode_tokens_per_second": 9.376839377706478,
+        "decode_seconds": 9.17556283401791,
+        "evidence": "evidence/bounded-speed-c2.json"
+      },
+      {
+        "target_input_tokens": 1024,
+        "incoming_concurrency": 2,
+        "success": true,
+        "finish_reason": "stop",
+        "decode_tokens_per_second": 9.304412599374269,
+        "decode_seconds": 15.80047620998169,
+        "evidence": "evidence/bounded-speed-c2.json"
+      }
+    ],
+    "speed_matrix": [
+      {
+        "target_input_tokens": 1024,
+        "incoming_concurrency": 1,
+        "successful_repeats": 1,
+        "mean_decode_tokens_per_second": 9.156191367875719,
+        "status": "measured_below_target",
+        "evidence": "evidence/bounded-speed-c1.json"
+      },
+      {
+        "target_input_tokens": 32768,
+        "incoming_concurrency": 1,
+        "successful_repeats": 1,
+        "mean_decode_tokens_per_second": 9.468603182914144,
+        "status": "measured_below_target",
+        "evidence": "evidence/bounded-speed-c1.json"
+      },
+      {
+        "target_input_tokens": 131072,
+        "incoming_concurrency": 1,
+        "successful_repeats": 1,
+        "mean_decode_tokens_per_second": 9.275677548715068,
+        "status": "measured_below_target",
+        "evidence": "evidence/bounded-speed-c1.json"
+      },
+      {
+        "target_input_tokens": 1024,
+        "incoming_concurrency": 2,
+        "successful_repeats": 2,
+        "mean_decode_tokens_per_second": 9.340625988540374,
+        "status": "measured_below_target",
+        "evidence": "evidence/bounded-speed-c2.json"
+      }
+    ]
   },
   "gates": {
     "structure": {"status": "pass", "evidence": null},
