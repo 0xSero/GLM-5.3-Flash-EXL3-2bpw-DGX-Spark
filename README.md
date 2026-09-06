@@ -50,6 +50,18 @@ only, refuses to evict an existing CUDA workload, enables chunked prefill, and
 keeps CUDA graphs on. The server listens on `127.0.0.1:18080` by default and
 serves the ID `glm-5.3-flash-exl3-k2-single-spark`.
 
+After `release.json` contains the immutable Hugging Face revision, verify the
+entire public handoff without credentials:
+
+```bash
+python3 verify_public_release.py .
+```
+
+The verifier checks public/ungated Hub state, exact weight-file closure and LFS
+digests, the structural-manifest hash, anonymous GHCR access to both the OCI
+index and its Linux/ARM64 manifest, and the pinned public GitHub revision. It
+fails closed while any publication gate is still pending.
+
 To rebuild the small runtime overlay rather than pulling the release image:
 
 ```bash
