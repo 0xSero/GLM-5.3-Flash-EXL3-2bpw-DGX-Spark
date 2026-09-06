@@ -93,12 +93,14 @@ docker build --platform linux/arm64 \
   fresh clean second-Spark replay; the sanitized payloads are preserved in
   `evidence/behavior-final.json`.
 - Four of four paired image fixtures and two of two paired native-video
-  fixtures.
+  fixtures passed again on the clean second Spark; see
+  `evidence/vision-clean.json`.
 - Arabic, Chinese, and Polish language-constrained smoke prompts passed in the
   same fresh replay.
-- A fresh 200,012-token server-reported prompt with four random records at
-  approximately 5%, 35%, 65%, and 95%; all four were retrieved exactly. It
-  took 498.40 seconds end to end and 474.04 seconds to first streamed token.
+- A fresh clean-deployment 200,012-token server-reported prompt with four
+  random records at approximately 5%, 35%, 65%, and 95%; all four were
+  retrieved exactly. It took 507.43 seconds end to end and 475.78 seconds to
+  first streamed token; see `evidence/long-context-clean.json`.
 - Full-decode CUDA graph capture and health/model-discovery checks.
 
 Preserved sanitized evidence is under [`evidence/`](evidence/). `BENCHMARKS.md`

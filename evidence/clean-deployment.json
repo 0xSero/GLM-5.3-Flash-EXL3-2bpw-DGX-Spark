@@ -44,5 +44,23 @@
     "arabic": true,
     "chinese": true,
     "polish": true
+  },
+  "multimodal": {
+    "evidence": "evidence/vision-clean.json",
+    "images_passed": 4,
+    "images_total": 4,
+    "videos_passed": 2,
+    "videos_total": 2
+  },
+  "long_context": {
+    "evidence": "evidence/long-context-clean.json",
+    "actual_prompt_tokens": 200012,
+    "marker_positions": [10000, 70000, 130000, 190000],
+    "exact_retrievals_passed": 4,
+    "exact_retrievals_total": 4,
+    "elapsed_seconds": 507.43129311100347,
+    "ttft_seconds": 475.7772193349956,
+    "decode_tokens_per_second_estimate": 9.26105639844268,
+    "finish_reason": "stop"
   }
 }

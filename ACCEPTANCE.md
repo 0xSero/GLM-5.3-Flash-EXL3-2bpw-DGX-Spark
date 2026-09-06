@@ -13,9 +13,9 @@ or graph configuration invalidates the affected gates.
 | Text natural stop | pass | clean second-Spark replay in `evidence/behavior-final.json` |
 | Structured tool call | pass | clean replay parsed exact function name and JSON arguments |
 | Multilingual smoke | pass | clean replay passed Arabic, Chinese, and Polish |
-| Images | pass | 4/4 exact controlled fixtures in `evidence/vision-final.json` |
-| Native video | pass | 2/2 exact controlled fixtures in `evidence/vision-final.json` |
-| Real 200k request | pass | 200,012 server prompt tokens and 4/4 exact retrieval in `evidence/long-context-final.json` |
+| Images | pass | clean second-Spark replay 4/4 in `evidence/vision-clean.json` |
+| Native video | pass | clean second-Spark replay 2/2 in `evidence/vision-clean.json` |
+| Real 200k request | pass | clean replay: 200,012 server prompt tokens, unique nonce, 4/4 exact retrieval, natural stop in `evidence/long-context-clean.json` |
 | 25–50 tok/s target | **fail** | bounded estimates cluster near 9.3 tok/s |
 | Code responsiveness | **fail** | simple Python request had no final content by 600 seconds |
 | Exact held-out KLD | unmeasured | pinned BF16 weights are 642.65 GB, exceeding the four-Spark 512 GiB pool before runtime/logits; see `evidence/kld-feasibility.json` |
