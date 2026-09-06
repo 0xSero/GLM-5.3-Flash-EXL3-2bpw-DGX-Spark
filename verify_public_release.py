@@ -29,6 +29,11 @@ def request_json(url: str, headers: dict[str, str] | None = None) -> tuple[dict,
         return json.load(response), response.headers
 
 
+def download(url: str) -> bytes:
+    with urllib.request.urlopen(url, timeout=120) as response:
+        return response.read()
+
+
 def anonymous_registry_token(repository: str) -> str:
     url = f"https://ghcr.io/v2/{repository}/manifests/latest"
     try:
@@ -70,9 +75,12 @@ def registry_manifest(repository: str, digest: str, token: str) -> tuple[dict, s
 
 def verify(root: Path) -> dict:
     release = json.loads((root / "release.json").read_text())
+    structure = json.loads((root / "evidence/artifact-structure.json").read_text())
     model = release["release"]
     artifact = release["artifact"]
     errors: list[str] = []
+    docker_index = str(model.get("docker_digest") or "")
+    docker_arm64 = str(model.get("docker_arm64_manifest_digest") or "")
 
     revision = str(model.get("model_revision") or "")
     if not re.fullmatch(r"[a-f0-9]{40}", revision):
@@ -112,8 +120,7 @@ def verify(root: Path) -> dict:
                 f"https://huggingface.co/{encoded_repo}/resolve/{revision}/"
                 "EXL3_MANIFEST.json"
             )
-            with urllib.request.urlopen(manifest_url, timeout=30) as response:
-                manifest_bytes = response.read()
+            manifest_bytes = download(manifest_url)
             if hashlib.sha256(manifest_bytes).hexdigest() != artifact["manifest_sha256"]:
                 errors.append("Hugging Face structural manifest digest differs")
             manifest = json.loads(manifest_bytes)
@@ -130,11 +137,27 @@ def verify(root: Path) -> dict:
             }
             if observed_weights != expected_weights:
                 errors.append("Hugging Face weight closure or per-file digest differs")
+
+            immutable_root = f"https://huggingface.co/{encoded_repo}/resolve/{revision}"
+            for path, expected_sha256 in (
+                ("model.safetensors.index.json", structure["model_index"]["sha256"]),
+                ("tier_bitmap.json", structure["tier_bitmap_sha256"]),
+                (
+                    "STRUCTURAL_EVIDENCE_MANIFEST.json",
+                    structure["structural_evidence_manifest"]["sha256"],
+                ),
+            ):
+                if hashlib.sha256(download(f"{immutable_root}/{path}")).hexdigest() != expected_sha256:
+                    errors.append(f"Hugging Face {path} digest differs")
+
+            card = download(f"{immutable_root}/README.md").decode(errors="replace")
+            if model["github_repository"] not in card:
+                errors.append("Hugging Face model card lacks the public runtime repository")
+            if docker_index not in card:
+                errors.append("Hugging Face model card lacks the immutable Docker digest")
         except Exception as error:  # fail closed and avoid response-body disclosure
             errors.append(f"Hugging Face anonymous verification failed: {type(error).__name__}")
 
-    docker_index = str(model.get("docker_digest") or "")
-    docker_arm64 = str(model.get("docker_arm64_manifest_digest") or "")
     image = str(model.get("docker_image") or "")
     repository = image.removeprefix("ghcr.io/").split("@", 1)[0].split(":", 1)[0]
     try:
