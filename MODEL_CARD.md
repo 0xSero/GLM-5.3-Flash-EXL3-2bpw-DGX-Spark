@@ -12,9 +12,11 @@ yet passed, so the complete public handoff remains pending until
 `python3 verify_public_release.py .` succeeds.
 
 This repository's README contains the same measured runtime scope, limitations,
-and attribution. Exact held-out KLD is not available for this artifact, the
-25–50 tok/s target was not met, and the 600-second code-responsiveness probe
-failed. Those limitations are intentional release facts, not pending edits.
+and attribution. Exact held-out KLD is not available for this artifact: the
+pinned BF16 weights alone exceed all four local Sparks' combined 512 GiB before
+runtime or logits. The 25–50 tok/s target was not met, and the 600-second
+code-responsiveness probe failed. Those limitations are intentional release
+facts, not pending edits.
 
 The required runtime source and launch recipe are in this repository. The
 immutable ARM64 image is

@@ -115,8 +115,10 @@ preserved evidence from acceptance observations that still require replay.
   returned no final content. This is a failed responsiveness/code-quality
   probe.
 - Exact held-out KLD against the BF16 source is not measured for this exact
-  artifact. Historical measurements from other pruning candidates are not
-  attributed to it.
+  artifact. The pinned BF16 weights alone are 642,652,070,880 bytes, exceeding
+  all four local Sparks' combined 512 GiB by 92,896,256,992 bytes before
+  runtime, activations, KV cache, or logits. Historical measurements from
+  other pruning candidates are not attributed to it.
 - The visual fixtures are controlled discrimination checks, not a broad
   multimodal benchmark.
 - DFlash2 was tested and rejected from this release because its draft metadata

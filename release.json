@@ -176,8 +176,8 @@
     "speed_matrix": {"status": "incomplete", "evidence": "evidence/bounded-speed-c1.json"},
     "held_out_quality": {
       "status": "unmeasured",
-      "evidence": null,
-      "reason": "no preserved full-vocabulary logits are bound to this exact artifact; a valid KLD run requires fresh aligned BF16 and exact-2.0 execution on the frozen panel"
+      "evidence": "evidence/kld-feasibility.json",
+      "reason": "a valid KLD run requires aligned BF16 and exact-2.0 full-vocabulary logits, but the pinned 642652070880-byte BF16 weights exceed the complete four-Spark 512-GiB pool before runtime, activations, KV cache, and logits"
     },
     "dflash2": {"status": "rejected", "evidence": null, "reason": "not_in_release"},
     "anonymous_model_download": {"status": "pass", "evidence": "evidence/hf-publication.json"},
@@ -188,9 +188,14 @@
   },
   "files": [
     {
+      "path": "evidence/kld-feasibility.json",
+      "bytes": 1000,
+      "sha256": "57e382c784fc32fee786aa08f38e120b7828eab90822f94ca208df2ce55801a4"
+    },
+    {
       "path": "evidence/public-repo-secret-audit.json",
       "bytes": 287,
-      "sha256": "2e58115762fef54e1c69de668c23209c312f1c44a5a50da654e4e68ece04a20a"
+      "sha256": "735c99288e319bc964b6328d78670cd40d3405a361fda37850bf149dae078d16"
     },
     {
       "path": "evidence/behavior-final.json",

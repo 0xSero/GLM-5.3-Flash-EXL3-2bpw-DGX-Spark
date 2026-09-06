@@ -1,0 +1,20 @@
+{
+  "schema": "glm53-exact2-kld-feasibility-v1",
+  "verified_at": "2026-09-06T03:15:00Z",
+  "reference_repository": "zai-org/GLM-5.3-Flash-BF16",
+  "reference_revision": "a6c167b62691b2bac901344b65cb651a70f53e43",
+  "reference_weight_files": 120,
+  "reference_weight_bytes": 642652070880,
+  "largest_local_unified_pool": {
+    "hardware": "four NVIDIA DGX Sparks",
+    "devices": 4,
+    "bytes_per_device": 137438953472,
+    "aggregate_bytes": 549755813888,
+    "reference_weight_shortfall_bytes": 92896256992
+  },
+  "required_measurement": "Aligned BF16-reference and exact-2.0 full-vocabulary pre-sampling logits over the same frozen corpus and tokenizer.",
+  "resident_fit": false,
+  "rented_accelerator_used": false,
+  "exact_held_out_kld": null,
+  "conclusion": "Exact held-out KLD remains unmeasured because the pinned BF16 weights alone exceed the complete local Spark memory pool before runtime, activations, KV cache, and logits. Historical or quantized-reference KLD is not substituted."
+}

@@ -18,7 +18,7 @@ or graph configuration invalidates the affected gates.
 | Real 200k request | pass | 200,012 server prompt tokens and 4/4 exact retrieval in `evidence/long-context-final.json` |
 | 25–50 tok/s target | **fail** | bounded estimates cluster near 9.3 tok/s |
 | Code responsiveness | **fail** | simple Python request had no final content by 600 seconds |
-| Exact held-out KLD | unmeasured | BF16 comparison was not feasible in the remaining one-Spark publication window |
+| Exact held-out KLD | unmeasured | pinned BF16 weights are 642.65 GB, exceeding the four-Spark 512 GiB pool before runtime/logits; see `evidence/kld-feasibility.json` |
 | DFlash2 | rejected | initialization failed; not bundled or advertised |
 | Public HF weights | pass | 133 shards and per-file hashes verified anonymously at revision `56621460…` |
 | Public ARM64 image | pending visibility | immutable index and ARM64 manifest exist; anonymous pull still returns 401 |
