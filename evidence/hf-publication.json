@@ -1,0 +1,19 @@
+{
+  "anonymous_api": true,
+  "card_links_public_runtime_repository": true,
+  "card_pins_immutable_docker_digest": true,
+  "disabled": false,
+  "file_count": 337,
+  "gated": false,
+  "manifest_sha256": "501641b947fa56afc9ed098bdc034e59c2bd229d4fa1a1d7b80e3727f10c8ba3",
+  "pass": true,
+  "per_file_size_and_sha256_match": true,
+  "private": false,
+  "repository": "0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
+  "revision": "56621460be056cec1d30dd13e64cadb46d55b5bd",
+  "schema": "glm53-hf-publication-verification-v1",
+  "verified_at": "2026-09-06T02:30:00Z",
+  "weight_bytes": 111352026456,
+  "weight_closure_matches_manifest": true,
+  "weight_file_count": 133
+}

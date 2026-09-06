@@ -6,11 +6,12 @@ checkpoint. The accepted baseline runs on one NVIDIA DGX Spark / one GB10 GPU
 with CUDA graphs enabled and supports text, structured tools, images, native
 video, and a real 200k-token request.
 
-> **Publication in progress:** the baseline was accepted and then stopped as
-> requested, but the public handoff is not complete yet. The Hugging Face
-> repository does not expose the 133 weight shards until its atomic upload
-> commits, and the GHCR package is not yet anonymously pullable. Treat the run
-> commands below as pending until `python3 verify_public_release.py .` passes.
+> **Weights published; image visibility pending:** the baseline was accepted
+> and then stopped as requested. Hugging Face now exposes all 133 weight shards
+> at immutable revision `56621460be056cec1d30dd13e64cadb46d55b5bd`, with the
+> full manifest closure verified anonymously. The GHCR package is not yet
+> anonymously pullable, so the complete public handoff remains pending until
+> `python3 verify_public_release.py .` passes.
 
 The accepted baseline was usable, but it did not meet the requested 25–50
 tok/s target. The measured natural-stop decode estimates were consistently
@@ -57,8 +58,7 @@ only, refuses to evict an existing CUDA workload, enables chunked prefill, and
 keeps CUDA graphs on. The server listens on `127.0.0.1:18080` by default and
 serves the ID `glm-5.3-flash-exl3-k2-single-spark`.
 
-After `release.json` contains the immutable Hugging Face revision, verify the
-entire public handoff without credentials:
+Verify the entire public handoff without credentials:
 
 ```bash
 python3 verify_public_release.py .

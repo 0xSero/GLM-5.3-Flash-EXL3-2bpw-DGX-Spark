@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "model": "GLM-5.3-Flash-EXL3-TR3-2.0bpw",
-  "status": "validated_publication_in_progress",
+  "status": "public_weights_verified_image_visibility_pending",
   "source": {
     "repository": "zai-org/GLM-5.3-Flash-BF16",
     "revision": "a6c167b62691b2bac901344b65cb651a70f53e43"
@@ -16,14 +16,15 @@
   },
   "release": {
     "model_repository": "0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
-    "model_revision": null,
+    "model_revision": "56621460be056cec1d30dd13e64cadb46d55b5bd",
     "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1:2026-09-05",
     "docker_digest": "sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a",
     "docker_arm64_manifest_digest": "sha256:c1d0bf2f72da0995eb795d85edb62fe6bd149d740f1dfd8481a1fbd72ebb6a78",
     "docker_platforms": ["linux/arm64"],
     "sbom": "evidence/runtime.spdx.json",
     "github_repository": "https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark",
-    "github_revision": "c935536ed1107a20ff1e880c5c055a5dc35009c5"
+    "github_revision": "c838093d260f6fe6163bc8d02b292afb66f8a4a0",
+    "github_revision_scope": "runtime source and pre-publication evidence"
   },
   "requirements": {
     "hardware": "one NVIDIA DGX Spark",
@@ -182,13 +183,18 @@
       "reason": "no preserved full-vocabulary logits are bound to this exact artifact; a valid KLD run requires fresh aligned BF16 and exact-2.0 execution on the frozen panel"
     },
     "dflash2": {"status": "rejected", "evidence": null, "reason": "not_in_release"},
-    "anonymous_model_download": {"status": "pending_upload", "evidence": null},
-    "anonymous_image_pull": {"status": "pending_upload", "evidence": null},
+    "anonymous_model_download": {"status": "pass", "evidence": "evidence/hf-publication.json"},
+    "anonymous_image_pull": {"status": "pending_visibility_confirmation", "evidence": null},
     "clean_deployment": {"status": "pending_second_node", "evidence": null},
-    "public_documentation": {"status": "pending_publish", "evidence": null},
+    "public_documentation": {"status": "pass", "evidence": "evidence/hf-publication.json"},
     "secret_audit": {"status": "pending_final_commit", "evidence": null}
   },
   "files": [
+    {
+      "path": "evidence/hf-publication.json",
+      "bytes": 658,
+      "sha256": "2598e906667eaed84c65ab21ebd613b999d10258c6db2f07f8296b8e15b1877f"
+    },
     {
       "path": "evidence/runtime.spdx.json",
       "bytes": 35424902,

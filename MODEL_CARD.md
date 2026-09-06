@@ -3,9 +3,10 @@
 The canonical Hugging Face model card is published with the weights at
 [`0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw`](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw).
 
-Publication is still in progress. The accepted baseline server was stopped as
-requested, the Hub weight commit is pending, and anonymous GHCR access has not
-yet passed. Do not treat the release as public until
+All 133 weight shards are public and anonymously verified at immutable Hub
+revision `56621460be056cec1d30dd13e64cadb46d55b5bd`. The accepted baseline
+server was stopped as requested. Anonymous GHCR access has not yet passed, so
+the complete public handoff remains pending until
 `python3 verify_public_release.py .` succeeds.
 
 This repository's README contains the same measured runtime scope, limitations,
