@@ -1,0 +1,50 @@
+{
+  "schema": "glm53-exact2-single-spark-runtime-startup-v1",
+  "captured_at": "2026-09-05T23:43:37Z",
+  "model": "glm-5.3-flash-exl3-k2-single-spark",
+  "artifact_manifest_sha256": "501641b947fa56afc9ed098bdc034e59c2bd229d4fa1a1d7b80e3727f10c8ba3",
+  "hardware": {
+    "system": "NVIDIA DGX Spark",
+    "gpu_count": 1,
+    "tensor_parallel_size": 1,
+    "decode_context_parallel_size": 1
+  },
+  "runtime": {
+    "vllm_version": "0.1.dev20051+g487ecf187",
+    "vllm_upstream_commit": "487ecf187d3dfe74d2cf6119a92881dba403c219",
+    "quantization": "exl3",
+    "activation_dtype": "bfloat16",
+    "kv_cache_dtype": "fp8_ds_mla",
+    "attention_backend": "FLASHINFER_MLA_SPARSE_SM120",
+    "max_model_len": 204800,
+    "max_num_seqs": 1,
+    "prefix_caching": false,
+    "chunked_prefill": true,
+    "eager_mode": false,
+    "reasoning_parser": "glm47",
+    "tool_call_parser": "glm47"
+  },
+  "measurements": {
+    "model_loading_gib": 89.89,
+    "model_loading_seconds": 661.784386,
+    "available_kv_cache_gib": 13.57,
+    "kv_cache_tokens": 1638400,
+    "maximum_204800_token_concurrency": 8.0
+  },
+  "cuda_graphs": {
+    "mode": "FULL_DECODE_ONLY",
+    "capture_sizes": [1],
+    "capture_finished": true,
+    "capture_seconds": 1
+  },
+  "api": {
+    "application_startup_complete": true,
+    "models_endpoint_status": 200
+  },
+  "source_log": {
+    "bytes": 49348,
+    "sha256": "9f2a130153e7191e4ed9fdd5fb2bc796100f16f8158e8318062566d2be98b20e",
+    "publication_note": "Only sanitized measurements are included; private infrastructure details are omitted."
+  },
+  "state": "PASS"
+}

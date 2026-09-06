@@ -151,7 +151,7 @@
   "gates": {
     "structure": {"status": "pass", "evidence": null},
     "sanitization": {"status": "pass", "evidence": null},
-    "cuda_graphs": {"status": "pass", "evidence": null},
+    "cuda_graphs": {"status": "pass", "evidence": "evidence/runtime-startup.json"},
     "text": {"status": "pass", "evidence": null},
     "tools": {"status": "pass", "evidence": null},
     "multilingual_smoke": {"status": "pass", "evidence": null},
@@ -198,6 +198,11 @@
       "path": "evidence/bounded-speed-c2.json",
       "bytes": 1820,
       "sha256": "462fea0dc10f3b8bcdd2d6064ff9f7e262b5152792b062eef8f4ba950fc2fe68"
+    },
+    {
+      "path": "evidence/runtime-startup.json",
+      "bytes": 1586,
+      "sha256": "b9b444d15e9bc6e1227ee1a08db277874a4be6f402b893493a6ef2513fb1c9b1"
     }
   ]
 }
