@@ -22,7 +22,8 @@ measured natural-stop decode estimates were consistently about 9.3 tok/s.
 | Context | 204,800 configured; 1,638,400 live KV tokens on the final instance |
 | CUDA graphs | `FULL_DECODE_ONLY`, capture size 1; graph capture passed |
 | Resident model | 89.89 GiB |
-| Docker | `ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1:2026-09-05` (ARM64) |
+| Docker | `ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1@sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a` |
+| ARM64 manifest | `sha256:c1d0bf2f72da0995eb795d85edb62fe6bd149d740f1dfd8481a1fbd72ebb6a78` |
 
 The `2.0bpw` name describes the routed-expert tier, not every tensor. Routing,
 attention, embeddings, vision, and other retained components stay in their
@@ -40,7 +41,7 @@ hf download 0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw \
   --local-dir "$PWD/GLM-5.3-Flash-EXL3-TR3-2.0bpw"
 
 export GLM53_MODEL_ROOT="$PWD/GLM-5.3-Flash-EXL3-TR3-2.0bpw"
-export GLM53_IMAGE="ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1:2026-09-05"
+export GLM53_IMAGE="ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1@sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a"
 ./runtime/spark/start-rank-stacked-tp1.sh
 ```
 
@@ -96,4 +97,3 @@ The model weights follow the source model's MIT license. The runtime overlay is
 also MIT. The container inherits third-party packages and their own licenses;
 see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). The optional external
 DFlash2 draft is not bundled.
-

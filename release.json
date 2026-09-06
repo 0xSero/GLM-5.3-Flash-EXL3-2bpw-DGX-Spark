@@ -15,14 +15,15 @@
     "mtp_companion_loaded": false
   },
   "release": {
-    "model_repository": "https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
+    "model_repository": "0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
     "model_revision": null,
     "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1:2026-09-05",
-    "docker_digest": null,
+    "docker_digest": "sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a",
+    "docker_arm64_manifest_digest": "sha256:c1d0bf2f72da0995eb795d85edb62fe6bd149d740f1dfd8481a1fbd72ebb6a78",
     "docker_platforms": ["linux/arm64"],
     "sbom": "evidence/runtime.spdx.json",
-    "github_repository": null,
-    "github_revision": null
+    "github_repository": "https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark",
+    "github_revision": "c935536ed1107a20ff1e880c5c055a5dc35009c5"
   },
   "requirements": {
     "hardware": "one NVIDIA DGX Spark",
