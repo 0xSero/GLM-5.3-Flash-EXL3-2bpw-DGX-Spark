@@ -20,6 +20,7 @@
     "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1:2026-09-05",
     "docker_digest": null,
     "docker_platforms": ["linux/arm64"],
+    "sbom": "evidence/runtime.spdx.json",
     "github_repository": null,
     "github_revision": null
   },
@@ -89,6 +90,11 @@
     "secret_audit": {"status": "pending_final_commit", "evidence": null}
   },
   "files": [
+    {
+      "path": "evidence/runtime.spdx.json",
+      "bytes": 35424902,
+      "sha256": "be24a2cbd5ff0079f10bbc6831764bdc5d4f8a7fc018701f52c293db6f3747b8"
+    },
     {
       "path": "evidence/vision-final.json",
       "bytes": 4454,
