@@ -123,9 +123,12 @@ preserved evidence from acceptance observations that still require replay.
   other pruning candidates are not attributed to it.
 - The visual fixtures are controlled discrimination checks, not a broad
   multimodal benchmark.
-- DFlash2 was tested and rejected from this release because its draft metadata
-  inherited the target MLA KV format and failed initialization. Context was
-  not reduced and eager mode was not used as a workaround.
+- DFlash was tested twice and rejected from this release. The first draft
+  inherited an incompatible target MLA KV format. A corrected, matched public
+  draft then loaded successfully, but left only 11.54 GiB for KV while the
+  204,800-token configuration required 22.68 GiB. Context was not reduced and
+  eager mode or graph disabling was not used as a workaround; see
+  `evidence/dflash-capacity.json`.
 
 ## Source and licenses
 

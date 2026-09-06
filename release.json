@@ -192,7 +192,11 @@
       "evidence": "evidence/kld-feasibility.json",
       "reason": "a valid KLD run requires aligned BF16 and exact-2.0 full-vocabulary logits, but the pinned 642652070880-byte BF16 weights exceed the complete four-Spark 512-GiB pool before runtime, activations, KV cache, and logits"
     },
-    "dflash2": {"status": "rejected", "evidence": null, "reason": "not_in_release"},
+    "dflash2": {
+      "status": "rejected",
+      "evidence": "evidence/dflash-capacity.json",
+      "reason": "matched candidate loaded 92.4 GiB but had only 11.54 GiB available KV versus 22.68 GiB required at 204800 tokens"
+    },
     "anonymous_model_download": {"status": "pass", "evidence": "evidence/hf-publication.json"},
     "anonymous_image_pull": {"status": "pending_visibility_confirmation", "evidence": null},
     "clean_deployment": {"status": "pass", "evidence": "evidence/clean-deployment.json"},
@@ -216,9 +220,14 @@
       "sha256": "57e382c784fc32fee786aa08f38e120b7828eab90822f94ca208df2ce55801a4"
     },
     {
+      "path": "evidence/dflash-capacity.json",
+      "bytes": 1299,
+      "sha256": "2d22bbabb0af2329b6cea47b8460dacff93225836b69219118f4b5bd27fb0371"
+    },
+    {
       "path": "evidence/public-repo-secret-audit.json",
       "bytes": 287,
-      "sha256": "2a103582dc2f487d0e06d4385e54bf7b63e4363f21e8727be1550fbc99bfe8d6"
+      "sha256": "2be372a4c89e9e2ce74b28b945da1ab0cef03e948cd6246dfae853b3393e6f53"
     },
     {
       "path": "evidence/behavior-final.json",

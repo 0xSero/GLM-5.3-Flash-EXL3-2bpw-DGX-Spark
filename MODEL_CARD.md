@@ -15,8 +15,9 @@ This repository's README contains the same measured runtime scope, limitations,
 and attribution. Exact held-out KLD is not available for this artifact: the
 pinned BF16 weights alone exceed all four local Sparks' combined 512 GiB before
 runtime or logits. The 25–50 tok/s target was not met, and the 600-second
-code-responsiveness probe failed. Those limitations are intentional release
-facts, not pending edits.
+code-responsiveness probe failed. A matched DFlash candidate loaded but could
+not allocate the KV memory required for 204,800 tokens on one Spark. Those
+limitations are intentional release facts, not pending edits.
 
 The required runtime source and launch recipe are in this repository. The
 immutable ARM64 image is

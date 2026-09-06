@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "rejected_single_spark_200k_capacity",
+  "scope": "Matched acceleration candidate using the accepted exact target, the public DFlash draft, and the accepted baseline launch settings except for the declared speculative-decoding additions.",
+  "target": {
+    "max_model_len": 204800,
+    "gpu_memory_utilization": 0.94,
+    "cuda_graph_mode": "FULL_DECODE_ONLY",
+    "cuda_graph_capture_sizes": [1],
+    "eager_mode": false
+  },
+  "draft": {
+    "method": "dflash",
+    "num_speculative_tokens": 7,
+    "kv_cache_dtype": "fp8_e4m3"
+  },
+  "observed": {
+    "target_and_draft_loaded": true,
+    "model_loading_gib": 92.4,
+    "model_loading_seconds": 776.784553,
+    "available_kv_cache_gib": 11.54,
+    "required_kv_cache_gib_at_204800": 22.68,
+    "kv_cache_shortfall_gib": 11.14,
+    "api_ready": false,
+    "engine_error": "insufficient KV-cache memory for max_model_len 204800"
+  },
+  "decision": "Reject DFlash from the single-Spark 200k release. Reducing context or disabling CUDA graphs would violate the accepted release requirements.",
+  "raw_log_sha256": "76ce383600a2f0f7c7f8b6da1b2e3f6599afdfa94b2644381062caa904ca41b3",
+  "raw_log_bytes": 55120,
+  "matched_config_receipt_sha256": "c863bf1472eea8a912fb4496cb63a5fff51e0318d80b77634618c19165107a07"
+}
