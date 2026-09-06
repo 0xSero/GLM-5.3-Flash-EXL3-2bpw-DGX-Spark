@@ -201,7 +201,8 @@
     "anonymous_image_pull": {
       "status": "pass",
       "evidence": "evidence/docker-publication.json",
-      "pull_evidence": "evidence/docker-anonymous-pull.log"
+      "pull_evidence": "evidence/docker-anonymous-pull.log",
+      "layer_evidence": "evidence/docker-anonymous-layers.json"
     },
     "clean_deployment": {"status": "pass", "evidence": "evidence/clean-deployment.json"},
     "public_documentation": {"status": "pass", "evidence": "evidence/hf-publication.json"},
@@ -297,6 +298,11 @@
       "path": "evidence/docker-anonymous-pull.log",
       "bytes": 538,
       "sha256": "e969620f1f50395442da8f5505b1254812cbc5c66c1540207e3c50f518898a09"
+    },
+    {
+      "path": "evidence/docker-anonymous-layers.json",
+      "bytes": 8061,
+      "sha256": "52560590abb169c994a3e4790893673dadb153554353ca9b5d7662aafb85e999"
     }
   ]
 }
