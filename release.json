@@ -149,8 +149,8 @@
     ]
   },
   "gates": {
-    "structure": {"status": "pass", "evidence": null},
-    "sanitization": {"status": "pass", "evidence": null},
+    "structure": {"status": "pass", "evidence": "evidence/artifact-structure.json"},
+    "sanitization": {"status": "pass", "evidence": "evidence/sanitization.json"},
     "cuda_graphs": {"status": "pass", "evidence": "evidence/runtime-startup.json"},
     "text": {"status": "pass", "evidence": null},
     "tools": {"status": "pass", "evidence": null},
@@ -203,6 +203,16 @@
       "path": "evidence/runtime-startup.json",
       "bytes": 1586,
       "sha256": "b9b444d15e9bc6e1227ee1a08db277874a4be6f402b893493a6ef2513fb1c9b1"
+    },
+    {
+      "path": "evidence/artifact-structure.json",
+      "bytes": 932,
+      "sha256": "eeb01ac6b3a40363cab896f2d291d64e63707e8eb2f033f760437bd719b544fe"
+    },
+    {
+      "path": "evidence/sanitization.json",
+      "bytes": 426,
+      "sha256": "ed58e060269a798e9ceedc73138e9e3a6b39cf5be66e21537b8c0e903fce265b"
     }
   ]
 }

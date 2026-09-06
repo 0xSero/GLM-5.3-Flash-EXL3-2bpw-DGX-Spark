@@ -1,0 +1,25 @@
+{
+  "schema": "glm53-exact2-artifact-structure-v1",
+  "state": "PASS",
+  "artifact_manifest": {
+    "schema_version": 2,
+    "sha256": "501641b947fa56afc9ed098bdc034e59c2bd229d4fa1a1d7b80e3727f10c8ba3",
+    "state": "STRUCTURAL_PASS"
+  },
+  "weight_files": 133,
+  "weight_bytes": 111352026456,
+  "indexed_tensors": 583090,
+  "all_weight_references_at_repository_root": true,
+  "all_weight_references_exist": true,
+  "root_files_match_index": true,
+  "model_index": {
+    "bytes": 63993782,
+    "sha256": "825d6dc1ae4e10e7e4e744d8e556c781ab2e87b87ddc8775f2b01141ddad4327"
+  },
+  "tier_bitmap_sha256": "1166225b44b54ff9286b0c2af7edbe2d3148faa44693cc239380ed7ddbae5317",
+  "structural_evidence_manifest": {
+    "bytes": 27279,
+    "sha256": "e14841c8a84fcc06493b0aeed1fdbcae286ecc3b691ca42acc984edaeaa78b88"
+  },
+  "scope": "Full sanitized publication tree; remote public closure is verified separately after the atomic Hub commit."
+}

@@ -1,0 +1,12 @@
+{
+  "completed_at": "2026-09-05T23:54:16.706440+00:00",
+  "content_addressed_bytes": 111352026456,
+  "content_addressed_files": 133,
+  "credential_and_private_path_scan": true,
+  "forbidden_name_patterns": true,
+  "manifest_sha256": "501641b947fa56afc9ed098bdc034e59c2bd229d4fa1a1d7b80e3727f10c8ba3",
+  "scanned_text_files": 201,
+  "schema": "glm53-sanitized-release-audit-v1",
+  "state": "COMPLETE",
+  "symlink_free": true
+}
