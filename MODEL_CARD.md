@@ -3,6 +3,11 @@
 The canonical Hugging Face model card is published with the weights at
 [`0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw`](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw).
 
+Publication is still in progress. The accepted baseline server was stopped as
+requested, the Hub weight commit is pending, and anonymous GHCR access has not
+yet passed. Do not treat the release as public until
+`python3 verify_public_release.py .` succeeds.
+
 This repository's README contains the same measured runtime scope, limitations,
 and attribution. Exact held-out KLD is not available for this artifact, the
 25–50 tok/s target was not met, and the 600-second code-responsiveness probe

@@ -6,8 +6,15 @@ checkpoint. The accepted baseline runs on one NVIDIA DGX Spark / one GB10 GPU
 with CUDA graphs enabled and supports text, structured tools, images, native
 video, and a real 200k-token request.
 
-The model is usable, but it did not meet the requested 25–50 tok/s target. The
-measured natural-stop decode estimates were consistently about 9.3 tok/s.
+> **Publication in progress:** the baseline was accepted and then stopped as
+> requested, but the public handoff is not complete yet. The Hugging Face
+> repository does not expose the 133 weight shards until its atomic upload
+> commits, and the GHCR package is not yet anonymously pullable. Treat the run
+> commands below as pending until `python3 verify_public_release.py .` passes.
+
+The accepted baseline was usable, but it did not meet the requested 25–50
+tok/s target. The measured natural-stop decode estimates were consistently
+about 9.3 tok/s.
 
 ## Exact release facts
 
@@ -80,17 +87,21 @@ docker build --platform linux/arm64 \
 
 ## What passed
 
-- Exact natural-stop text response and structured tool-call parsing.
+- Exact natural-stop text response and structured tool-call parsing were
+  observed in the original acceptance session. Their sanitized raw payloads
+  were not preserved, so the public-release replay remains pending.
 - Four of four paired image fixtures and two of two paired native-video
   fixtures.
-- Arabic, Chinese, and Polish language-constrained smoke prompts.
+- Arabic, Chinese, and Polish language-constrained smoke prompts were observed
+  in that session; their public-release replay evidence also remains pending.
 - A fresh 200,012-token server-reported prompt with four random records at
   approximately 5%, 35%, 65%, and 95%; all four were retrieved exactly. It
   took 498.40 seconds end to end and 474.04 seconds to first streamed token.
 - Full-decode CUDA graph capture and health/model-discovery checks.
 
-Sanitized raw evidence is under [`evidence/`](evidence/). `BENCHMARKS.md`
-explains the timing method and its limits.
+Preserved sanitized evidence is under [`evidence/`](evidence/). `BENCHMARKS.md`
+explains the timing method and its limits. `release.json` distinguishes the
+preserved evidence from acceptance observations that still require replay.
 
 ## What did not pass or is not claimed
 
