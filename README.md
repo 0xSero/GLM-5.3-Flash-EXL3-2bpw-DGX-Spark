@@ -6,14 +6,15 @@ checkpoint. The accepted baseline runs on one NVIDIA DGX Spark / one GB10 GPU
 with CUDA graphs enabled and supports text, structured tools, images, native
 video, and a real 200k-token request.
 
-> **Weights published; image visibility pending:** the baseline was accepted
+> **Public baseline release verified:** the baseline was accepted
 > and then stopped as requested. Hugging Face now exposes all 133 weight shards
 > at immutable revision `56621460be056cec1d30dd13e64cadb46d55b5bd`, with the
 > full manifest closure verified anonymously. A clean second DGX Spark also
 > loaded the exact image and snapshot, captured CUDA graphs, reached a healthy
-> API, and passed the five-case behavior replay. The GHCR package is not yet
-> anonymously pullable, so the complete public handoff remains pending until
-> `python3 verify_public_release.py .` passes.
+> API, and passed the five-case behavior replay. The immutable Linux/ARM64 GHCR
+> image is public: its index, platform manifest, and config were fetched
+> anonymously with matching digests, followed by a pull from an empty Docker
+> configuration.
 
 The accepted baseline was usable, but it did not meet the requested 25–50
 tok/s target. The measured natural-stop decode estimates were consistently
@@ -68,8 +69,7 @@ python3 verify_public_release.py .
 
 The verifier checks public/ungated Hub state, exact weight-file closure and LFS
 digests, the structural-manifest hash, anonymous GHCR access to both the OCI
-index and its Linux/ARM64 manifest, and the pinned public GitHub revision. It
-fails closed while any publication gate is still pending.
+index and its Linux/ARM64 manifest, and the pinned public GitHub revision.
 
 Seal the short text, tool-call, and language checks after launch without a
 token-cap request field:

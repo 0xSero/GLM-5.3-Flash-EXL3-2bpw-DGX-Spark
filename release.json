@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "model": "GLM-5.3-Flash-EXL3-TR3-2.0bpw",
-  "status": "public_weights_verified_image_visibility_pending",
+  "status": "public_baseline_release_verified_with_known_quality_and_speed_failures",
   "source": {
     "repository": "zai-org/GLM-5.3-Flash-BF16",
     "revision": "a6c167b62691b2bac901344b65cb651a70f53e43"
@@ -198,7 +198,11 @@
       "reason": "matched candidate loaded 92.4 GiB but had only 11.54 GiB available KV versus 22.68 GiB required at 204800 tokens"
     },
     "anonymous_model_download": {"status": "pass", "evidence": "evidence/hf-publication.json"},
-    "anonymous_image_pull": {"status": "pending_visibility_confirmation", "evidence": null},
+    "anonymous_image_pull": {
+      "status": "pass",
+      "evidence": "evidence/docker-publication.json",
+      "pull_evidence": "evidence/docker-anonymous-pull.log"
+    },
     "clean_deployment": {"status": "pass", "evidence": "evidence/clean-deployment.json"},
     "public_documentation": {"status": "pass", "evidence": "evidence/hf-publication.json"},
     "secret_audit": {"status": "pass", "evidence": "evidence/public-repo-secret-audit.json"}
@@ -283,6 +287,16 @@
       "path": "evidence/sanitization.json",
       "bytes": 426,
       "sha256": "ed58e060269a798e9ceedc73138e9e3a6b39cf5be66e21537b8c0e903fce265b"
+    },
+    {
+      "path": "evidence/docker-publication.json",
+      "bytes": 608,
+      "sha256": "a216ddd473a4de8c3b63bca4ceb1ba79f20d0b3ea282d53a03f42820f913121d"
+    },
+    {
+      "path": "evidence/docker-anonymous-pull.log",
+      "bytes": 538,
+      "sha256": "e969620f1f50395442da8f5505b1254812cbc5c66c1540207e3c50f518898a09"
     }
   ]
 }

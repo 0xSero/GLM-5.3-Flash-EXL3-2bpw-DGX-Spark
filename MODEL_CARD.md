@@ -7,9 +7,10 @@ All 133 weight shards are public and anonymously verified at immutable Hub
 revision `56621460be056cec1d30dd13e64cadb46d55b5bd`. The accepted baseline
 server was stopped as requested, then the exact public snapshot and image were
 loaded cleanly on a second Spark. CUDA graphs, API readiness, text, tools, and
-Arabic/Chinese/Polish replay all passed there. Anonymous GHCR access has not
-yet passed, so the complete public handoff remains pending until
-`python3 verify_public_release.py .` succeeds.
+Arabic/Chinese/Polish replay all passed there. The immutable Linux/ARM64 GHCR
+image is also public: anonymous index, platform-manifest, and config downloads
+matched the pinned digests, and a pull from an empty Docker configuration
+passed.
 
 This repository's README contains the same measured runtime scope, limitations,
 and attribution. Exact held-out KLD is not available for this artifact: the

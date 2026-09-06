@@ -1,0 +1,15 @@
+{
+  "status": "anonymous_index_manifest_and_config_download_verified",
+  "utc": "2026-09-06T04:57:30.181923+00:00",
+  "package": "0xsero/glm53-flash-exl3-k2-rankstacked-tp1",
+  "index_digest": "sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a",
+  "arm_manifest_digest": "sha256:c1d0bf2f72da0995eb795d85edb62fe6bd149d740f1dfd8481a1fbd72ebb6a78",
+  "config_digest": "sha256:b5e7b2af44c8561b98edf227bb37c37f6356ba0dd80dd3a316146a3222decf9f",
+  "http_statuses": [
+    200,
+    200,
+    200
+  ],
+  "credential_source": "anonymous registry token; no user credentials",
+  "layer_count": 54
+}
