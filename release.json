@@ -82,7 +82,11 @@
     "code_responsiveness": {"status": "fail", "evidence": null, "reason": "600_second_deadline_no_final_content"},
     "sustained_decode": {"status": "fail", "evidence": "evidence/bounded-speed-c1.json", "reason": "measured_about_9_3_tokens_per_second"},
     "speed_matrix": {"status": "incomplete", "evidence": "evidence/bounded-speed-c1.json"},
-    "held_out_quality": {"status": "unmeasured", "evidence": null},
+    "held_out_quality": {
+      "status": "unmeasured",
+      "evidence": null,
+      "reason": "no preserved full-vocabulary logits are bound to this exact artifact; a valid KLD run requires fresh aligned BF16 and exact-2.0 execution on the frozen panel"
+    },
     "dflash2": {"status": "rejected", "evidence": null, "reason": "not_in_release"},
     "anonymous_model_download": {"status": "pending_upload", "evidence": null},
     "anonymous_image_pull": {"status": "pending_upload", "evidence": null},
