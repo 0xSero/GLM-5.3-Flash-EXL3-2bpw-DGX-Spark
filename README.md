@@ -92,13 +92,12 @@ hf download IncoAI/GLM-5.3-Flash-DFlash2 \
   --local-dir "$PWD/GLM-5.3-Flash-DFlash2"
 
 export GLM53_DFLASH_ROOT="$PWD/GLM-5.3-Flash-DFlash2"
-export GLM53_IMAGE="ghcr.io/0xsero/glm53-flash-exl3-k2-dflash:20260906-accepted-arm64"
+export GLM53_IMAGE="ghcr.io/0xsero/glm53-flash-exl3-k2-dflash@sha256:6be6de479a5c8c6b8ce9ce42a7be3a2f79e9eeed854ddd4d73e3fc407da88a4d"
 ./runtime/spark/start-dflash2.sh
 ```
 
-Use the immutable image digest recorded in `release.json` once publication
-verification is complete; the mutable tag above is provided only for
-discoverability.
+The Linux/ARM64 manifest, config, and all 57 layer blobs were fetched
+anonymously; see `evidence/dflash-docker-publication.json`.
 
 To rebuild the small runtime overlay rather than pulling the release image:
 

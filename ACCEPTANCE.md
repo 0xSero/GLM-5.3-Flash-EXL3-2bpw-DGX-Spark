@@ -23,7 +23,7 @@ or graph configuration invalidates the affected gates.
 | DFlash2 sustained speed | below target / partial | 15.57 tok/s at 1k input; a short 186-token post-200k response measured 27.12 tok/s, but no full sweep or concurrency result exists |
 | Public HF weights | pass | 133 shards and exact manifest closure verified anonymously at revision `063c9e6f…` |
 | Public baseline ARM64 image | pass | immutable index, ARM64 manifest, config, and all 54 layers fetched anonymously |
-| Public DFlash ARM64 image | publication in progress | draft remains an external pinned CC-BY-NC-ND-4.0 download and is not bundled |
+| Public DFlash ARM64 image | pass | manifest, config, and all 57 layers verified anonymously by digest; draft remains external and is not bundled |
 | Second-node clean load | pass | exact public snapshot and image, 89.89 GiB load, 1,638,400 KV tokens, CUDA graphs, health 200, behavior 5/5 |
 | Abliteration | deferred | begins only after baseline publication is complete |
 

@@ -1,0 +1,15 @@
+{
+  "schema": "glm53-dflash-docker-publication-v1",
+  "repository": "ghcr.io/0xsero/glm53-flash-exl3-k2-dflash",
+  "tag": "20260906-accepted-arm64",
+  "visibility": "public",
+  "anonymous": true,
+  "manifest_digest": "sha256:6be6de479a5c8c6b8ce9ce42a7be3a2f79e9eeed854ddd4d73e3fc407da88a4d",
+  "manifest_bytes": 12240,
+  "platform": "linux/arm64",
+  "config_digest": "sha256:3d2e379b1bd8b18c5ecdbd6a1fba0b80f2964c94ecc642a69b9432f966727a36",
+  "layer_count": 57,
+  "compressed_layer_bytes": 9789125671,
+  "all_blob_heads_200": true,
+  "verified_at": "2026-09-06T05:48:00Z"
+}

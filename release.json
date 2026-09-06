@@ -16,7 +16,7 @@
   },
   "release": {
     "model_repository": "0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw",
-    "model_revision": "63b5d5a199cef5ac9f1f8f752cfe4407b824c95b",
+    "model_revision": "ab209d2b0a9b822b5caba326c7def8704c97e571",
     "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1:2026-09-05",
     "docker_digest": "sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a",
     "docker_arm64_manifest_digest": "sha256:c1d0bf2f72da0995eb795d85edb62fe6bd149d740f1dfd8481a1fbd72ebb6a78",
@@ -32,10 +32,12 @@
     "draft_bundled": false,
     "draft_license": "CC-BY-NC-ND-4.0",
     "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-dflash:20260906-accepted-arm64",
-    "docker_digest": null,
+    "docker_digest": "sha256:6be6de479a5c8c6b8ce9ce42a7be3a2f79e9eeed854ddd4d73e3fc407da88a4d",
+    "docker_config_digest": "sha256:3d2e379b1bd8b18c5ecdbd6a1fba0b80f2964c94ecc642a69b9432f966727a36",
     "docker_platforms": ["linux/arm64"],
     "launcher": "runtime/spark/start-dflash2.sh",
-    "publication_status": "push_in_progress"
+    "publication_status": "public_anonymous_manifest_config_and_57_layers_verified",
+    "publication_evidence": "evidence/dflash-docker-publication.json"
   },
   "requirements": {
     "hardware": "one NVIDIA DGX Spark",
@@ -267,6 +269,11 @@
       "sha256": "31a6560dc148e6bd7756c42be338556f0368b5115f4a765a26f28dd94235a0cc"
     },
     {
+      "path": "evidence/dflash-docker-publication.json",
+      "bytes": 575,
+      "sha256": "60494b76267e1eab96d9897f4943ac969a88a98c11d371bdc9146b4e44cbff95"
+    },
+    {
       "path": "evidence/public-repo-secret-audit.json",
       "bytes": 287,
       "sha256": "2be372a4c89e9e2ce74b28b945da1ab0cef03e948cd6246dfae853b3393e6f53"
@@ -284,7 +291,7 @@
     {
       "path": "evidence/hf-publication.json",
       "bytes": 658,
-      "sha256": "212af1843c0a36de2b7c8b268649d5897a88d6805a80af40ec6fc2f932cfcd24"
+      "sha256": "79435ac4034f37745a228e94811d71bd391a3bd77a6247e7cd1c85a418830fae"
     },
     {
       "path": "evidence/runtime.spdx.json",

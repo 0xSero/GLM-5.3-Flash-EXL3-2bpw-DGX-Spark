@@ -73,6 +73,25 @@ def registry_manifest(repository: str, digest: str, token: str) -> tuple[dict, s
     return payload, observed
 
 
+def registry_blob(repository: str, digest: str, token: str) -> bytes:
+    url = f"https://ghcr.io/v2/{repository}/blobs/{digest}"
+    request = urllib.request.Request(
+        url, headers={"Authorization": f"Bearer {token}"}
+    )
+    with urllib.request.urlopen(request, timeout=120) as response:
+        return response.read()
+
+
+def registry_blob_exists(repository: str, digest: str, token: str) -> None:
+    url = f"https://ghcr.io/v2/{repository}/blobs/{digest}"
+    request = urllib.request.Request(
+        url, headers={"Authorization": f"Bearer {token}"}, method="HEAD"
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        if response.status != 200:
+            raise RuntimeError(f"registry blob HEAD failed for {digest}")
+
+
 def verify(root: Path) -> dict:
     release = json.loads((root / "release.json").read_text())
     structure = json.loads((root / "evidence/artifact-structure.json").read_text())
@@ -81,6 +100,10 @@ def verify(root: Path) -> dict:
     errors: list[str] = []
     docker_index = str(model.get("docker_digest") or "")
     docker_arm64 = str(model.get("docker_arm64_manifest_digest") or "")
+    dflash = release.get("dflash_release") or {}
+    dflash_digest = str(dflash.get("docker_digest") or "")
+    dflash_platform = None
+    dflash_layer_count = 0
 
     revision = str(model.get("model_revision") or "")
     if not re.fullmatch(r"[a-f0-9]{40}", revision):
@@ -176,6 +199,32 @@ def verify(root: Path) -> dict:
     except Exception as error:  # fail closed and avoid token/response disclosure
         errors.append(f"GHCR anonymous verification failed: {type(error).__name__}")
 
+    if dflash.get("publication_status", "").startswith("public_"):
+        dflash_image = str(dflash.get("docker_image") or "")
+        dflash_repository = (
+            dflash_image.removeprefix("ghcr.io/").split("@", 1)[0].split(":", 1)[0]
+        )
+        try:
+            token = anonymous_registry_token(dflash_repository)
+            manifest, _ = registry_manifest(
+                dflash_repository, dflash_digest, token
+            )
+            config_digest = str((manifest.get("config") or {}).get("digest") or "")
+            if config_digest != dflash.get("docker_config_digest"):
+                errors.append("DFlash GHCR config digest differs")
+            config = json.loads(registry_blob(dflash_repository, config_digest, token))
+            dflash_platform = f"{config.get('os')}/{config.get('architecture')}"
+            if dflash_platform != "linux/arm64":
+                errors.append("DFlash GHCR platform is not linux/arm64")
+            layers = manifest.get("layers") or []
+            dflash_layer_count = len(layers)
+            for item in layers:
+                registry_blob_exists(dflash_repository, str(item["digest"]), token)
+        except Exception as error:
+            errors.append(
+                f"DFlash GHCR anonymous verification failed: {type(error).__name__}"
+            )
+
     github_revision = str(model.get("github_revision") or "")
     try:
         github_repo = model["github_repository"].removeprefix("https://github.com/")
@@ -201,6 +250,9 @@ def verify(root: Path) -> dict:
         ),
         "docker_index_digest": docker_index,
         "docker_arm64_manifest_digest": docker_arm64,
+        "dflash_manifest_digest": dflash_digest or None,
+        "dflash_platform": dflash_platform,
+        "dflash_layer_count": dflash_layer_count,
         "github_revision": github_revision,
         "errors": errors,
     }
