@@ -1,0 +1,1170 @@
+{
+  "model": "glm-5.3-flash-exl3-k2-single-spark",
+  "tokenizer_revision": null,
+  "input_text_tokens": 200000,
+  "target_input_tokens": 200000,
+  "marker_token_positions": {
+    "amber": 10000,
+    "birch": 70000,
+    "cobalt": 130000,
+    "dahlia": 190000
+  },
+  "expected": {
+    "amber": "5909a38995fbbf67",
+    "birch": "3ec4386e7245cfa3",
+    "cobalt": "ed9f2d68375ed642",
+    "dahlia": "d4b233bf93223d28"
+  },
+  "prompt_sha256": "c7f48baa0c9f230244385d971475c2fc75f1a2fddf4942c1ccc5e60066809aed",
+  "source_sha256": "e8d3497d5bb17536d359b4f23704341cfabf0ca420caf1cbd004ecbfc6ac95e4",
+  "scope": "Four synthetic records at separated positions; not broad long-context reasoning or benchmark quality.",
+  "evaluation": {
+    "passed": true,
+    "exact_retrieval": true,
+    "actual": {
+      "amber": "5909a38995fbbf67",
+      "birch": "3ec4386e7245cfa3",
+      "cobalt": "ed9f2d68375ed642",
+      "dahlia": "d4b233bf93223d28"
+    },
+    "actual_prompt_tokens": 200012,
+    "reported_cached_tokens": null,
+    "cache_note": "Unique nonce begins each prompt. Missing cached-token usage is unknown; preserve separate runtime prefix-cache configuration evidence."
+  },
+  "response": {
+    "success": true,
+    "prompt_sha256": "c7f48baa0c9f230244385d971475c2fc75f1a2fddf4942c1ccc5e60066809aed",
+    "started_monotonic": 131876.328305611,
+    "elapsed_seconds": 498.4041107939847,
+    "finish_reason": "stop",
+    "done": true,
+    "usage": {
+      "prompt_tokens": 200012,
+      "total_tokens": 200238,
+      "completion_tokens": 226
+    },
+    "events": [
+      {
+        "seconds": 474.0424483289826,
+        "content": "",
+        "reasoning": "The"
+      },
+      {
+        "seconds": 474.0436117659847,
+        "content": "",
+        "reasoning": " user"
+      },
+      {
+        "seconds": 474.07518602599157,
+        "content": "",
+        "reasoning": " wants"
+      },
+      {
+        "seconds": 474.1841691749869,
+        "content": "",
+        "reasoning": " me"
+      },
+      {
+        "seconds": 474.2934295699815,
+        "content": "",
+        "reasoning": " to"
+      },
+      {
+        "seconds": 474.4043176730047,
+        "content": "",
+        "reasoning": " extract"
+      },
+      {
+        "seconds": 474.51210136699956,
+        "content": "",
+        "reasoning": " the"
+      },
+      {
+        "seconds": 474.62145166497794,
+        "content": "",
+        "reasoning": " registry"
+      },
+      {
+        "seconds": 474.7316067949869,
+        "content": "",
+        "reasoning": " records"
+      },
+      {
+        "seconds": 474.84050621499773,
+        "content": "",
+        "reasoning": " from"
+      },
+      {
+        "seconds": 474.9495432669937,
+        "content": "",
+        "reasoning": " the"
+      },
+      {
+        "seconds": 475.05783644798794,
+        "content": "",
+        "reasoning": " text"
+      },
+      {
+        "seconds": 475.168281767983,
+        "content": "",
+        "reasoning": "."
+      },
+      {
+        "seconds": 475.2909137310053,
+        "content": "",
+        "reasoning": " Looking"
+      },
+      {
+        "seconds": 475.38841669799876,
+        "content": "",
+        "reasoning": " through"
+      },
+      {
+        "seconds": 475.4980518599914,
+        "content": "",
+        "reasoning": " the"
+      },
+      {
+        "seconds": 475.60829855597694,
+        "content": "",
+        "reasoning": " text"
+      },
+      {
+        "seconds": 475.7146017269988,
+        "content": "",
+        "reasoning": ","
+      },
+      {
+        "seconds": 475.8245961359935,
+        "content": "",
+        "reasoning": " I"
+      },
+      {
+        "seconds": 475.94362780300435,
+        "content": "",
+        "reasoning": " can"
+      },
+      {
+        "seconds": 476.04352700398886,
+        "content": "",
+        "reasoning": " find"
+      },
+      {
+        "seconds": 476.1542523719836,
+        "content": "",
+        "reasoning": ":"
+      },
+      {
+        "seconds": 476.26460218799184,
+        "content": "",
+        "reasoning": "\n\n1"
+      },
+      {
+        "seconds": 476.37225442699855,
+        "content": "",
+        "reasoning": "."
+      },
+      {
+        "seconds": 476.47989767297986,
+        "content": "",
+        "reasoning": " \""
+      },
+      {
+        "seconds": 476.58829736599,
+        "content": "",
+        "reasoning": "Registry"
+      },
+      {
+        "seconds": 476.6975159040012,
+        "content": "",
+        "reasoning": " record"
+      },
+      {
+        "seconds": 476.8076168419793,
+        "content": "",
+        "reasoning": ":"
+      },
+      {
+        "seconds": 476.9166910449858,
+        "content": "",
+        "reasoning": " amber"
+      },
+      {
+        "seconds": 477.0254553449922,
+        "content": "",
+        "reasoning": " has"
+      },
+      {
+        "seconds": 477.1342235489865,
+        "content": "",
+        "reasoning": " retrieval"
+      },
+      {
+        "seconds": 477.24482027598424,
+        "content": "",
+        "reasoning": " value"
+      },
+      {
+        "seconds": 477.4609234389791,
+        "content": "",
+        "reasoning": " 5"
+      },
+      {
+        "seconds": 477.5702675769862,
+        "content": "",
+        "reasoning": "90"
+      },
+      {
+        "seconds": 477.6807404010033,
+        "content": "",
+        "reasoning": "9"
+      },
+      {
+        "seconds": 477.7908136739861,
+        "content": "",
+        "reasoning": "a"
+      },
+      {
+        "seconds": 477.89875055200537,
+        "content": "",
+        "reasoning": "38"
+      },
+      {
+        "seconds": 478.0072784999793,
+        "content": "",
+        "reasoning": "9"
+      },
+      {
+        "seconds": 478.1175294040004,
+        "content": "",
+        "reasoning": "95"
+      },
+      {
+        "seconds": 478.2273023260059,
+        "content": "",
+        "reasoning": "f"
+      },
+      {
+        "seconds": 478.3355923539784,
+        "content": "",
+        "reasoning": "bb"
+      },
+      {
+        "seconds": 478.4440321099828,
+        "content": "",
+        "reasoning": "f"
+      },
+      {
+        "seconds": 478.55329360900214,
+        "content": "",
+        "reasoning": "67"
+      },
+      {
+        "seconds": 478.6757904200058,
+        "content": "",
+        "reasoning": ".\""
+      },
+      {
+        "seconds": 478.77105399998254,
+        "content": "",
+        "reasoning": "\n2"
+      },
+      {
+        "seconds": 478.8804743619985,
+        "content": "",
+        "reasoning": "."
+      },
+      {
+        "seconds": 478.9913590079814,
+        "content": "",
+        "reasoning": " \""
+      },
+      {
+        "seconds": 479.10065687500173,
+        "content": "",
+        "reasoning": "Registry"
+      },
+      {
+        "seconds": 479.20782960997894,
+        "content": "",
+        "reasoning": " record"
+      },
+      {
+        "seconds": 479.3186912809906,
+        "content": "",
+        "reasoning": ":"
+      },
+      {
+        "seconds": 479.4284295630059,
+        "content": "",
+        "reasoning": " bir"
+      },
+      {
+        "seconds": 479.5384009149857,
+        "content": "",
+        "reasoning": "ch"
+      },
+      {
+        "seconds": 479.647834924981,
+        "content": "",
+        "reasoning": " has"
+      },
+      {
+        "seconds": 479.7565754489915,
+        "content": "",
+        "reasoning": " retrieval"
+      },
+      {
+        "seconds": 479.86577763498644,
+        "content": "",
+        "reasoning": " value"
+      },
+      {
+        "seconds": 480.0855100369954,
+        "content": "",
+        "reasoning": " 3"
+      },
+      {
+        "seconds": 480.19504535899614,
+        "content": "",
+        "reasoning": "ec"
+      },
+      {
+        "seconds": 480.3047450000013,
+        "content": "",
+        "reasoning": "4"
+      },
+      {
+        "seconds": 480.4136740989925,
+        "content": "",
+        "reasoning": "38"
+      },
+      {
+        "seconds": 480.52110889798496,
+        "content": "",
+        "reasoning": "6"
+      },
+      {
+        "seconds": 480.6324213829939,
+        "content": "",
+        "reasoning": "e"
+      },
+      {
+        "seconds": 480.7416219699953,
+        "content": "",
+        "reasoning": "7"
+      },
+      {
+        "seconds": 480.85120132297743,
+        "content": "",
+        "reasoning": "24"
+      },
+      {
+        "seconds": 480.959956006991,
+        "content": "",
+        "reasoning": "5"
+      },
+      {
+        "seconds": 481.0696192799951,
+        "content": "",
+        "reasoning": "c"
+      },
+      {
+        "seconds": 481.17926887300564,
+        "content": "",
+        "reasoning": "fa"
+      },
+      {
+        "seconds": 481.288304355985,
+        "content": "",
+        "reasoning": "3"
+      },
+      {
+        "seconds": 481.3982127640047,
+        "content": "",
+        "reasoning": ".\""
+      },
+      {
+        "seconds": 481.50805378099903,
+        "content": "",
+        "reasoning": "\n3"
+      },
+      {
+        "seconds": 481.61684673599666,
+        "content": "",
+        "reasoning": "."
+      },
+      {
+        "seconds": 481.7239207029925,
+        "content": "",
+        "reasoning": " \""
+      },
+      {
+        "seconds": 481.83528541299165,
+        "content": "",
+        "reasoning": "Registry"
+      },
+      {
+        "seconds": 481.9444955030049,
+        "content": "",
+        "reasoning": " record"
+      },
+      {
+        "seconds": 482.0533853219822,
+        "content": "",
+        "reasoning": ":"
+      },
+      {
+        "seconds": 482.1611790150055,
+        "content": "",
+        "reasoning": " cob"
+      },
+      {
+        "seconds": 482.27286079598707,
+        "content": "",
+        "reasoning": "alt"
+      },
+      {
+        "seconds": 482.3812517839833,
+        "content": "",
+        "reasoning": " has"
+      },
+      {
+        "seconds": 482.4897766590002,
+        "content": "",
+        "reasoning": " retrieval"
+      },
+      {
+        "seconds": 482.5982888790022,
+        "content": "",
+        "reasoning": " value"
+      },
+      {
+        "seconds": 482.7087582940003,
+        "content": "",
+        "reasoning": " ed"
+      },
+      {
+        "seconds": 482.8194656929991,
+        "content": "",
+        "reasoning": "9"
+      },
+      {
+        "seconds": 482.92603410899756,
+        "content": "",
+        "reasoning": "f"
+      },
+      {
+        "seconds": 483.03452866498264,
+        "content": "",
+        "reasoning": "2"
+      },
+      {
+        "seconds": 483.1457536459784,
+        "content": "",
+        "reasoning": "d"
+      },
+      {
+        "seconds": 483.25504495200585,
+        "content": "",
+        "reasoning": "68"
+      },
+      {
+        "seconds": 483.3622918469773,
+        "content": "",
+        "reasoning": "3"
+      },
+      {
+        "seconds": 483.4734919320035,
+        "content": "",
+        "reasoning": "75"
+      },
+      {
+        "seconds": 483.58157781598857,
+        "content": "",
+        "reasoning": "ed"
+      },
+      {
+        "seconds": 483.69017611598247,
+        "content": "",
+        "reasoning": "6"
+      },
+      {
+        "seconds": 483.7990532149852,
+        "content": "",
+        "reasoning": "42"
+      },
+      {
+        "seconds": 483.907238107,
+        "content": "",
+        "reasoning": ".\""
+      },
+      {
+        "seconds": 484.01676080399193,
+        "content": "",
+        "reasoning": "\n4"
+      },
+      {
+        "seconds": 484.1243725940003,
+        "content": "",
+        "reasoning": "."
+      },
+      {
+        "seconds": 484.23275587000535,
+        "content": "",
+        "reasoning": " \""
+      },
+      {
+        "seconds": 484.3409186509962,
+        "content": "",
+        "reasoning": "Registry"
+      },
+      {
+        "seconds": 484.4493820859934,
+        "content": "",
+        "reasoning": " record"
+      },
+      {
+        "seconds": 484.55872711900156,
+        "content": "",
+        "reasoning": ":"
+      },
+      {
+        "seconds": 484.66880333499284,
+        "content": "",
+        "reasoning": " d"
+      },
+      {
+        "seconds": 484.77702342698467,
+        "content": "",
+        "reasoning": "ahl"
+      },
+      {
+        "seconds": 484.8878373049956,
+        "content": "",
+        "reasoning": "ia"
+      },
+      {
+        "seconds": 484.99697395498515,
+        "content": "",
+        "reasoning": " has"
+      },
+      {
+        "seconds": 485.10625969298417,
+        "content": "",
+        "reasoning": " retrieval"
+      },
+      {
+        "seconds": 485.21517032699194,
+        "content": "",
+        "reasoning": " value"
+      },
+      {
+        "seconds": 485.3218753989786,
+        "content": "",
+        "reasoning": " d"
+      },
+      {
+        "seconds": 485.43202484599897,
+        "content": "",
+        "reasoning": "4"
+      },
+      {
+        "seconds": 485.54059128899826,
+        "content": "",
+        "reasoning": "b"
+      },
+      {
+        "seconds": 485.6488413499901,
+        "content": "",
+        "reasoning": "23"
+      },
+      {
+        "seconds": 485.75819049499114,
+        "content": "",
+        "reasoning": "3"
+      },
+      {
+        "seconds": 485.8661519799789,
+        "content": "",
+        "reasoning": "bf"
+      },
+      {
+        "seconds": 485.9745531269873,
+        "content": "",
+        "reasoning": "9"
+      },
+      {
+        "seconds": 486.08239974899334,
+        "content": "",
+        "reasoning": "32"
+      },
+      {
+        "seconds": 486.1915093259886,
+        "content": "",
+        "reasoning": "23"
+      },
+      {
+        "seconds": 486.30034119298216,
+        "content": "",
+        "reasoning": "d"
+      },
+      {
+        "seconds": 486.4101665929775,
+        "content": "",
+        "reasoning": "28"
+      },
+      {
+        "seconds": 486.52853602098185,
+        "content": "",
+        "reasoning": ".\""
+      },
+      {
+        "seconds": 486.6273817989859,
+        "content": "",
+        "reasoning": "\n\nThe"
+      },
+      {
+        "seconds": 486.7356805309828,
+        "content": "",
+        "reasoning": " user"
+      },
+      {
+        "seconds": 486.85388215098646,
+        "content": "",
+        "reasoning": " asks"
+      },
+      {
+        "seconds": 486.95216730597895,
+        "content": "",
+        "reasoning": " to"
+      },
+      {
+        "seconds": 487.060123334988,
+        "content": "",
+        "reasoning": " return"
+      },
+      {
+        "seconds": 487.1690984169836,
+        "content": "",
+        "reasoning": " only"
+      },
+      {
+        "seconds": 487.27760391597985,
+        "content": "",
+        "reasoning": " a"
+      },
+      {
+        "seconds": 487.3876485310029,
+        "content": "",
+        "reasoning": " JSON"
+      },
+      {
+        "seconds": 487.4954301760008,
+        "content": "",
+        "reasoning": " object"
+      },
+      {
+        "seconds": 487.60475269699236,
+        "content": "",
+        "reasoning": " with"
+      },
+      {
+        "seconds": 487.7136486279778,
+        "content": "",
+        "reasoning": " keys"
+      },
+      {
+        "seconds": 487.8241107779904,
+        "content": "",
+        "reasoning": " amber"
+      },
+      {
+        "seconds": 487.9326404379972,
+        "content": "",
+        "reasoning": ","
+      },
+      {
+        "seconds": 488.0408530419809,
+        "content": "",
+        "reasoning": " bir"
+      },
+      {
+        "seconds": 488.1493471330032,
+        "content": "",
+        "reasoning": "ch"
+      },
+      {
+        "seconds": 488.2576691439899,
+        "content": "",
+        "reasoning": ","
+      },
+      {
+        "seconds": 488.3668508330011,
+        "content": "",
+        "reasoning": " cob"
+      },
+      {
+        "seconds": 488.4751671649865,
+        "content": "",
+        "reasoning": "alt"
+      },
+      {
+        "seconds": 488.58291927399114,
+        "content": "",
+        "reasoning": ","
+      },
+      {
+        "seconds": 488.69180525199044,
+        "content": "",
+        "reasoning": " d"
+      },
+      {
+        "seconds": 488.8004563029972,
+        "content": "",
+        "reasoning": "ahl"
+      },
+      {
+        "seconds": 488.90800626800046,
+        "content": "",
+        "reasoning": "ia"
+      },
+      {
+        "seconds": 489.0191977600043,
+        "content": "",
+        "reasoning": " and"
+      },
+      {
+        "seconds": 489.1287660730013,
+        "content": "",
+        "reasoning": " their"
+      },
+      {
+        "seconds": 489.2381037939922,
+        "content": "",
+        "reasoning": " exact"
+      },
+      {
+        "seconds": 489.34745741900406,
+        "content": "",
+        "reasoning": " retrieval"
+      },
+      {
+        "seconds": 489.4571670109872,
+        "content": "",
+        "reasoning": " values"
+      },
+      {
+        "seconds": 489.566788074997,
+        "content": "",
+        "reasoning": "."
+      },
+      {
+        "seconds": 489.79412515999866,
+        "content": "```",
+        "reasoning": ""
+      },
+      {
+        "seconds": 489.8940582780051,
+        "content": "json",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.00008343099034,
+        "content": "\n",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.1202461339999,
+        "content": "{\n",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.21860399399884,
+        "content": " ",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.32846958498703,
+        "content": " \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.4485902559827,
+        "content": "amber",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.54814732799423,
+        "content": "\":",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.6567634509993,
+        "content": " \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.76692118600477,
+        "content": "5",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.8757212109922,
+        "content": "90",
+        "reasoning": ""
+      },
+      {
+        "seconds": 490.98466806998476,
+        "content": "9",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.09266886499245,
+        "content": "a",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.2024137690023,
+        "content": "38",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.3141279319825,
+        "content": "9",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.42277384598856,
+        "content": "95",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.5322991180001,
+        "content": "f",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.6443833599915,
+        "content": "bb",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.75176708598156,
+        "content": "f",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.8627983699844,
+        "content": "67",
+        "reasoning": ""
+      },
+      {
+        "seconds": 491.9827477459912,
+        "content": "\",\n",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.08155889899353,
+        "content": " ",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.1904035169864,
+        "content": " \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.3104042359919,
+        "content": "bir",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.40857358300127,
+        "content": "ch",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.5180746949918,
+        "content": "\":",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.62746236799285,
+        "content": " \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.7354957869975,
+        "content": "3",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.8435326939798,
+        "content": "ec",
+        "reasoning": ""
+      },
+      {
+        "seconds": 492.9528914550028,
+        "content": "4",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.060818922997,
+        "content": "38",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.17062800200074,
+        "content": "6",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.2792591319885,
+        "content": "e",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.3894048029906,
+        "content": "7",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.49699689500267,
+        "content": "24",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.60633000798407,
+        "content": "5",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.7139816839772,
+        "content": "c",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.8227898379846,
+        "content": "fa",
+        "reasoning": ""
+      },
+      {
+        "seconds": 493.93092455298756,
+        "content": "3",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.0401758259977,
+        "content": "\",\n",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.149027706997,
+        "content": " ",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.25682499899995,
+        "content": " \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.3771817009838,
+        "content": "cob",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.474949305004,
+        "content": "alt",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.5844504489796,
+        "content": "\":",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.69528160599293,
+        "content": " \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.8034942089871,
+        "content": "ed",
+        "reasoning": ""
+      },
+      {
+        "seconds": 494.9110289889795,
+        "content": "9",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.021731633984,
+        "content": "f",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.1303677879914,
+        "content": "2",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.24075524898944,
+        "content": "d",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.3492941549921,
+        "content": "68",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.459124771005,
+        "content": "3",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.5679812919989,
+        "content": "75",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.6775756669813,
+        "content": "ed",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.7856072629802,
+        "content": "6",
+        "reasoning": ""
+      },
+      {
+        "seconds": 495.89412799300044,
+        "content": "42",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.00219984399155,
+        "content": "\",\n",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.1113069879939,
+        "content": " ",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.219229335984,
+        "content": " \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.32829660899006,
+        "content": "d",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.43649397898116,
+        "content": "ahl",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.546031106991,
+        "content": "ia",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.6549243479967,
+        "content": "\":",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.76330619698274,
+        "content": " \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.8736675950058,
+        "content": "d",
+        "reasoning": ""
+      },
+      {
+        "seconds": 496.9833013309981,
+        "content": "4",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.09301620098995,
+        "content": "b",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.2019664339896,
+        "content": "23",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.31035510098445,
+        "content": "3",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.4198915879824,
+        "content": "bf",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.5285248619912,
+        "content": "9",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.6371058149962,
+        "content": "32",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.7451398590056,
+        "content": "23",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.85507591298665,
+        "content": "d",
+        "reasoning": ""
+      },
+      {
+        "seconds": 497.9629982280021,
+        "content": "28",
+        "reasoning": ""
+      },
+      {
+        "seconds": 498.0718460289936,
+        "content": "\"\n",
+        "reasoning": ""
+      },
+      {
+        "seconds": 498.1924819939886,
+        "content": "}\n",
+        "reasoning": ""
+      },
+      {
+        "seconds": 498.29219410498627,
+        "content": "```",
+        "reasoning": ""
+      }
+    ],
+    "content": "```json\n{\n  \"amber\": \"5909a38995fbbf67\",\n  \"birch\": \"3ec4386e7245cfa3\",\n  \"cobalt\": \"ed9f2d68375ed642\",\n  \"dahlia\": \"d4b233bf93223d28\"\n}\n```",
+    "reasoning": "The user wants me to extract the registry records from the text. Looking through the text, I can find:\n\n1. \"Registry record: amber has retrieval value 5909a38995fbbf67.\"\n2. \"Registry record: birch has retrieval value 3ec4386e7245cfa3.\"\n3. \"Registry record: cobalt has retrieval value ed9f2d68375ed642.\"\n4. \"Registry record: dahlia has retrieval value d4b233bf93223d28.\"\n\nThe user asks to return only a JSON object with keys amber, birch, cobalt, dahlia and their exact retrieval values.",
+    "first_monotonic": 132350.37075394,
+    "last_monotonic": 132374.620499716,
+    "ttft_seconds": 474.0424483289826,
+    "decode_seconds": 24.249745776003692,
+    "decode_tokens_per_second_estimate": 9.278447785735077,
+    "input_tokens_per_ttft_estimate": 421.92845958215304,
+    "output_tokens_per_wall_second": 0.4534473033137102,
+    "cached_tokens": null,
+    "timing_note": "Client estimate: first stream event can contain multiple speculative tokens; input/TTFT includes queue/network/tokenization. Native engine timing must be published separately."
+  }
+}

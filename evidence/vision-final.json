@@ -1,0 +1,157 @@
+{
+  "model": "glm-5.3-flash-exl3-k2-single-spark",
+  "all_selected_pass": true,
+  "scope": "Synthetic paired visual acceptance only; not broad visual quality evaluation.",
+  "results": [
+    {
+      "id": "image-1",
+      "kind": "image",
+      "fixture_sha256": "141d08d5a2181823e58cad476869f40d2680167d2b510149f5a2a80f78ebec43",
+      "passed": true,
+      "content": "{\"code\": \"417926\", \"circles\": 1, \"square_color\": \"red\"}",
+      "actual": {
+        "code": "417926",
+        "circles": 1,
+        "square_color": "red"
+      },
+      "expected": {
+        "code": "417926",
+        "circles": 1,
+        "square_color": "red"
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 321,
+        "total_tokens": 385,
+        "completion_tokens": 64,
+        "prompt_tokens_details": null
+      },
+      "seconds": 9.062853089999408
+    },
+    {
+      "id": "image-2",
+      "kind": "image",
+      "fixture_sha256": "95e8d0af791438f37a6b877c3cf23e61ac4375e216205f5c399ab9fce1c4fcf1",
+      "passed": true,
+      "content": "{\"code\": \"803152\", \"circles\": 3, \"square_color\": \"blue\"}",
+      "actual": {
+        "code": "803152",
+        "circles": 3,
+        "square_color": "blue"
+      },
+      "expected": {
+        "code": "803152",
+        "circles": 3,
+        "square_color": "blue"
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 321,
+        "total_tokens": 390,
+        "completion_tokens": 69,
+        "prompt_tokens_details": null
+      },
+      "seconds": 8.428795967018232
+    },
+    {
+      "id": "image-3",
+      "kind": "image",
+      "fixture_sha256": "bc0b9f25a7404dd3e50feeaa8b967c883ad0e7c3864950a1a88b79bb9fa481d6",
+      "passed": true,
+      "content": "{\"code\": \"649207\", \"circles\": 2, \"square_color\": \"green\"}",
+      "actual": {
+        "code": "649207",
+        "circles": 2,
+        "square_color": "green"
+      },
+      "expected": {
+        "code": "649207",
+        "circles": 2,
+        "square_color": "green"
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 321,
+        "total_tokens": 383,
+        "completion_tokens": 62,
+        "prompt_tokens_details": null
+      },
+      "seconds": 7.660523233993445
+    },
+    {
+      "id": "image-4",
+      "kind": "image",
+      "fixture_sha256": "f179b73ec3220bf0383ff349f34bf07c24d851abc26c795688f80f2963e4053b",
+      "passed": true,
+      "content": "{\"code\": \"125864\", \"circles\": 4, \"square_color\": \"yellow\"}",
+      "actual": {
+        "code": "125864",
+        "circles": 4,
+        "square_color": "yellow"
+      },
+      "expected": {
+        "code": "125864",
+        "circles": 4,
+        "square_color": "yellow"
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 321,
+        "total_tokens": 378,
+        "completion_tokens": 57,
+        "prompt_tokens_details": null
+      },
+      "seconds": 7.184102264000103
+    },
+    {
+      "id": "video-1",
+      "kind": "video",
+      "fixture_sha256": "73d12825e6a5766b475cfa32684c2cc895de138305a5ccedb6d738fade92d110",
+      "passed": true,
+      "content": "{\"direction\": \"right\", \"first_color\": \"red\", \"last_color\": \"blue\"}",
+      "actual": {
+        "direction": "right",
+        "first_color": "red",
+        "last_color": "blue"
+      },
+      "expected": {
+        "direction": "right",
+        "first_color": "red",
+        "last_color": "blue"
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4413,
+        "total_tokens": 4774,
+        "completion_tokens": 361,
+        "prompt_tokens_details": null
+      },
+      "seconds": 59.76128711499041
+    },
+    {
+      "id": "video-2",
+      "kind": "video",
+      "fixture_sha256": "9bd1be0f3eafb495db3fd41fd9002be678e4016fe7148a762fb83de7f7f2017e",
+      "passed": true,
+      "content": "{\"direction\": \"left\", \"first_color\": \"green\", \"last_color\": \"yellow\"}",
+      "actual": {
+        "direction": "left",
+        "first_color": "green",
+        "last_color": "yellow"
+      },
+      "expected": {
+        "direction": "left",
+        "first_color": "green",
+        "last_color": "yellow"
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4413,
+        "total_tokens": 4765,
+        "completion_tokens": 352,
+        "prompt_tokens_details": null
+      },
+      "seconds": 49.439558960002614
+    }
+  ]
+}

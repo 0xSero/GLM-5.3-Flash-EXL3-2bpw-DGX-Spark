@@ -1,0 +1,52 @@
+{
+  "model": "glm-5.3-flash-exl3-k2-single-spark",
+  "scope": "Finite exact-answer natural-stop client timing; not native kernel timing.",
+  "cells": [
+    {
+      "summary": {
+        "target_input_tokens": 1024,
+        "incoming_concurrency": 2,
+        "successes": 2,
+        "requests": 2,
+        "wall_seconds": 29.839206697011832,
+        "mean_decode_tokens_per_second_estimate": 9.340625988540374
+      },
+      "requests": [
+        {
+          "success": true,
+          "finish_reason": "stop",
+          "done": true,
+          "content": "SPEED_OK_64e8b0482f8b",
+          "reasoning_sha256": "ed7412b33debdd35d7df7e983ae31e0cbd0af0d60a17b5c2a3ebb36085a696bc",
+          "usage": {
+            "prompt_tokens": 1035,
+            "total_tokens": 1121,
+            "completion_tokens": 86
+          },
+          "elapsed_seconds": 11.582464990002336,
+          "ttft_seconds": 2.406902155984426,
+          "decode_tokens_per_second_estimate": 9.376839377706478,
+          "input_text_tokens": 1023,
+          "prompt_sha256": "bceb929b3e0bd8f60e630900b11b6640bc0fb1344c7a760d3e450b8245e58b28"
+        },
+        {
+          "success": true,
+          "finish_reason": "stop",
+          "done": true,
+          "content": "SPEED_OK_5f2293a8cba6",
+          "reasoning_sha256": "3389842cc4a3c345e05e215fda8bfcf52d672d12a8d359ad108b81fdffecdba6",
+          "usage": {
+            "prompt_tokens": 1036,
+            "total_tokens": 1183,
+            "completion_tokens": 147
+          },
+          "elapsed_seconds": 29.838083805982023,
+          "ttft_seconds": 14.037607676000334,
+          "decode_tokens_per_second_estimate": 9.304412599374269,
+          "input_text_tokens": 1024,
+          "prompt_sha256": "4a59c4be95546ac4ce98c3f8e37ea290d42e1ef0ada0bf74b01b58c8186527d4"
+        }
+      ]
+    }
+  ]
+}

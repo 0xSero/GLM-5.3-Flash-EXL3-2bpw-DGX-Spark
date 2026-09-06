@@ -1,0 +1,38 @@
+ARG BASE=ghcr.io/miaai-lab/glm-5.3-flash-2x-dgx-sparks:exl3@sha256:9bb1557a4234fce63d59599e44d10747eabd742beb337eebf9e7070be8a0fd58
+FROM ${BASE}
+
+COPY exl3.py /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py
+
+RUN python3 -m py_compile \
+      /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py \
+    && python3 - <<'PY'
+from vllm.model_executor.layers.quantization.exl3 import Exl3Config
+
+config = Exl3Config.from_config(
+    {
+        "quant_method": "exl3",
+        "bits": 3,
+        "codebook": "mcg",
+        "pre_sliced": True,
+        "pre_sliced_rank": 2,
+        "pre_sliced_tp": 4,
+    }
+)
+assert config.raw_config["pre_sliced"] is True
+assert config.raw_config["pre_sliced_rank"] == 2
+assert config.raw_config["pre_sliced_tp"] == 4
+print("selective TP4 pre-sliced EXL3 config OK")
+
+stacked = Exl3Config.from_config(
+    {
+        "quant_method": "exl3",
+        "bits": 2,
+        "codebook": "mcg",
+        "rank_stacked_tp": 4,
+    }
+)
+assert stacked.bits == 2
+assert stacked.rank_stacked_tp == 4
+assert stacked.raw_config["rank_stacked_tp"] == 4
+print("K2 rank-stacked TP4 archive on live TP1 config OK")
+PY

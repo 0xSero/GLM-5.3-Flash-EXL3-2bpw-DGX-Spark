@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "description": "Synthetic paired OCR/count/color and temporal video tests. Expectations are not sent to model.",
+  "cases": [
+    {
+      "id": "image-1",
+      "kind": "image",
+      "file": "i01.png",
+      "prompt": "Return only JSON with exactly these keys: code (the six digits at the top, as a string), circles (number of black circles, as an integer), square_color (lowercase English color name).",
+      "expected": {
+        "code": "417926",
+        "circles": 1,
+        "square_color": "red"
+      },
+      "bytes": 5831,
+      "sha256": "141d08d5a2181823e58cad476869f40d2680167d2b510149f5a2a80f78ebec43"
+    },
+    {
+      "id": "image-2",
+      "kind": "image",
+      "file": "i02.png",
+      "prompt": "Return only JSON with exactly these keys: code (the six digits at the top, as a string), circles (number of black circles, as an integer), square_color (lowercase English color name).",
+      "expected": {
+        "code": "803152",
+        "circles": 3,
+        "square_color": "blue"
+      },
+      "bytes": 6471,
+      "sha256": "95e8d0af791438f37a6b877c3cf23e61ac4375e216205f5c399ab9fce1c4fcf1"
+    },
+    {
+      "id": "image-3",
+      "kind": "image",
+      "file": "i03.png",
+      "prompt": "Return only JSON with exactly these keys: code (the six digits at the top, as a string), circles (number of black circles, as an integer), square_color (lowercase English color name).",
+      "expected": {
+        "code": "649207",
+        "circles": 2,
+        "square_color": "green"
+      },
+      "bytes": 6453,
+      "sha256": "bc0b9f25a7404dd3e50feeaa8b967c883ad0e7c3864950a1a88b79bb9fa481d6"
+    },
+    {
+      "id": "image-4",
+      "kind": "image",
+      "file": "i04.png",
+      "prompt": "Return only JSON with exactly these keys: code (the six digits at the top, as a string), circles (number of black circles, as an integer), square_color (lowercase English color name).",
+      "expected": {
+        "code": "125864",
+        "circles": 4,
+        "square_color": "yellow"
+      },
+      "bytes": 6414,
+      "sha256": "f179b73ec3220bf0383ff349f34bf07c24d851abc26c795688f80f2963e4053b"
+    },
+    {
+      "id": "video-1",
+      "kind": "video",
+      "file": "v01.mp4",
+      "prompt": "Watch the complete video. Return only JSON with exactly these keys: direction (left or right, the direction the square moves), first_color (lowercase English color at the beginning), last_color (lowercase English color at the end).",
+      "expected": {
+        "direction": "right",
+        "first_color": "red",
+        "last_color": "blue"
+      },
+      "bytes": 7378,
+      "sha256": "73d12825e6a5766b475cfa32684c2cc895de138305a5ccedb6d738fade92d110"
+    },
+    {
+      "id": "video-2",
+      "kind": "video",
+      "file": "v02.mp4",
+      "prompt": "Watch the complete video. Return only JSON with exactly these keys: direction (left or right, the direction the square moves), first_color (lowercase English color at the beginning), last_color (lowercase English color at the end).",
+      "expected": {
+        "direction": "left",
+        "first_color": "green",
+        "last_color": "yellow"
+      },
+      "bytes": 7080,
+      "sha256": "9bd1be0f3eafb495db3fd41fd9002be678e4016fe7148a762fb83de7f7f2017e"
+    }
+  ]
+}
