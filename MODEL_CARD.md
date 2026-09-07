@@ -25,6 +25,13 @@ across 1k–200k inputs, so the sustained 25–50 tok/s target was not met. The
 contains the reproducible matrix and per-request evidence. The draft remains an
 external pinned CC-BY-NC-ND-4.0 dependency and is not bundled in the image.
 
+The post-release strength-1 runtime abliteration experiment was not promoted.
+The sealed writer projection loaded with CUDA graphs and matched sampled
+materialized BF16 abliterated columns at 99.9978% element agreement. Ordinary
+behavior passed 5/5 and images 4/4, but all three bounded refusal probes still
+refused and one of two video cases failed to stop. This is a documented negative
+result, not an abliterated model release.
+
 The required runtime source and launch recipe are in the public
 [DGX Spark runtime repository](https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark).
 The immutable ARM64 image is
