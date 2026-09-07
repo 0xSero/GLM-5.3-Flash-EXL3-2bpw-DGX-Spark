@@ -1,0 +1,1233 @@
+{
+  "summary": {
+    "requests": 1,
+    "successes": 1,
+    "failures": 0,
+    "wall_seconds": 66.94961394698475,
+    "mean_decode_tokens_per_second_estimate": 14.0603426909657,
+    "median_ttft_seconds": 20.007181491004303,
+    "aggregate_output_tokens_per_wall_second": 9.873096512900352,
+    "native_timing": {
+      "status": "matched_isolated_cell",
+      "request_count": 1,
+      "sum_request_prefill_seconds": 19.97527363599511,
+      "sum_request_decode_seconds": 46.94692348901299,
+      "mean_request_prefill_seconds": 19.97527363599511,
+      "mean_request_decode_seconds": 46.94692348901299,
+      "prompt_tokens_per_sum_request_prefill_second": 410.7578273778802,
+      "reported_counter_deltas": {
+        "vllm:request_generation_tokens_count": 1.0,
+        "vllm:request_prompt_tokens_sum": 8205.0,
+        "vllm:request_prefill_time_seconds_count": 1.0,
+        "vllm:request_prompt_tokens_count": 1.0,
+        "vllm:request_decode_time_seconds_sum": 46.94692348901299,
+        "vllm:request_generation_tokens_sum": 661.0,
+        "vllm:request_prefill_time_seconds_sum": 19.97527363599511,
+        "vllm:request_decode_time_seconds_count": 1.0
+      },
+      "scope": "vLLM request-level timing observations. Concurrent request durations overlap; these sums are not GPU-exclusive time or aggregate throughput. No native decode rate inferred because speculative first-token accounting differs."
+    },
+    "target_input_tokens": 8192,
+    "incoming_concurrency": 1,
+    "repeat": 0
+  },
+  "requests": [
+    {
+      "success": true,
+      "prompt_sha256": "24bb6ffefb8fda2a67468d97a3077845a50b86280eeb4627bb76835ed745e60b",
+      "started_monotonic": 186288.598083314,
+      "elapsed_seconds": 66.94789619502262,
+      "finish_reason": "stop",
+      "done": true,
+      "usage": {
+        "prompt_tokens": 8205,
+        "total_tokens": 8866,
+        "completion_tokens": 661
+      },
+      "events": [
+        {
+          "seconds": 20.007181491004303,
+          "content": "",
+          "reasoning": "The"
+        },
+        {
+          "seconds": 20.203514040011214,
+          "content": "",
+          "reasoning": " user wants"
+        },
+        {
+          "seconds": 20.413266618998023,
+          "content": "",
+          "reasoning": " 10 numbered Python comment lines explaining practical software"
+        },
+        {
+          "seconds": 20.62507790699601,
+          "content": "",
+          "reasoning": " debugging techniques. Each line must"
+        },
+        {
+          "seconds": 20.8375139440177,
+          "content": "",
+          "reasoning": " contain"
+        },
+        {
+          "seconds": 21.052949022006942,
+          "content": "",
+          "reasoning": " a distinct, concrete tip. End after"
+        },
+        {
+          "seconds": 21.255467861017678,
+          "content": "",
+          "reasoning": " line 10. Do not summarize the"
+        },
+        {
+          "seconds": 21.456907842017245,
+          "content": "",
+          "reasoning": " archive.\n\nThe archive"
+        },
+        {
+          "seconds": 21.660877842019545,
+          "content": "",
+          "reasoning": " context is just"
+        },
+        {
+          "seconds": 21.87029240699485,
+          "content": "",
+          "reasoning": " repeated"
+        },
+        {
+          "seconds": 22.08050010399893,
+          "content": "",
+          "reasoning": " filler"
+        },
+        {
+          "seconds": 22.272412309015635,
+          "content": "",
+          "reasoning": " text about cache entries"
+        },
+        {
+          "seconds": 22.460597140016034,
+          "content": "",
+          "reasoning": " \u2014 it's"
+        },
+        {
+          "seconds": 22.666745242022444,
+          "content": "",
+          "reasoning": " noise"
+        },
+        {
+          "seconds": 22.865224758017575,
+          "content": "",
+          "reasoning": ". I"
+        },
+        {
+          "seconds": 23.069907796016196,
+          "content": "",
+          "reasoning": " should ignore"
+        },
+        {
+          "seconds": 23.271604640001897,
+          "content": "",
+          "reasoning": " it and just produce"
+        },
+        {
+          "seconds": 23.48362589601311,
+          "content": "",
+          "reasoning": " the 10 numbered comment lines about"
+        },
+        {
+          "seconds": 23.68867192399921,
+          "content": "",
+          "reasoning": " debugging techniques"
+        },
+        {
+          "seconds": 23.885756200004835,
+          "content": "",
+          "reasoning": ".\n\nFormat"
+        },
+        {
+          "seconds": 24.090967155003455,
+          "content": "",
+          "reasoning": ": numbered Python"
+        },
+        {
+          "seconds": 24.294118552003056,
+          "content": "",
+          "reasoning": " comment lines."
+        },
+        {
+          "seconds": 24.49232311101514,
+          "content": "",
+          "reasoning": " So something"
+        },
+        {
+          "seconds": 24.688768014020752,
+          "content": "",
+          "reasoning": " like:\n\n#"
+        },
+        {
+          "seconds": 24.895434195001144,
+          "content": "",
+          "reasoning": " 1. ...\n# 2."
+        },
+        {
+          "seconds": 25.09763929300243,
+          "content": "",
+          "reasoning": " ...\n\nEach"
+        },
+        {
+          "seconds": 25.303208071010886,
+          "content": "",
+          "reasoning": " line a"
+        },
+        {
+          "seconds": 25.50638034901931,
+          "content": "",
+          "reasoning": " distinct concrete tip. End"
+        },
+        {
+          "seconds": 25.710367343010148,
+          "content": "",
+          "reasoning": " after line 10. No"
+        },
+        {
+          "seconds": 25.918549916998018,
+          "content": "",
+          "reasoning": " summary of"
+        },
+        {
+          "seconds": 26.12336954701459,
+          "content": "",
+          "reasoning": " the archive.\n\nLet me write"
+        },
+        {
+          "seconds": 26.328691382019315,
+          "content": "",
+          "reasoning": " 10 concrete"
+        },
+        {
+          "seconds": 26.522442059998866,
+          "content": "",
+          "reasoning": " debugging tips:\n\n1. Rep"
+        },
+        {
+          "seconds": 26.72254102601437,
+          "content": "",
+          "reasoning": "roduce the bug reliably"
+        },
+        {
+          "seconds": 26.925784009014023,
+          "content": "",
+          "reasoning": " with a minimal failing"
+        },
+        {
+          "seconds": 27.129139231023146,
+          "content": "",
+          "reasoning": " test"
+        },
+        {
+          "seconds": 27.3324678610079,
+          "content": "",
+          "reasoning": " case"
+        },
+        {
+          "seconds": 27.541098640998825,
+          "content": "",
+          "reasoning": " before changing"
+        },
+        {
+          "seconds": 27.744644229998812,
+          "content": "",
+          "reasoning": " code"
+        },
+        {
+          "seconds": 27.931171472999267,
+          "content": "",
+          "reasoning": ".\n2. Read"
+        },
+        {
+          "seconds": 28.126396688021487,
+          "content": "",
+          "reasoning": " the full"
+        },
+        {
+          "seconds": 28.320766179007478,
+          "content": "",
+          "reasoning": " traceback bottom"
+        },
+        {
+          "seconds": 28.520438941020984,
+          "content": "",
+          "reasoning": "-up:"
+        },
+        {
+          "seconds": 28.720428036001977,
+          "content": "",
+          "reasoning": " the last frame"
+        },
+        {
+          "seconds": 28.923728666995885,
+          "content": "",
+          "reasoning": " shows"
+        },
+        {
+          "seconds": 29.123289717012085,
+          "content": "",
+          "reasoning": " where it failed"
+        },
+        {
+          "seconds": 29.33478896401357,
+          "content": "",
+          "reasoning": ", earlier"
+        },
+        {
+          "seconds": 29.53673152200645,
+          "content": "",
+          "reasoning": " frames show how"
+        },
+        {
+          "seconds": 29.741042837005807,
+          "content": "",
+          "reasoning": " it got"
+        },
+        {
+          "seconds": 29.931203486019513,
+          "content": "",
+          "reasoning": " there.\n3. Use print"
+        },
+        {
+          "seconds": 30.13071460102219,
+          "content": "",
+          "reasoning": "/logging"
+        },
+        {
+          "seconds": 30.331024367013015,
+          "content": "",
+          "reasoning": " with"
+        },
+        {
+          "seconds": 30.538248788012424,
+          "content": "",
+          "reasoning": " variable"
+        },
+        {
+          "seconds": 30.73898668101174,
+          "content": "",
+          "reasoning": " values"
+        },
+        {
+          "seconds": 30.949318462022347,
+          "content": "",
+          "reasoning": " at boundaries"
+        },
+        {
+          "seconds": 31.156851281004492,
+          "content": "",
+          "reasoning": " to"
+        },
+        {
+          "seconds": 31.36729414999718,
+          "content": "",
+          "reasoning": " narrow"
+        },
+        {
+          "seconds": 31.574757690017577,
+          "content": "",
+          "reasoning": " down where state"
+        },
+        {
+          "seconds": 31.775779165996937,
+          "content": "",
+          "reasoning": " diver"
+        },
+        {
+          "seconds": 31.981638714001747,
+          "content": "",
+          "reasoning": "ges from"
+        },
+        {
+          "seconds": 32.183021532022394,
+          "content": "",
+          "reasoning": " expectations.\n4. Use"
+        },
+        {
+          "seconds": 32.38529781802208,
+          "content": "",
+          "reasoning": " pdb /"
+        },
+        {
+          "seconds": 32.57930220902199,
+          "content": "",
+          "reasoning": " breakpoint()"
+        },
+        {
+          "seconds": 32.76969748301781,
+          "content": "",
+          "reasoning": " to step"
+        },
+        {
+          "seconds": 32.96886922500562,
+          "content": "",
+          "reasoning": " through execution"
+        },
+        {
+          "seconds": 33.17463391000638,
+          "content": "",
+          "reasoning": " and inspect live"
+        },
+        {
+          "seconds": 33.382628888008185,
+          "content": "",
+          "reasoning": " state"
+        },
+        {
+          "seconds": 33.5886199560191,
+          "content": "",
+          "reasoning": " instead"
+        },
+        {
+          "seconds": 33.79351282201242,
+          "content": "",
+          "reasoning": " of guessing"
+        },
+        {
+          "seconds": 33.98939344502287,
+          "content": "",
+          "reasoning": ".\n5. Check"
+        },
+        {
+          "seconds": 34.188257316011004,
+          "content": "",
+          "reasoning": " assumptions"
+        },
+        {
+          "seconds": 34.38750406701001,
+          "content": "",
+          "reasoning": " about"
+        },
+        {
+          "seconds": 34.58099654200487,
+          "content": "",
+          "reasoning": " types"
+        },
+        {
+          "seconds": 34.78521857899614,
+          "content": "",
+          "reasoning": " \u2014"
+        },
+        {
+          "seconds": 34.98793956800364,
+          "content": "",
+          "reasoning": " isinstance"
+        },
+        {
+          "seconds": 35.179255110007944,
+          "content": "",
+          "reasoning": " checks"
+        },
+        {
+          "seconds": 35.384708422003314,
+          "content": "",
+          "reasoning": " or"
+        },
+        {
+          "seconds": 35.589097643009154,
+          "content": "",
+          "reasoning": " type hints"
+        },
+        {
+          "seconds": 35.79275491600856,
+          "content": "",
+          "reasoning": " catch"
+        },
+        {
+          "seconds": 36.004001064022304,
+          "content": "",
+          "reasoning": " silent wrong"
+        },
+        {
+          "seconds": 36.21216257000924,
+          "content": "",
+          "reasoning": "-type"
+        },
+        {
+          "seconds": 36.40090622199932,
+          "content": "",
+          "reasoning": " bugs.\n6. Bis"
+        },
+        {
+          "seconds": 36.60272822401021,
+          "content": "",
+          "reasoning": "ect:"
+        },
+        {
+          "seconds": 36.795205057016574,
+          "content": "",
+          "reasoning": " revert"
+        },
+        {
+          "seconds": 36.99188508599764,
+          "content": "",
+          "reasoning": " or"
+        },
+        {
+          "seconds": 37.17801572600729,
+          "content": "",
+          "reasoning": " comment"
+        },
+        {
+          "seconds": 37.388198328000726,
+          "content": "",
+          "reasoning": " out changes"
+        },
+        {
+          "seconds": 37.59358335300931,
+          "content": "",
+          "reasoning": " half"
+        },
+        {
+          "seconds": 37.80217649001861,
+          "content": "",
+          "reasoning": " at a time to find the commit"
+        },
+        {
+          "seconds": 38.0152123250009,
+          "content": "",
+          "reasoning": "/change"
+        },
+        {
+          "seconds": 38.21523712199996,
+          "content": "",
+          "reasoning": " that introduced the bug.\n7. Compare"
+        },
+        {
+          "seconds": 38.409156524023274,
+          "content": "",
+          "reasoning": " working"
+        },
+        {
+          "seconds": 38.609439848019974,
+          "content": "",
+          "reasoning": " vs broken"
+        },
+        {
+          "seconds": 38.81152106600348,
+          "content": "",
+          "reasoning": " behavior with diffs"
+        },
+        {
+          "seconds": 39.00067113302066,
+          "content": "",
+          "reasoning": " \u2014"
+        },
+        {
+          "seconds": 39.19729157802067,
+          "content": "",
+          "reasoning": " data"
+        },
+        {
+          "seconds": 39.40034552800353,
+          "content": "",
+          "reasoning": ", config"
+        },
+        {
+          "seconds": 39.59677821499645,
+          "content": "",
+          "reasoning": ", environment.\n8. Log"
+        },
+        {
+          "seconds": 39.80179932300234,
+          "content": "",
+          "reasoning": " with timestamps"
+        },
+        {
+          "seconds": 40.02200061100302,
+          "content": "",
+          "reasoning": " and correlation"
+        },
+        {
+          "seconds": 40.22114530100953,
+          "content": "",
+          "reasoning": " IDs to trace"
+        },
+        {
+          "seconds": 40.43918776902137,
+          "content": "",
+          "reasoning": " multi"
+        },
+        {
+          "seconds": 40.633447107014945,
+          "content": "",
+          "reasoning": "-component"
+        },
+        {
+          "seconds": 40.838332440005615,
+          "content": "",
+          "reasoning": "/"
+        },
+        {
+          "seconds": 41.0406124110159,
+          "content": "",
+          "reasoning": "async flows.\n9. Is"
+        },
+        {
+          "seconds": 41.226665502006654,
+          "content": "",
+          "reasoning": "olate side"
+        },
+        {
+          "seconds": 41.42226017700159,
+          "content": "",
+          "reasoning": " effects:"
+        },
+        {
+          "seconds": 41.629420044017024,
+          "content": "",
+          "reasoning": " run pure functions separately"
+        },
+        {
+          "seconds": 41.83971195900813,
+          "content": "",
+          "reasoning": " to confirm"
+        },
+        {
+          "seconds": 42.04463873300119,
+          "content": "",
+          "reasoning": " inputs/"
+        },
+        {
+          "seconds": 42.23847608899814,
+          "content": "",
+          "reasoning": "outputs.\n10. After"
+        },
+        {
+          "seconds": 42.42804361201706,
+          "content": "",
+          "reasoning": " fixing, add"
+        },
+        {
+          "seconds": 42.6284973360016,
+          "content": "",
+          "reasoning": " a"
+        },
+        {
+          "seconds": 42.829965632001404,
+          "content": "",
+          "reasoning": " regression test so"
+        },
+        {
+          "seconds": 43.039937277004356,
+          "content": "",
+          "reasoning": " the bug"
+        },
+        {
+          "seconds": 43.25146624201443,
+          "content": "",
+          "reasoning": " can't silently"
+        },
+        {
+          "seconds": 43.45274417102337,
+          "content": "",
+          "reasoning": " return"
+        },
+        {
+          "seconds": 43.66333835700061,
+          "content": "",
+          "reasoning": ".\n\nMake"
+        },
+        {
+          "seconds": 43.86625874199672,
+          "content": "",
+          "reasoning": " them Python"
+        },
+        {
+          "seconds": 44.0746707310027,
+          "content": "",
+          "reasoning": " comment lines, numbered"
+        },
+        {
+          "seconds": 44.27263414801564,
+          "content": "",
+          "reasoning": ". Dist"
+        },
+        {
+          "seconds": 44.48193599001388,
+          "content": "",
+          "reasoning": "inct and"
+        },
+        {
+          "seconds": 44.693365421000635,
+          "content": "",
+          "reasoning": " concrete. End after line 10 \u2014"
+        },
+        {
+          "seconds": 44.901003366016084,
+          "content": "",
+          "reasoning": " no extra"
+        },
+        {
+          "seconds": 45.10784189202241,
+          "content": "",
+          "reasoning": " commentary"
+        },
+        {
+          "seconds": 45.30942988401512,
+          "content": "",
+          "reasoning": ". Should"
+        },
+        {
+          "seconds": 45.514021733019035,
+          "content": "",
+          "reasoning": " I include"
+        },
+        {
+          "seconds": 45.71975266499794,
+          "content": "",
+          "reasoning": " any preamble? The instruction"
+        },
+        {
+          "seconds": 45.92379090099712,
+          "content": "",
+          "reasoning": " says \"Write"
+        },
+        {
+          "seconds": 46.13671613301267,
+          "content": "",
+          "reasoning": " 10 numbered Python comment lines... End"
+        },
+        {
+          "seconds": 46.33855998000945,
+          "content": "",
+          "reasoning": " after line 10. Do not summarize"
+        },
+        {
+          "seconds": 46.536759670008905,
+          "content": "",
+          "reasoning": " the archive.\" So output"
+        },
+        {
+          "seconds": 46.73465912102256,
+          "content": "",
+          "reasoning": " should just be the 10 lines,"
+        },
+        {
+          "seconds": 46.94072635500925,
+          "content": "",
+          "reasoning": " nothing else. Keep"
+        },
+        {
+          "seconds": 47.14569618701353,
+          "content": "",
+          "reasoning": " each"
+        },
+        {
+          "seconds": 47.34442822600249,
+          "content": "",
+          "reasoning": " line reasonably"
+        },
+        {
+          "seconds": 47.54851537500508,
+          "content": "",
+          "reasoning": " concise but concrete"
+        },
+        {
+          "seconds": 47.74534943999606,
+          "content": "# 1. Reproduce",
+          "reasoning": "."
+        },
+        {
+          "seconds": 47.935678592999466,
+          "content": " the bug first",
+          "reasoning": ""
+        },
+        {
+          "seconds": 48.13999334000982,
+          "content": " with a minimal,",
+          "reasoning": ""
+        },
+        {
+          "seconds": 48.3431650060229,
+          "content": " deterministic",
+          "reasoning": ""
+        },
+        {
+          "seconds": 48.551457734021824,
+          "content": " failing test",
+          "reasoning": ""
+        },
+        {
+          "seconds": 48.75487426301697,
+          "content": " case before touching",
+          "reasoning": ""
+        },
+        {
+          "seconds": 48.95220215001609,
+          "content": " any code.\n# 2. Read",
+          "reasoning": ""
+        },
+        {
+          "seconds": 49.15729767800076,
+          "content": " the traceback",
+          "reasoning": ""
+        },
+        {
+          "seconds": 49.36397444701288,
+          "content": " bottom-up: the final",
+          "reasoning": ""
+        },
+        {
+          "seconds": 49.568044717016164,
+          "content": " frame shows",
+          "reasoning": ""
+        },
+        {
+          "seconds": 49.76877769100247,
+          "content": " where it crashed",
+          "reasoning": ""
+        },
+        {
+          "seconds": 49.967040870018536,
+          "content": ", the",
+          "reasoning": ""
+        },
+        {
+          "seconds": 50.174782498012064,
+          "content": " frames",
+          "reasoning": ""
+        },
+        {
+          "seconds": 50.3812707720208,
+          "content": " above show how execution",
+          "reasoning": ""
+        },
+        {
+          "seconds": 50.5744602640043,
+          "content": " got there.\n# 3. Insert",
+          "reasoning": ""
+        },
+        {
+          "seconds": 50.77091609200579,
+          "content": " temporary",
+          "reasoning": ""
+        },
+        {
+          "seconds": 50.979453828011174,
+          "content": " logging of",
+          "reasoning": ""
+        },
+        {
+          "seconds": 51.182246184995165,
+          "content": " variable",
+          "reasoning": ""
+        },
+        {
+          "seconds": 51.385514028021134,
+          "content": " values and",
+          "reasoning": ""
+        },
+        {
+          "seconds": 51.58860046300106,
+          "content": " types",
+          "reasoning": ""
+        },
+        {
+          "seconds": 51.79624458900071,
+          "content": " at function boundaries to pinpoint",
+          "reasoning": ""
+        },
+        {
+          "seconds": 52.00183917200775,
+          "content": " where state first",
+          "reasoning": ""
+        },
+        {
+          "seconds": 52.20137360901572,
+          "content": " diverges from expectations.\n# 4",
+          "reasoning": ""
+        },
+        {
+          "seconds": 52.40100294200238,
+          "content": ". Drop",
+          "reasoning": ""
+        },
+        {
+          "seconds": 52.598819197010016,
+          "content": " breakpoint",
+          "reasoning": ""
+        },
+        {
+          "seconds": 52.80101890099468,
+          "content": "() (pdb",
+          "reasoning": ""
+        },
+        {
+          "seconds": 52.995621235022554,
+          "content": ") into",
+          "reasoning": ""
+        },
+        {
+          "seconds": 53.190551392006455,
+          "content": " the suspect",
+          "reasoning": ""
+        },
+        {
+          "seconds": 53.38890738799819,
+          "content": " path and step through live",
+          "reasoning": ""
+        },
+        {
+          "seconds": 53.59273210901301,
+          "content": " execution",
+          "reasoning": ""
+        },
+        {
+          "seconds": 53.79552725100075,
+          "content": " instead",
+          "reasoning": ""
+        },
+        {
+          "seconds": 54.00817724101944,
+          "content": " of guessing from static",
+          "reasoning": ""
+        },
+        {
+          "seconds": 54.20019421199686,
+          "content": " reading",
+          "reasoning": ""
+        },
+        {
+          "seconds": 54.3985972640221,
+          "content": ".\n# 5. Bis",
+          "reasoning": ""
+        },
+        {
+          "seconds": 54.600055181013886,
+          "content": "ect history",
+          "reasoning": ""
+        },
+        {
+          "seconds": 54.79916226200294,
+          "content": ": check",
+          "reasoning": ""
+        },
+        {
+          "seconds": 54.99740504301735,
+          "content": " out or revert",
+          "reasoning": ""
+        },
+        {
+          "seconds": 55.19940407801187,
+          "content": " halfway",
+          "reasoning": ""
+        },
+        {
+          "seconds": 55.40717260399833,
+          "content": " between",
+          "reasoning": ""
+        },
+        {
+          "seconds": 55.603002518008,
+          "content": " a",
+          "reasoning": ""
+        },
+        {
+          "seconds": 55.7975905330095,
+          "content": " known-good",
+          "reasoning": ""
+        },
+        {
+          "seconds": 55.997688698000275,
+          "content": " and",
+          "reasoning": ""
+        },
+        {
+          "seconds": 56.193798226013314,
+          "content": " known-bad",
+          "reasoning": ""
+        },
+        {
+          "seconds": 56.39123907600879,
+          "content": " commit to",
+          "reasoning": ""
+        },
+        {
+          "seconds": 56.592609971005004,
+          "content": " hal",
+          "reasoning": ""
+        },
+        {
+          "seconds": 56.79004149301909,
+          "content": "ve the search",
+          "reasoning": ""
+        },
+        {
+          "seconds": 56.99544627100113,
+          "content": " space each",
+          "reasoning": ""
+        },
+        {
+          "seconds": 57.20083159400383,
+          "content": " round",
+          "reasoning": ""
+        },
+        {
+          "seconds": 57.402326697018,
+          "content": ".\n# 6. Diff",
+          "reasoning": ""
+        },
+        {
+          "seconds": 57.60452875599731,
+          "content": " everything",
+          "reasoning": ""
+        },
+        {
+          "seconds": 57.807606682006735,
+          "content": " that",
+          "reasoning": ""
+        },
+        {
+          "seconds": 58.00565047402051,
+          "content": " differs between",
+          "reasoning": ""
+        },
+        {
+          "seconds": 58.191264838998904,
+          "content": " working and broken runs",
+          "reasoning": ""
+        },
+        {
+          "seconds": 58.374163041007705,
+          "content": ":",
+          "reasoning": ""
+        },
+        {
+          "seconds": 58.55511859699618,
+          "content": " inputs",
+          "reasoning": ""
+        },
+        {
+          "seconds": 58.73703011701582,
+          "content": ", config",
+          "reasoning": ""
+        },
+        {
+          "seconds": 58.95294471702073,
+          "content": " files, environment variables, dependency",
+          "reasoning": ""
+        },
+        {
+          "seconds": 59.14649673900567,
+          "content": " versions.\n# 7. Verify",
+          "reasoning": ""
+        },
+        {
+          "seconds": 59.34855060701375,
+          "content": " type",
+          "reasoning": ""
+        },
+        {
+          "seconds": 59.54676267100149,
+          "content": " assumptions explicitly",
+          "reasoning": ""
+        },
+        {
+          "seconds": 59.75458270299714,
+          "content": " with isinstance() or type hints,",
+          "reasoning": ""
+        },
+        {
+          "seconds": 59.95683501899475,
+          "content": " since silent wrong-type",
+          "reasoning": ""
+        },
+        {
+          "seconds": 60.15688563400181,
+          "content": " coercion",
+          "reasoning": ""
+        },
+        {
+          "seconds": 60.36091371701332,
+          "content": " often",
+          "reasoning": ""
+        },
+        {
+          "seconds": 60.566695023997454,
+          "content": " mas",
+          "reasoning": ""
+        },
+        {
+          "seconds": 60.77323117500055,
+          "content": "querades as logic",
+          "reasoning": ""
+        },
+        {
+          "seconds": 60.97174227700452,
+          "content": " bugs.\n# 8. Tag",
+          "reasoning": ""
+        },
+        {
+          "seconds": 61.16695667599561,
+          "content": " log",
+          "reasoning": ""
+        },
+        {
+          "seconds": 61.36487939799554,
+          "content": " lines",
+          "reasoning": ""
+        },
+        {
+          "seconds": 61.57130695800879,
+          "content": " with timestamps and a correlation ID so interle",
+          "reasoning": ""
+        },
+        {
+          "seconds": 61.758096247009235,
+          "content": "aved output",
+          "reasoning": ""
+        },
+        {
+          "seconds": 61.958274222008185,
+          "content": " from threads",
+          "reasoning": ""
+        },
+        {
+          "seconds": 62.169393631018465,
+          "content": ", async tasks",
+          "reasoning": ""
+        },
+        {
+          "seconds": 62.35913546499796,
+          "content": ", or services",
+          "reasoning": ""
+        },
+        {
+          "seconds": 62.550801035016775,
+          "content": " can be re",
+          "reasoning": ""
+        },
+        {
+          "seconds": 62.75530129301478,
+          "content": "as",
+          "reasoning": ""
+        },
+        {
+          "seconds": 62.959619632019894,
+          "content": "sembled in",
+          "reasoning": ""
+        },
+        {
+          "seconds": 63.15567556300084,
+          "content": " order.\n# 9. Isolate",
+          "reasoning": ""
+        },
+        {
+          "seconds": 63.34995120001258,
+          "content": " side",
+          "reasoning": ""
+        },
+        {
+          "seconds": 63.54721626199898,
+          "content": " effects by extracting",
+          "reasoning": ""
+        },
+        {
+          "seconds": 63.74368286400568,
+          "content": " pure functions and running",
+          "reasoning": ""
+        },
+        {
+          "seconds": 63.94546899199486,
+          "content": " them on",
+          "reasoning": ""
+        },
+        {
+          "seconds": 64.14538444101345,
+          "content": " captured",
+          "reasoning": ""
+        },
+        {
+          "seconds": 64.35304695699597,
+          "content": " inputs to",
+          "reasoning": ""
+        },
+        {
+          "seconds": 64.56051377701806,
+          "content": " confirm whether",
+          "reasoning": ""
+        },
+        {
+          "seconds": 64.75773064800887,
+          "content": " the",
+          "reasoning": ""
+        },
+        {
+          "seconds": 64.96623981499579,
+          "content": " bug is",
+          "reasoning": ""
+        },
+        {
+          "seconds": 65.1736331480206,
+          "content": " in computation",
+          "reasoning": ""
+        },
+        {
+          "seconds": 65.37896514800377,
+          "content": " or I",
+          "reasoning": ""
+        },
+        {
+          "seconds": 65.57440606001182,
+          "content": "/O.\n# 10. After fixing",
+          "reasoning": ""
+        },
+        {
+          "seconds": 65.7729502840084,
+          "content": ", add a regression test that",
+          "reasoning": ""
+        },
+        {
+          "seconds": 65.97187413900974,
+          "content": " fails",
+          "reasoning": ""
+        },
+        {
+          "seconds": 66.17375630000606,
+          "content": " on the old",
+          "reasoning": ""
+        },
+        {
+          "seconds": 66.37023287100601,
+          "content": " code and passes on the new,",
+          "reasoning": ""
+        },
+        {
+          "seconds": 66.56556279200595,
+          "content": " so the bug cannot quietly",
+          "reasoning": ""
+        },
+        {
+          "seconds": 66.74438589799684,
+          "content": " return",
+          "reasoning": ""
+        },
+        {
+          "seconds": 66.94771590799792,
+          "content": ".",
+          "reasoning": ""
+        }
+      ],
+      "content": "# 1. Reproduce the bug first with a minimal, deterministic failing test case before touching any code.\n# 2. Read the traceback bottom-up: the final frame shows where it crashed, the frames above show how execution got there.\n# 3. Insert temporary logging of variable values and types at function boundaries to pinpoint where state first diverges from expectations.\n# 4. Drop breakpoint() (pdb) into the suspect path and step through live execution instead of guessing from static reading.\n# 5. Bisect history: check out or revert halfway between a known-good and known-bad commit to halve the search space each round.\n# 6. Diff everything that differs between working and broken runs: inputs, config files, environment variables, dependency versions.\n# 7. Verify type assumptions explicitly with isinstance() or type hints, since silent wrong-type coercion often masquerades as logic bugs.\n# 8. Tag log lines with timestamps and a correlation ID so interleaved output from threads, async tasks, or services can be reassembled in order.\n# 9. Isolate side effects by extracting pure functions and running them on captured inputs to confirm whether the bug is in computation or I/O.\n# 10. After fixing, add a regression test that fails on the old code and passes on the new, so the bug cannot quietly return.",
+      "reasoning": "The user wants 10 numbered Python comment lines explaining practical software debugging techniques. Each line must contain a distinct, concrete tip. End after line 10. Do not summarize the archive.\n\nThe archive context is just repeated filler text about cache entries \u2014 it's noise. I should ignore it and just produce the 10 numbered comment lines about debugging techniques.\n\nFormat: numbered Python comment lines. So something like:\n\n# 1. ...\n# 2. ...\n\nEach line a distinct concrete tip. End after line 10. No summary of the archive.\n\nLet me write 10 concrete debugging tips:\n\n1. Reproduce the bug reliably with a minimal failing test case before changing code.\n2. Read the full traceback bottom-up: the last frame shows where it failed, earlier frames show how it got there.\n3. Use print/logging with variable values at boundaries to narrow down where state diverges from expectations.\n4. Use pdb / breakpoint() to step through execution and inspect live state instead of guessing.\n5. Check assumptions about types \u2014 isinstance checks or type hints catch silent wrong-type bugs.\n6. Bisect: revert or comment out changes half at a time to find the commit/change that introduced the bug.\n7. Compare working vs broken behavior with diffs \u2014 data, config, environment.\n8. Log with timestamps and correlation IDs to trace multi-component/async flows.\n9. Isolate side effects: run pure functions separately to confirm inputs/outputs.\n10. After fixing, add a regression test so the bug can't silently return.\n\nMake them Python comment lines, numbered. Distinct and concrete. End after line 10 \u2014 no extra commentary. Should I include any preamble? The instruction says \"Write 10 numbered Python comment lines... End after line 10. Do not summarize the archive.\" So output should just be the 10 lines, nothing else. Keep each line reasonably concise but concrete.",
+      "first_monotonic": 186308.605264805,
+      "last_monotonic": 186355.545799222,
+      "ttft_seconds": 20.007181491004303,
+      "decode_seconds": 46.940534416993614,
+      "decode_tokens_per_second_estimate": 14.0603426909657,
+      "input_tokens_per_ttft_estimate": 410.10274254217967,
+      "output_tokens_per_wall_second": 9.873349837229737,
+      "cached_tokens": null,
+      "timing_note": "Client estimate: first stream event can contain multiple speculative tokens; input/TTFT includes queue/network/tokenization. Native engine timing must be published separately.",
+      "input_text_tokens": 8193
+    }
+  ]
+}

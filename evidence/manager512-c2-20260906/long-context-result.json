@@ -1,0 +1,310 @@
+{
+  "model": "glm-5.3-flash-exl3-k2-dflash-candidate",
+  "tokenizer_revision": null,
+  "input_text_tokens": 200000,
+  "target_input_tokens": 200000,
+  "marker_token_positions": {
+    "amber": 10000,
+    "birch": 70000,
+    "cobalt": 130000,
+    "dahlia": 190000
+  },
+  "expected": {
+    "amber": "24d9a4bc1869f3d9",
+    "birch": "5819038e71527290",
+    "cobalt": "00fced31d46dfd8f",
+    "dahlia": "f485387fec05c389"
+  },
+  "prompt_sha256": "c1fed468ac3a4c9bd16d35f3cb074f48da30eb14bb4d22a17d9097d90e3b9374",
+  "source_sha256": "e8d3497d5bb17536d359b4f23704341cfabf0ca420caf1cbd004ecbfc6ac95e4",
+  "scope": "Four synthetic records at separated positions; not broad long-context reasoning or benchmark quality.",
+  "evaluation": {
+    "passed": true,
+    "exact_retrieval": true,
+    "actual": {
+      "amber": "24d9a4bc1869f3d9",
+      "birch": "5819038e71527290",
+      "cobalt": "00fced31d46dfd8f",
+      "dahlia": "f485387fec05c389"
+    },
+    "actual_prompt_tokens": 200012,
+    "reported_cached_tokens": null,
+    "cache_note": "Unique nonce begins each prompt. Missing cached-token usage is unknown; preserve separate runtime prefix-cache configuration evidence."
+  },
+  "response": {
+    "success": true,
+    "prompt_sha256": "c1fed468ac3a4c9bd16d35f3cb074f48da30eb14bb4d22a17d9097d90e3b9374",
+    "started_monotonic": 185075.753691193,
+    "elapsed_seconds": 486.06340570398606,
+    "finish_reason": "stop",
+    "done": true,
+    "usage": {
+      "prompt_tokens": 200012,
+      "total_tokens": 200297,
+      "completion_tokens": 285
+    },
+    "events": [
+      {
+        "seconds": 476.23009366798215,
+        "content": "",
+        "reasoning": "The"
+      },
+      {
+        "seconds": 476.23272172300494,
+        "content": "",
+        "reasoning": " user wants me to extract"
+      },
+      {
+        "seconds": 476.34630114299944,
+        "content": "",
+        "reasoning": " the retrieval values from the"
+      },
+      {
+        "seconds": 476.551358961995,
+        "content": "",
+        "reasoning": " registry records for"
+      },
+      {
+        "seconds": 476.7555081959872,
+        "content": "",
+        "reasoning": " amber, birch, cobalt,"
+      },
+      {
+        "seconds": 476.9695762489864,
+        "content": "",
+        "reasoning": " and dahlia.\n\nLooking through"
+      },
+      {
+        "seconds": 477.1636637399788,
+        "content": "",
+        "reasoning": " the text,"
+      },
+      {
+        "seconds": 477.37717965600314,
+        "content": "",
+        "reasoning": " I can find these"
+      },
+      {
+        "seconds": 477.56813709798735,
+        "content": "",
+        "reasoning": " registry records:\n- \""
+      },
+      {
+        "seconds": 477.76843933199416,
+        "content": "",
+        "reasoning": "Registry record:"
+      },
+      {
+        "seconds": 477.95766016599373,
+        "content": "",
+        "reasoning": " amber has retrieval value"
+      },
+      {
+        "seconds": 478.1450681540009,
+        "content": "",
+        "reasoning": " 24d9a"
+      },
+      {
+        "seconds": 478.3590793799958,
+        "content": "",
+        "reasoning": "4bc186"
+      },
+      {
+        "seconds": 478.573576728988,
+        "content": "",
+        "reasoning": "9f3"
+      },
+      {
+        "seconds": 478.80544076298247,
+        "content": "",
+        "reasoning": "d9.\"\n- \"Registry record:"
+      },
+      {
+        "seconds": 478.99122799999896,
+        "content": "",
+        "reasoning": " birch has retrieval value 58"
+      },
+      {
+        "seconds": 479.1959550580068,
+        "content": "",
+        "reasoning": "19038"
+      },
+      {
+        "seconds": 479.41133264199016,
+        "content": "",
+        "reasoning": "e71527"
+      },
+      {
+        "seconds": 479.63167565100593,
+        "content": "",
+        "reasoning": "290.\"\n- \"Registry record:"
+      },
+      {
+        "seconds": 479.82207740598824,
+        "content": "",
+        "reasoning": " cobalt has retrieval value 00"
+      },
+      {
+        "seconds": 480.0154134379991,
+        "content": "",
+        "reasoning": "fced"
+      },
+      {
+        "seconds": 480.22836832600296,
+        "content": "",
+        "reasoning": "31d"
+      },
+      {
+        "seconds": 480.44047261498054,
+        "content": "",
+        "reasoning": "46dfd"
+      },
+      {
+        "seconds": 480.64899824999156,
+        "content": "",
+        "reasoning": "8f.\"\n- \"Registry record:"
+      },
+      {
+        "seconds": 480.848252131982,
+        "content": "",
+        "reasoning": " dahlia has retrieval value f"
+      },
+      {
+        "seconds": 481.0452046749997,
+        "content": "",
+        "reasoning": "48538"
+      },
+      {
+        "seconds": 481.254389698006,
+        "content": "",
+        "reasoning": "7fec05"
+      },
+      {
+        "seconds": 481.4574177059985,
+        "content": "",
+        "reasoning": "c389.\"\n\nSo the"
+      },
+      {
+        "seconds": 481.6590324319841,
+        "content": "",
+        "reasoning": " JSON object"
+      },
+      {
+        "seconds": 481.88084163999883,
+        "content": "",
+        "reasoning": " should be:\n{\n  \"amber\":"
+      },
+      {
+        "seconds": 482.0832586149918,
+        "content": "",
+        "reasoning": " \"24d9a4bc186"
+      },
+      {
+        "seconds": 482.3066152179963,
+        "content": "",
+        "reasoning": "9f3d9\",\n  \""
+      },
+      {
+        "seconds": 482.51596126600634,
+        "content": "",
+        "reasoning": "birch\": \"581903"
+      },
+      {
+        "seconds": 482.72357929800637,
+        "content": "",
+        "reasoning": "8e71527290\","
+      },
+      {
+        "seconds": 482.93722340097884,
+        "content": "",
+        "reasoning": "\n  \"cobalt\": \"00f"
+      },
+      {
+        "seconds": 483.1487790120009,
+        "content": "",
+        "reasoning": "ced31d46dfd8f\","
+      },
+      {
+        "seconds": 483.3714268729964,
+        "content": "",
+        "reasoning": "\n  \"dahlia\": \"f"
+      },
+      {
+        "seconds": 483.56196130800527,
+        "content": "",
+        "reasoning": "485387fec05c38"
+      },
+      {
+        "seconds": 483.7776932659908,
+        "content": "```",
+        "reasoning": "9\"\n}"
+      },
+      {
+        "seconds": 483.9788235689921,
+        "content": "json\n{\n  \"amber\": \"",
+        "reasoning": ""
+      },
+      {
+        "seconds": 484.17723551398376,
+        "content": "24d9a4bc1869",
+        "reasoning": ""
+      },
+      {
+        "seconds": 484.3919928279938,
+        "content": "f3d9\",\n  \"bir",
+        "reasoning": ""
+      },
+      {
+        "seconds": 484.5997824310034,
+        "content": "ch\": \"5819038",
+        "reasoning": ""
+      },
+      {
+        "seconds": 484.8193456349836,
+        "content": "e71527290\",\n ",
+        "reasoning": ""
+      },
+      {
+        "seconds": 485.0272253169969,
+        "content": " \"cobalt\": \"00fced",
+        "reasoning": ""
+      },
+      {
+        "seconds": 485.24013636098243,
+        "content": "31d46dfd8f\",\n ",
+        "reasoning": ""
+      },
+      {
+        "seconds": 485.4414358509821,
+        "content": " \"dahlia\": \"f48",
+        "reasoning": ""
+      },
+      {
+        "seconds": 485.64628165998147,
+        "content": "5387fec05c389",
+        "reasoning": ""
+      },
+      {
+        "seconds": 485.8484191260068,
+        "content": "\"\n}\n",
+        "reasoning": ""
+      },
+      {
+        "seconds": 486.06329063299927,
+        "content": "```",
+        "reasoning": ""
+      }
+    ],
+    "content": "```json\n{\n  \"amber\": \"24d9a4bc1869f3d9\",\n  \"birch\": \"5819038e71527290\",\n  \"cobalt\": \"00fced31d46dfd8f\",\n  \"dahlia\": \"f485387fec05c389\"\n}\n```",
+    "reasoning": "The user wants me to extract the retrieval values from the registry records for amber, birch, cobalt, and dahlia.\n\nLooking through the text, I can find these registry records:\n- \"Registry record: amber has retrieval value 24d9a4bc1869f3d9.\"\n- \"Registry record: birch has retrieval value 5819038e71527290.\"\n- \"Registry record: cobalt has retrieval value 00fced31d46dfd8f.\"\n- \"Registry record: dahlia has retrieval value f485387fec05c389.\"\n\nSo the JSON object should be:\n{\n  \"amber\": \"24d9a4bc1869f3d9\",\n  \"birch\": \"5819038e71527290\",\n  \"cobalt\": \"00fced31d46dfd8f\",\n  \"dahlia\": \"f485387fec05c389\"\n}",
+    "first_monotonic": 185551.983784861,
+    "last_monotonic": 185561.816981826,
+    "ttft_seconds": 476.23009366798215,
+    "decode_seconds": 9.833196965017123,
+    "decode_tokens_per_second_estimate": 28.88175646337269,
+    "input_tokens_per_ttft_estimate": 419.9902581953258,
+    "output_tokens_per_wall_second": 0.5863432561585715,
+    "cached_tokens": null,
+    "timing_note": "Client estimate: first stream event can contain multiple speculative tokens; input/TTFT includes queue/network/tokenization. Native engine timing must be published separately."
+  }
+}

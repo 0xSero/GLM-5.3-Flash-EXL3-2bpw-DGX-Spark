@@ -1,0 +1,27 @@
+{
+  "run_id": "5c1f5a5cbad34a93a0fed4873072277a",
+  "utc": "2026-09-06T13:09:54.471599+00:00",
+  "model": "glm-5.3-flash-exl3-k2-dflash-candidate",
+  "tokenizer_revision": null,
+  "lengths": [
+    1024,
+    8192,
+    32768,
+    65536,
+    131072,
+    200000
+  ],
+  "incoming_concurrencies": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "repeats": 1,
+  "output_lines": 10,
+  "template": {},
+  "source_sha256": "ecffdc551594a12fcaf6ca9985d7cbc46b33a89a06dadfed50602d168e9452f9",
+  "metrics": "Client estimates; server-native prefill/decode timing is separate.",
+  "native_metrics_enabled": true,
+  "native_metrics_source_sha256": "ca4ec3b4a9b836547fb93e7d4e44e0179e08af1e0744bd63e78606a02ebbacde"
+}
