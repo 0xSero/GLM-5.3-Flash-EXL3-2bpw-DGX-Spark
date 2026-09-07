@@ -1,0 +1,34 @@
+[
+  {
+    "requests": 8,
+    "successes": 8,
+    "failures": 0,
+    "wall_seconds": 4019.995288122009,
+    "mean_decode_tokens_per_second_estimate": 4.173966150578409,
+    "median_ttft_seconds": 2195.9385067669937,
+    "aggregate_output_tokens_per_wall_second": 1.6875641670637953,
+    "native_timing": {
+      "status": "matched_isolated_cell",
+      "request_count": 8,
+      "sum_request_prefill_seconds": 3831.933304143022,
+      "sum_request_decode_seconds": 3348.0297704060213,
+      "mean_request_prefill_seconds": 478.9916630178777,
+      "mean_request_decode_seconds": 418.50372130075266,
+      "prompt_tokens_per_sum_request_prefill_second": 417.5709421325247,
+      "reported_counter_deltas": {
+        "vllm:request_generation_tokens_sum": 6784.0,
+        "vllm:request_decode_time_seconds_count": 8.0,
+        "vllm:request_prompt_tokens_count": 8.0,
+        "vllm:request_prefill_time_seconds_sum": 3831.933304143022,
+        "vllm:request_decode_time_seconds_sum": 3348.0297704060213,
+        "vllm:request_prompt_tokens_sum": 1600104.0,
+        "vllm:request_prefill_time_seconds_count": 8.0,
+        "vllm:request_generation_tokens_count": 8.0
+      },
+      "scope": "vLLM request-level timing observations. Concurrent request durations overlap; these sums are not GPU-exclusive time or aggregate throughput. No native decode rate inferred because speculative first-token accounting differs."
+    },
+    "target_input_tokens": 200000,
+    "incoming_concurrency": 8,
+    "repeat": 0
+  }
+]

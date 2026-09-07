@@ -1,6 +1,6 @@
 # Manager512: context and concurrency sweep
 
-**The sustained 25–50 decode tok/s target remains unmet.** The initial sweep passed 23 of 24 cells. The 200k-input, eight-request cell completed six requests and hit its 3,600-second client deadline on two; its unmatched native timing is invalid. A separate retry is pending and will retain this original result.
+**The sustained 25–50 decode tok/s target remains unmet.** The initial sweep passed 23 of 24 cells. The 200k-input, eight-request cell completed six requests and hit its 3,600-second client deadline on two; its unmatched native timing is invalid. A separate 7,200-second-deadline retry passed all eight requests with natural stops and matching native counters; the original failed attempt remains below.
 
 One DGX Spark serves the same exact-2-bit target and pinned DFlash2 draft as the main release. The new allocator uses 512-token draft manager blocks, seven speculative tokens, full CUDA graphs at sizes 8 and 16, and at most two active sequences. Incoming concurrency four or eight includes queueing; it is not four or eight simultaneously active sequences.
 
@@ -36,6 +36,12 @@ The server loaded 92.4 GiB of target and draft weights, reported 11.97 GiB avail
 Each cell uses one repeat of the same ten-line debugging workload, preserving reasoning and natural response lengths. The previous D report has three repeats at concurrency one; these differing sample counts and generated responses do not establish a controlled speed improvement. All successful cells matched the isolated native timing counters. Failed and successful raw responses are retained in [the evidence directory](evidence/manager512-c2-20260906/).
 
 Decode is a client streaming estimate. Native prefill rate divides prompt-token counter deltas by summed request prefill durations. Concurrent durations overlap; this is not aggregate throughput or GPU-exclusive time. Queueing, interleaved prefill and response-length variation affect the results. Native decode duration is retained separately because speculative first-token accounting differs. No request token cap was used.
+
+## Final-cell retry
+
+The isolated 200k-input, eight-request retry completed **8/8** requests in 4020.00 seconds with natural stops. Mean client decode estimate was **4.17 tok/s**, median first-token latency **2195.94 seconds**, and native prefill rate **417.57 tok/s**. All eight requests matched the native counters. [Raw retry evidence](evidence/manager512-c2-20260906/retry-200k-c8/) is separate from the initial failed cell.
+
+There is now a successful measured result at every requested length/concurrency pair. This is one successful repeat per pair, not the complete multi-repeat release acceptance suite. Sustained speed remains below target. The long latency includes queueing and interleaved prefill with the two-sequence scheduler limit.
 
 ## Reproduce
 
