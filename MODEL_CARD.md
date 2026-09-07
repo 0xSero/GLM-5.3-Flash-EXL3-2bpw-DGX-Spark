@@ -19,9 +19,11 @@ runtime or logits. The 600-second code-responsiveness probe failed. A corrected
 DFlash2 Candidate D later passed CUDA graphs, behavior, all six vision/video
 fixtures, and exact retrieval at 200,013 prompt tokens. It measured 15.57 tok/s
 on a sustained 1k-input sample and 27.12 tok/s on a short 186-token post-200k
-response; this does not establish the 25–50 tok/s target across a full sweep.
-The draft remains an external pinned CC-BY-NC-ND-4.0 dependency and is not
-bundled in the image.
+response. A later complete 18-request C1 sweep measured 14.00–15.48 tok/s means
+across 1k–200k inputs, so the sustained 25–50 tok/s target was not met. The
+[full DFlash2 C1 report](https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark/blob/main/BENCHMARKS-D-C1.md)
+contains the reproducible matrix and per-request evidence. The draft remains an
+external pinned CC-BY-NC-ND-4.0 dependency and is not bundled in the image.
 
 The required runtime source and launch recipe are in the public
 [DGX Spark runtime repository](https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark).

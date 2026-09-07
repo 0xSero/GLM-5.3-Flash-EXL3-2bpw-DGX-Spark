@@ -21,8 +21,9 @@ tok/s target. The measured natural-stop decode estimates were consistently
 about 9.3 tok/s. A later DFlash2 Candidate D also passed CUDA-graph, behavior,
 vision/video, and fresh 200k-context acceptance. Its sustained 1k-input sample
 measured 15.57 tok/s; a short 186-token response after the 200k prefill measured
-27.12 tok/s. The latter is not a sustained sweep, so the overall 25–50 tok/s
-target remains unproven.
+27.12 tok/s. A subsequent complete 18-request C1 sweep measured 14.00–15.48
+tok/s means across 1k–200k inputs, so the sustained 25–50 tok/s target was not
+met. See [the full DFlash2 C1 report](BENCHMARKS-D-C1.md).
 
 ## Exact release facts
 
