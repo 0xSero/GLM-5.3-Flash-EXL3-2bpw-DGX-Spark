@@ -25,6 +25,15 @@ measured 15.57 tok/s; a short 186-token response after the 200k prefill measured
 tok/s means across 1k–200k inputs, so the sustained 25–50 tok/s target was not
 met. See [the full DFlash2 C1 report](BENCHMARKS-D-C1.md).
 
+The separate [manager512/C2 experiment](BENCHMARKS-MANAGER512-C2.md) tests
+two active sequences and incoming concurrency up to eight. Behavior, images,
+video, and 200k retrieval passed; 23 of 24 initial benchmark cells completed.
+The 200k/eight-request cell timed out after six completions, with a separate
+retry pending in the report. The sustained 25–50 tok/s target remains unmet.
+Its public experimental image and reproduction files are linked in the report;
+this configuration has not been promoted to the recommended default or
+validated by a clean pull on another node.
+
 ## Exact release facts
 
 | Property | Accepted value |

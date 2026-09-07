@@ -25,6 +25,16 @@ across 1k–200k inputs, so the sustained 25–50 tok/s target was not met. The
 contains the reproducible matrix and per-request evidence. The draft remains an
 external pinned CC-BY-NC-ND-4.0 dependency and is not bundled in the image.
 
+The separate
+[manager512/C2 experiment](https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark/blob/main/BENCHMARKS-MANAGER512-C2.md)
+tests two active sequences and incoming concurrency up to eight. Behavior,
+images, video, and 200k retrieval passed; 23 of 24 initial benchmark cells
+completed. The 200k/eight-request cell timed out after six completions, with a
+separate retry pending in the report. The sustained 25–50 tok/s target remains
+unmet. The report links its public experimental image and reproduction files;
+it has not been promoted to the recommended default or validated by a clean
+pull on another node.
+
 The post-release strength-1 runtime abliteration experiment was not promoted.
 The sealed writer projection loaded with CUDA graphs and matched sampled
 materialized BF16 abliterated columns at 99.9978% element agreement. Ordinary
