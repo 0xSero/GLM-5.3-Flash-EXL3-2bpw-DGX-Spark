@@ -1,4 +1,16 @@
-# Model card
+---
+license: mit
+base_model: zai-org/GLM-5.3-Flash-BF16
+base_model_relation: quantized
+pipeline_tag: image-text-to-text
+inference: false
+tags:
+- glm
+- mixture-of-experts
+- exl3
+---
+
+# GLM-5.3-Flash EXL3 TR3 2.0bpw
 
 The canonical Hugging Face model card is published with the weights at
 [`0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw`](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw).
@@ -50,3 +62,57 @@ The accepted DFlash runtime image is public at
 `ghcr.io/0xsero/glm53-flash-exl3-k2-dflash@sha256:6be6de479a5c8c6b8ce9ce42a7be3a2f79e9eeed854ddd4d73e3fc407da88a4d`;
 the separately licensed draft checkpoint is still downloaded and mounted at
 runtime.
+
+## Release identity
+
+Status: **Public checkpoint**. Audited weight payload: 133 safetensors files, 111,352,026,456 bytes (weight files only; excludes metadata).
+
+Upstream source: [zai-org/GLM-5.3-Flash-BF16](https://huggingface.co/zai-org/GLM-5.3-Flash-BF16), BF16 revision `a6c167b62691b2bac901344b65cb651a70f53e43`. Artifact/evidence snapshot inspected: [`2942abd96ee224679bf513d501f6b40dc9237211`](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw/tree/2942abd96ee224679bf513d501f6b40dc9237211). A card update does not constitute a new weight conversion.
+
+## Component layout and compatibility
+
+| Component | Storage |
+|---|---|
+| Routed expert gate/up/down, language layers 3–44 | Selective EXL3 K2 |
+| Attention, routers, shared experts, dense layers, embeddings, head, norms and vision | Retained source precision |
+| MTP companion | Present; execution is a separate validation gate |
+
+The bitrate labels describe the routed-expert tier, not every tensor. A custom selective-EXL3 loader is required. The accepted single-Spark launch commands, pinned Docker images and checks are in the [runtime README](https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark).
+
+## Calibration and coverage
+
+600 × 2,048 tokens (1,228,800 tokens): 536 base rows plus 64 scrubbed private-session rows; all 92 protected random rows were retained. Natural top-8 routing was the policy. The [session calibration manifest](evidence/session-calibration-manifest.json) records counts and hashes and labels full-layer route coverage pending; do not infer full coverage from sealing the corpus. Raw private session text is excluded.
+
+## Attribution and license
+
+Z.AI supplies the MIT base model. TurboDerp/ExLlamaV3 supplies EXL3/Trellis. Brandon M. Music is credited for the MIT GLM-5.2 TR3 lineage at `f79c9167690ca705e877ae4dc55a841d1aae1247`; separately licensed GLM-5.3 artifacts are not the source of this release. The independent conversion workflow is Dione. vLLM and the runtime contributors are credited with their licenses in the [third-party notices](https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark/blob/main/THIRD_PARTY_NOTICES.md). The optional IncoAI DFlash2 draft retains its separate CC-BY-NC-ND-4.0 license and is not bundled.
+
+## Intended use and limitations
+
+Use populated checkpoints for local inference or quantization research with the declared compatible runtime. Results from one bitrate or runtime do not transfer automatically to another. Quantization may change behavior and factual accuracy; controlled smoke tests do not establish broad benchmark quality. A projection or REAP observation record alone does not prove successful refusal removal or a pruned model release.
+
+## Related releases
+
+| Repository | Access | Weight files | Weight payload (GB) |
+|---|---|---:|---:|
+| [EXL3-Q4](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-Q4) | public | 217 | 187.453 |
+| [EXL3-3.0bpw](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-3.0bpw) | public | 130 | 149.403 |
+| [EXL3-TR3-2.0bpw](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-TR3-2.0bpw) | public | 133 | 111.352 |
+| [EXL3-2.5bpw](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-2.5bpw) | public; no weights | 0 | 0.000 |
+| [EXL3-2.0bpw](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-2.0bpw) | public; no weights | 0 | 0.000 |
+| [EXL3-TR3-3.0bpw](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3-TR3-3.0bpw) | public; no weights | 0 | 0.000 |
+| [EXL3](https://huggingface.co/0xSero/GLM-5.3-Flash-EXL3) | public; index only | 0 | 0.000 |
+| [BF16-Abliterated](https://huggingface.co/0xSero/GLM-5.3-Flash-BF16-Abliterated) | private | 120 | 642.652 |
+| [Abliterated-EXL3-3.0bpw](https://huggingface.co/0xSero/GLM-5.3-Flash-Abliterated-EXL3-3.0bpw) | private | 133 | 149.403 |
+| [Abliterated-EXL3-Q4](https://huggingface.co/0xSero/GLM-5.3-Flash-Abliterated-EXL3-Q4) | private | 133 | 187.454 |
+| [Abliterated-EXL3](https://huggingface.co/0xSero/GLM-5.3-Flash-Abliterated-EXL3) | private; index only | 0 | 0.000 |
+
+Private links require authorized access. Two suite indexes and three placeholders are included in this inventory; they are not additional trained models.
+
+## Evidence files
+
+- [EXL3_MANIFEST.json](EXL3_MANIFEST.json)
+
+## REAP observation provenance
+
+The original 3bpw and Q4 were each observed on two corpora: private calibration material and balanced 12-language Wikipedia. Each sealed lane records 128 sequences × 1,024 tokens (131,072 tokens), across 42 routed layers and 288 experts per layer. These four observation lanes are separate from quantization calibration and do not mean experts have been pruned from the weights above. The [private observation dataset](https://huggingface.co/datasets/0xSero/glm53-flash-exl3-reap-observations) holds the manifests and aggregate sidecars.
