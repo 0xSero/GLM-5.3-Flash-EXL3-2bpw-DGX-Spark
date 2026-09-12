@@ -34,6 +34,14 @@ Its public experimental image and reproduction files are linked in the report;
 this configuration has not been promoted to the recommended default or
 validated by a clean pull on another node.
 
+The same published weights have also been measured with the **native MTP head
+loaded** at the full 262,144-token context, where images, native video, and a
+real 262,016-token request all pass and a 1-to-260k sustained sweep shows no
+looping at any depth. That is a different runtime image, it is not yet published
+to a public registry, and it is documented separately in
+[BENCHMARKS-NATIVE-MTP-262K.md](BENCHMARKS-NATIVE-MTP-262K.md). The commands
+below run the baseline configuration.
+
 ## Exact release facts
 
 | Property | Accepted value |
@@ -170,6 +178,99 @@ preserved evidence from acceptance observations that still require replay.
   but all three bounded refusal probes still refused and one of two video cases
   failed to stop. It was stopped and not promoted; see
   `evidence/abliteration-overlay-strength1.json`.
+
+## How this release was produced
+
+### The design decision: spend bytes on bit width, not on deleting experts
+
+The tempting way to fit a 642 GB MoE into one 128 GB Spark is to drop experts.
+Measured on one frozen panel, that is a bad trade. Removing experts costs more
+fidelity per byte than lowering the bit width of the experts you keep:
+
+| Candidate | Routed-expert policy | Byte cost | BF16 top-1 agreement | Mean KL |
+|---|---|---|---|---|
+| Q3 reference | all 288 experts at 3-bit | largest | 87.384% | 0.152204 |
+| **K2 (this release)** | **all 288 experts at 2-bit** | **111.35 GB** | **77.385%** | **0.438986** |
+| K2 keep-256 | 256 of 288 experts at 2-bit | ~95.6 GB | 71.350% | 0.687907 |
+| Q3 keep-192 | 192 of 288 experts at 3-bit | ≈ the K2 tier | 61.810% | 1.183637 |
+| Q3 keep-176 | 176 of 288 experts at 3-bit | smaller | 58.807% | 1.343988 |
+
+The decisive row pair is *Q3 keep-192* against *K2*. Dropping a third of the
+experts **and** paying 3 bits for the survivors still lands at 61.8% agreement
+and a mean KL of 1.18 — worse than simply using 2 bits for every expert, at
+roughly the same byte cost. Pruning loses twice: it removes the routing options
+the model relies on, and the bytes it frees do not buy back the loss.
+
+So the release keeps **every routed expert** and quantizes them uniformly to
+EXL3 K2 with the MCG codebook, and reclaims the budget from bit width instead.
+This is the whole reason the artifact exists in its current shape.
+
+### What is *not* quantized
+
+Only the routed experts are quantized. Execution-critical and
+quality-sensitive tensors stay in their source precision, including attention,
+embeddings, the vision tower, the output head, and the MTP head. Those retained
+tensors were verified **byte-identical to the separate 3.0bpw release** across
+49 shards and 2,482 tensors, totalling 33,835,039,608 bytes. Two artifacts
+sharing 33.84 GB of identical bytes is a strong structural check: it proves the
+low-bitrate artifact did not silently degrade the components that carry
+multimodal and long-context behaviour.
+
+That is also why this checkpoint can be described as vision-preserving rather
+than vision-quantized, and why the image, video, and MTP gates above are
+meaningful.
+
+### Resulting artifact
+
+| Property | Value |
+|---|---|
+| Total weight bytes | 111,352,026,456 |
+| Retained (unquantized) bytes | 33,835,039,608 |
+| Routed-expert bytes | ≈ 77.5 GB, all 288 experts per layer |
+| Weight shards | 133 |
+| Indexed tensors | 583,090 |
+| Resident on one GB10 | 89.89 GiB |
+| Reduction vs. BF16 source | ≈ 531 GB, from a 642,652,070,880-byte source |
+
+### The quality gap, and why promotion is held
+
+The panel above is a frozen WikiText2 set of 32 × 2048 tokens — 65,504
+next-token positions — scored against the BF16 teacher with a frozen evaluator
+identity. It is a *screen*, not an end-to-end acceptance, and it does not
+establish broad task quality.
+
+It does establish the gap that gates this release. The 2.0bpw tier reaches
+77.385% top-1 agreement against a 3-bit reference at 87.384%, with a mean KL of
+0.439 versus 0.152. Against the working bands used for this checkpoint — below
+0.01 near-lossless, below 0.05 good, below 0.1 noticeable — a mean KL of 0.439
+is well into the noticeable range. This tier is a *serving* baseline, not a
+quality-equivalent substitute for the 3-bit reference, and the accepted baseline
+is therefore published with an explicit quality caveat rather than as a drop-in
+replacement.
+
+An exact held-out KLD against the BF16 source remains unmeasured for this
+artifact; the pinned BF16 weights alone exceed the local four-node memory pool
+before runtime or logits. See `evidence/kld-feasibility.json`.
+
+### The next direction: non-uniform allocation instead of uniform pruning
+
+If dropping experts is a bad trade, the remaining lever is to spend bits
+*unevenly*. Two things were established:
+
+- **Per-layer sensitivity is real.** Raising the bit width of only 14
+  down-projections while retaining all 288 experts, chosen using separate
+  calibration, measured 78.381% agreement at a cost of 3.94 GiB. That is roughly
+  a full point of agreement for a small slice of bytes, but it is still far from
+  the 3-bit reference, so it was recorded and not promoted.
+- **Per-layer expert counts are runtime-supported.** A modified loader accepts a
+  different expert count per layer while keeping the global count at 288. A GPU
+  smoke test on two layers with 8 and 16 retained experts passed with exact
+  router rows, correctly fused pointer tables, and graph replay matching eager
+  execution to 0.0 — meaning non-uniform pruning is not blocked by the runtime.
+
+That combination — uneven bits *and* uneven expert counts, chosen by measured
+sensitivity rather than uniformly — is the live research direction. It has no
+accepted result, and this repository does not claim one.
 
 ## Source and licenses
 

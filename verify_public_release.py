@@ -98,12 +98,15 @@ def verify(root: Path) -> dict:
     model = release["release"]
     artifact = release["artifact"]
     errors: list[str] = []
+    notes: list[str] = []
     docker_index = str(model.get("docker_digest") or "")
     docker_arm64 = str(model.get("docker_arm64_manifest_digest") or "")
     dflash = release.get("dflash_release") or {}
     dflash_digest = str(dflash.get("docker_digest") or "")
     dflash_platform = None
     dflash_layer_count = 0
+    head_revision = None
+    head_weight_closure_matches_pin = None
 
     revision = str(model.get("model_revision") or "")
     if not re.fullmatch(r"[a-f0-9]{40}", revision):
@@ -123,8 +126,54 @@ def verify(root: Path) -> dict:
                 errors.append("Hugging Face repository is gated")
             if hub_info.get("disabled") not in (False, None):
                 errors.append("Hugging Face repository is disabled")
-            if hub_info.get("sha") != revision:
-                errors.append("Hugging Face head differs from model_revision")
+
+            head_revision = hub_info.get("sha")
+            if head_revision != revision:
+                # A moving head is only a defect if it moves the weights. Model
+                # cards and evidence files are routinely updated after a pin, and
+                # failing on that would train the operator to ignore this check.
+                # Every digest below is still resolved at the immutable revision,
+                # so compare the weight closure explicitly instead.
+                head_info, _ = request_json(
+                    f"https://huggingface.co/api/models/{encoded_repo}/revision/"
+                    f"{head_revision}?blobs=true"
+                )
+                pinned_info, _ = request_json(
+                    f"https://huggingface.co/api/models/{encoded_repo}/revision/"
+                    f"{revision}?blobs=true"
+                )
+
+                def weight_closure(info: dict) -> dict:
+                    return {
+                        str(item.get("rfilename")): {
+                            "size": int(item.get("size") or 0),
+                            "sha256": (item.get("lfs") or {}).get("sha256"),
+                        }
+                        for item in (info.get("siblings") or [])
+                        if str(item.get("rfilename", "")).endswith(".safetensors")
+                    }
+
+                head_weights = weight_closure(head_info)
+                pinned_weights = weight_closure(pinned_info)
+                head_weight_closure_matches_pin = head_weights == pinned_weights
+                if not head_weight_closure_matches_pin:
+                    errors.append(
+                        "Hugging Face weight closure changed after the pinned revision"
+                    )
+                else:
+                    changed = sorted(
+                        str(item.get("rfilename"))
+                        for item in (head_info.get("siblings") or [])
+                        if str(item.get("rfilename"))
+                        not in {str(s.get("rfilename")) for s in pinned_info.get("siblings") or []}
+                    )
+                    notes.append(
+                        "Hugging Face head has advanced past the pinned revision with "
+                        f"an identical {len(head_weights)}-file weight closure; "
+                        f"head={head_revision}. The pin remains authoritative for every "
+                        "digest below. Non-weight paths added at head: "
+                        + (", ".join(changed) if changed else "none")
+                    )
 
             siblings = hub_info.get("siblings") or []
             weights = [
@@ -254,6 +303,9 @@ def verify(root: Path) -> dict:
         "dflash_platform": dflash_platform,
         "dflash_layer_count": dflash_layer_count,
         "github_revision": github_revision,
+        "head_revision": head_revision,
+        "head_weight_closure_matches_pin": head_weight_closure_matches_pin,
+        "notes": notes,
         "errors": errors,
     }
 

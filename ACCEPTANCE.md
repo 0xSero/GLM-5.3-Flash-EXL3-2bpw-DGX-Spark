@@ -26,6 +26,15 @@ or graph configuration invalidates the affected gates.
 | Public DFlash ARM64 image | pass | manifest, config, and all 57 layers verified anonymously by digest; draft remains external and is not bundled |
 | Second-node clean load | pass | exact public snapshot and image, 89.89 GiB load, 1,638,400 KV tokens, CUDA graphs, health 200, behavior 5/5 |
 | Abliteration strength 1 runtime experiment | **fail / not promoted** | exact K2 loaded with the sealed writer projection and CUDA graphs; ordinary behavior 5/5 and images 4/4 passed, but all 3 bounded refusal probes still refused and video 2 failed to stop; see `evidence/abliteration-overlay-strength1.json` |
+| Native MTP at 262,144 context, images | **pass** | identical weight manifest to the published artifact; 4/4 paired image fixtures under the native-MTP runtime; see [BENCHMARKS-NATIVE-MTP-262K.md](BENCHMARKS-NATIVE-MTP-262K.md) |
+| Native MTP at 262,144 context, native video | **pass** | 2/2 paired video fixtures, same configuration |
+| Native MTP at 262,144 context, real request | **pass** | 262,016 server-reported prompt tokens against a 262,144 budget |
+| Native MTP counters advancing | **pass** | verified in all 7 sweep depth cells; 99.79% acceptance over 7,180 drafts in the 14 measured cells |
+| Sustained 1k–260k decode, native MTP | **measured / target unmet** | 14.79–14.98 tok/s across 14 measured cells; flat from 1k to 260k, still below the 25–50 tok/s target |
+| MTP depth 2 speed | **measured / partial** | 19.11 tok/s at 1k and 19.03 at 16k (+27.6% / +28.1%), but only those two depths were admitted |
+| Looping and repetition collapse | **pass** | 21/21 depth-1 and 8/8 depth-2 cells; longest repeated token n-gram 2, no consecutive repeated tokens, at every depth to 260,096; see `evidence/loop-acceptance-native-mtp-depth1.json` |
+| Loop harness discrimination | **pass** | the harness rejects 6 constructed defects and accepts a correct answer; see `tests/test_loop_acceptance.py` |
+| Native-MTP runtime image publication | **not done** | the B12x image that produced the MTP measurements is unpublished and has not been validated by a clean pull on a second node |
 
 The release is intentionally not represented as meeting the decode-speed or
 held-out-KLD gates. `verify_release.py` is strict: it returns nonzero until all

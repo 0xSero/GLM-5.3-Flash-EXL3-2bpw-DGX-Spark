@@ -20,7 +20,9 @@
     "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-rankstacked-tp1:2026-09-05",
     "docker_digest": "sha256:e60a824db7615ead2ae60b4b39b3a9e11e14700bec49901eae7b1e3fb3620d7a",
     "docker_arm64_manifest_digest": "sha256:c1d0bf2f72da0995eb795d85edb62fe6bd149d740f1dfd8481a1fbd72ebb6a78",
-    "docker_platforms": ["linux/arm64"],
+    "docker_platforms": [
+      "linux/arm64"
+    ],
     "sbom": "evidence/runtime.spdx.json",
     "github_repository": "https://github.com/0xSero/GLM-5.3-Flash-EXL3-2bpw-DGX-Spark",
     "github_revision": "c838093d260f6fe6163bc8d02b292afb66f8a4a0",
@@ -34,7 +36,9 @@
     "docker_image": "ghcr.io/0xsero/glm53-flash-exl3-k2-dflash:20260906-accepted-arm64",
     "docker_digest": "sha256:6be6de479a5c8c6b8ce9ce42a7be3a2f79e9eeed854ddd4d73e3fc407da88a4d",
     "docker_config_digest": "sha256:3d2e379b1bd8b18c5ecdbd6a1fba0b80f2964c94ecc642a69b9432f966727a36",
-    "docker_platforms": ["linux/arm64"],
+    "docker_platforms": [
+      "linux/arm64"
+    ],
     "launcher": "runtime/spark/start-dflash2.sh",
     "publication_status": "public_anonymous_manifest_config_and_57_layers_verified",
     "publication_evidence": "evidence/dflash-docker-publication.json"
@@ -44,7 +48,10 @@
     "gpu_count": 1,
     "context_target": 200000,
     "cold_input_tokens": 200000,
-    "decode_target_tokens_per_second": [25, 50],
+    "decode_target_tokens_per_second": [
+      25,
+      50
+    ],
     "sustained_trials": 5,
     "cuda_graphs": true,
     "vision": true,
@@ -61,7 +68,9 @@
     "configured_context_tokens": 204800,
     "max_num_seqs": 1,
     "cuda_graph_mode": "FULL_DECODE_ONLY",
-    "cuda_graph_capture_sizes": [1]
+    "cuda_graph_capture_sizes": [
+      1
+    ]
   },
   "measurements": {
     "gpu_count": 1,
@@ -77,7 +86,10 @@
     "long_context_elapsed_seconds": 498.404,
     "long_context_ttft_seconds": 474.042,
     "long_context_decode_tokens_per_second_estimate": 9.278,
-    "decode_target_tokens_per_second": [25, 50],
+    "decode_target_tokens_per_second": [
+      25,
+      50
+    ],
     "decode_target_met": false,
     "exact_held_out_kld": null,
     "speed_trials": [
@@ -105,7 +117,7 @@
         "success": true,
         "finish_reason": "stop",
         "decode_tokens_per_second": 9.275677548715068,
-        "decode_seconds": 16.715160814026594,
+        "decode_seconds": 16.715160814026593,
         "evidence": "evidence/bounded-speed-c1.json"
       },
       {
@@ -179,7 +191,9 @@
       "resident_model_gib": 92.4,
       "available_kv_gib": 10.51,
       "kv_tokens": 264050,
-      "cuda_graph_capture_sizes": [8],
+      "cuda_graph_capture_sizes": [
+        8
+      ],
       "behavior_cases": "5_of_5",
       "image_cases": "4_of_4",
       "video_cases": "2_of_2",
@@ -195,9 +209,18 @@
     }
   },
   "gates": {
-    "structure": {"status": "pass", "evidence": "evidence/artifact-structure.json"},
-    "sanitization": {"status": "pass", "evidence": "evidence/sanitization.json"},
-    "cuda_graphs": {"status": "pass", "evidence": "evidence/runtime-startup.json"},
+    "structure": {
+      "status": "pass",
+      "evidence": "evidence/artifact-structure.json"
+    },
+    "sanitization": {
+      "status": "pass",
+      "evidence": "evidence/sanitization.json"
+    },
+    "cuda_graphs": {
+      "status": "pass",
+      "evidence": "evidence/runtime-startup.json"
+    },
     "text": {
       "status": "pass",
       "evidence": "evidence/behavior-final.json",
@@ -213,12 +236,35 @@
       "evidence": "evidence/behavior-final.json",
       "evidence_status": "clean_second_spark_replay_preserved"
     },
-    "image": {"status": "pass", "evidence": "evidence/vision-clean.json", "result": "clean_second_spark_4_of_4"},
-    "video": {"status": "pass", "evidence": "evidence/vision-clean.json", "result": "clean_second_spark_2_of_2"},
-    "long_context": {"status": "pass", "evidence": "evidence/long-context-clean.json", "result": "clean_second_spark_4_of_4_at_200012_prompt_tokens"},
-    "code_responsiveness": {"status": "fail", "evidence": null, "reason": "600_second_deadline_no_final_content"},
-    "sustained_decode": {"status": "fail", "evidence": "evidence/bounded-speed-c1.json", "reason": "measured_about_9_3_tokens_per_second"},
-    "speed_matrix": {"status": "incomplete", "evidence": "evidence/bounded-speed-c1.json"},
+    "image": {
+      "status": "pass",
+      "evidence": "evidence/vision-clean.json",
+      "result": "clean_second_spark_4_of_4"
+    },
+    "video": {
+      "status": "pass",
+      "evidence": "evidence/vision-clean.json",
+      "result": "clean_second_spark_2_of_2"
+    },
+    "long_context": {
+      "status": "pass",
+      "evidence": "evidence/long-context-clean.json",
+      "result": "clean_second_spark_4_of_4_at_200012_prompt_tokens"
+    },
+    "code_responsiveness": {
+      "status": "fail",
+      "evidence": null,
+      "reason": "600_second_deadline_no_final_content"
+    },
+    "sustained_decode": {
+      "status": "fail",
+      "evidence": "evidence/bounded-speed-c1.json",
+      "reason": "measured_about_9_3_tokens_per_second"
+    },
+    "speed_matrix": {
+      "status": "incomplete",
+      "evidence": "evidence/bounded-speed-c1.json"
+    },
     "held_out_quality": {
       "status": "unmeasured",
       "evidence": "evidence/kld-feasibility.json",
@@ -231,16 +277,38 @@
       "result": "CUDA graphs, 5_of_5 behavior, 4_of_4 images, 2_of_2 videos, and exact 4_of_4 retrieval at 200013 prompt tokens",
       "speed_scope": "15.57 tok/s on the sustained 1k-input sample; 27.12 tok/s on a short 186-token post-200k retrieval response; full sweep and concurrency remain unmeasured"
     },
-    "anonymous_model_download": {"status": "pass", "evidence": "evidence/hf-publication.json"},
+    "anonymous_model_download": {
+      "status": "pass",
+      "evidence": "evidence/hf-publication.json"
+    },
     "anonymous_image_pull": {
       "status": "pass",
       "evidence": "evidence/docker-publication.json",
       "pull_evidence": "evidence/docker-anonymous-pull.log",
       "layer_evidence": "evidence/docker-anonymous-layers.json"
     },
-    "clean_deployment": {"status": "pass", "evidence": "evidence/clean-deployment.json"},
-    "public_documentation": {"status": "pass", "evidence": "evidence/hf-publication.json"},
-    "secret_audit": {"status": "pass", "evidence": "evidence/public-repo-secret-audit.json"}
+    "clean_deployment": {
+      "status": "pass",
+      "evidence": "evidence/clean-deployment.json"
+    },
+    "public_documentation": {
+      "status": "pass",
+      "evidence": "evidence/hf-publication.json"
+    },
+    "secret_audit": {
+      "status": "pass",
+      "evidence": "evidence/public-repo-secret-audit.json"
+    },
+    "native_mtp_full_context": {
+      "status": "pass",
+      "evidence": "evidence/native-mtp-sustained-262k.json",
+      "scope": "Identity-matched to the published weight manifest. Images 4/4, native video 2/2, a 262,016-token request against a 262,144 budget, and advancing native MTP counters in all 7 sweep depths. The producing runtime image is not publicly published and this is recorded in the evidence file."
+    },
+    "loop_acceptance": {
+      "status": "pass",
+      "evidence": "evidence/loop-acceptance-native-mtp-depth1.json",
+      "scope": "21/21 depth-1 cells to 260,096 input tokens and 8/8 depth-2 cells. Longest repeated token n-gram 2; no consecutive repeated tokens. The harness rejects 6 constructed defects and accepts a correct answer, see tests/test_loop_acceptance.py."
+    }
   },
   "files": [
     {
@@ -347,6 +415,168 @@
       "path": "evidence/docker-anonymous-layers.json",
       "bytes": 8061,
       "sha256": "52560590abb169c994a3e4790893673dadb153554353ca9b5d7662aafb85e999"
+    },
+    {
+      "path": "evidence/native-mtp-sustained-262k.json",
+      "bytes": 17857,
+      "sha256": "8f752a2f43f2c5739c5412a626adc9dcab1091a6535550370965589d2961a9da"
+    },
+    {
+      "path": "evidence/loop-acceptance-native-mtp-depth1.json",
+      "bytes": 21656,
+      "sha256": "6b11d237040590e570a3979b0ff2d936b333ae19adcc88d4c5e11a652397bb56"
+    },
+    {
+      "path": "evidence/loop-acceptance-native-mtp-depth2.json",
+      "bytes": 8636,
+      "sha256": "1adaf4371dededdca2cf5ea2e129a89f4ba4937aa2f9bd0e0bf2563f4c69f61f"
     }
-  ]
+  ],
+  "native_mtp_configuration": {
+    "status": "measured_functional_gates_passed_quality_promotion_held",
+    "artifact_identity": "identical weight manifest to the published 2.0bpw checkpoint",
+    "documentation": "BENCHMARKS-NATIVE-MTP-262K.md",
+    "evidence": "evidence/native-mtp-sustained-262k.json",
+    "mtp_companion_loaded": true,
+    "container_image_digest": "sha256:afb74c791853d438810b27bf28994128f5baa2a3bf5c9b50b9ecdad7b9afffd5",
+    "image_publicly_published": false,
+    "image_publication_note": "The B12x runtime image used for these measurements is not published to a public registry and has not been validated by a clean pull on a second node.",
+    "runtime_state": "BASELINE_FUNCTIONAL_GATES_PASSED_QUALITY_RELEASE_HOLD",
+    "backend_identity": "Jovian3aada677 + B12x3b862805; EXL3 full K2 target; native MTP routed experts online FP8; target/draft B12X attention; explicit B12x KDA prefill",
+    "configured_context_tokens": 262144,
+    "native_max_position_embeddings": 1048576,
+    "kv_capacity_tokens": 751007,
+    "max_num_batched_tokens": 2048,
+    "max_num_seqs": 1,
+    "gpu_memory_fraction": 0.93,
+    "prefix_caching": false,
+    "cuda_graph_mode": "FULL_DECODE_ONLY",
+    "cuda_graph_capture_sizes": [
+      2
+    ],
+    "speculative_config": {
+      "method": "mtp",
+      "num_speculative_tokens": 1,
+      "attention_backend": "B12X"
+    },
+    "resident_model_gib": 97.89,
+    "resident_kv_gib": 5.84,
+    "functional_gates": {
+      "long_context_prompt_tokens": 262016,
+      "long_context_budget_tokens": 262144,
+      "long_context_pass": true,
+      "images_pass": 4,
+      "images_total": 4,
+      "videos_pass": 2,
+      "videos_total": 2,
+      "native_mtp_counters_verified_all_cells": true,
+      "verified_utc": "2026-09-12T00:23:14.518579+00:00"
+    },
+    "sustained_sweep": {
+      "depths": [
+        1023,
+        4095,
+        16383,
+        65535,
+        131071,
+        199999,
+        260095
+      ],
+      "runs_per_depth": 3,
+      "incoming_concurrency": 1,
+      "measured_decode_tok_s_range": [
+        14.7894,
+        14.9801
+      ],
+      "native_prefill_tok_s_range": [
+        412.58,
+        456.41
+      ],
+      "ttft_seconds_range": [
+        2.45,
+        574.84
+      ],
+      "mtp_acceptance_fraction": 0.9979,
+      "mtp_draft_tokens": 7180,
+      "mtp_accepted_tokens": 7166,
+      "finish_reason_all_cells": "stop"
+    },
+    "mtp_depth_2": {
+      "measured_decode_tok_s": {
+        "1023": 19.1142,
+        "16383": 19.0294
+      },
+      "gain_pct": {
+        "1023": 27.62,
+        "16383": 28.06
+      },
+      "depths_admitted": [
+        1024,
+        16384
+      ],
+      "long_context_verified": false,
+      "note": "Depth 2 was only admitted at 1024 and 16384 input tokens. It has no long-context, vision, or 262k result and is not a recommended configuration."
+    },
+    "not_admitted": {
+      "concurrencies": [
+        2,
+        4,
+        8
+      ],
+      "sustained_decode_target_tok_s": [
+        25,
+        50
+      ],
+      "note": "Only max_num_seqs=1 was admitted. The original 25-50 tok/s target remains unmet at depth 1."
+    }
+  },
+  "loop_acceptance": {
+    "harness": "loop_acceptance.py",
+    "controls": "tests/test_loop_acceptance.py",
+    "scope": "Degenerate-repetition acceptance over exact emitted token IDs for the structured counting task. Detects looping and repetition collapse; not a quality or correctness evaluation.",
+    "negative_controls_rejected": 6,
+    "negative_controls_total": 6,
+    "positive_controls_accepted": 1,
+    "positive_controls_total": 1,
+    "configurations": {
+      "mtp_depth1": {
+        "cells": 21,
+        "cells_passed": 21,
+        "all_pass": true,
+        "max_input_tokens_tested": 260096,
+        "longest_repeated_token_ngram": 2,
+        "longest_identical_token_run": 1,
+        "distinct_token_ratio_range": [
+          0.3607,
+          0.3676
+        ],
+        "evidence": "evidence/loop-acceptance-native-mtp-depth1.json"
+      },
+      "mtp_depth2": {
+        "cells": 8,
+        "cells_passed": 8,
+        "all_pass": true,
+        "max_input_tokens_tested": 16384,
+        "longest_repeated_token_ngram": 2,
+        "longest_identical_token_run": 1,
+        "distinct_token_ratio_range": [
+          0.36,
+          0.368
+        ],
+        "evidence": "evidence/loop-acceptance-native-mtp-depth2.json"
+      }
+    }
+  },
+  "provenance": {
+    "quantized_scope": "routed experts only, EXL3 K2 tier with MCG codebook, all 288 experts retained per layer",
+    "retained_tensor_bytes": 33835039608,
+    "retained_tensor_count": 2482,
+    "retained_shards": 49,
+    "retained_byte_identical_to": "0xSero/GLM-5.3-Flash-EXL3-3.0bpw",
+    "retained_parity_revision": "2a30ad09c15f779a44fa62c216f5dbe5fb0c9223",
+    "design_note": "Uniform expert pruning was measured to be a worse byte trade than lowering routed-expert bit width, so every expert is retained and the budget is spent on bit width.",
+    "quality_screen_panel": "Frozen WikiText2, 32x2048 tokens, 65504 next-token positions, full-vocabulary BF16 teacher comparison",
+    "quality_screen_disclosure": "A screen, not an end-to-end acceptance. Exact held-out KLD against the BF16 source remains unmeasured for this artifact.",
+    "reference_band": "near-lossless KL < 0.01; good < 0.05; noticeable < 0.1"
+  }
 }
