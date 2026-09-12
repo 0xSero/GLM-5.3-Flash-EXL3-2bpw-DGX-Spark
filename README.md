@@ -189,9 +189,9 @@ fidelity per byte than lowering the bit width of the experts you keep:
 
 | Candidate | Routed-expert policy | Byte cost | BF16 top-1 agreement | Mean KL |
 |---|---|---|---|---|
-| Q3 reference | all 288 experts at 3-bit | largest | 87.384% | 0.152204 |
-| **K2 (this release)** | **all 288 experts at 2-bit** | **111.35 GB** | **77.385%** | **0.438986** |
-| K2 keep-256 | 256 of 288 experts at 2-bit | ~95.6 GB | 71.350% | 0.687907 |
+| Q3 reference | all 288 experts at 3-bit | larger than the 2-bit tier | 87.384% | 0.152204 |
+| **K2 (this release)** | **all 288 experts at 2-bit** | **111.35 GB measured** | **77.385%** | **0.438986** |
+| K2 keep-256 | 256 of 288 experts at 2-bit | 102.67 GB projected | 71.350% | 0.687907 |
 | Q3 keep-192 | 192 of 288 experts at 3-bit | ≈ the K2 tier | 61.810% | 1.183637 |
 | Q3 keep-176 | 176 of 288 experts at 3-bit | smaller | 58.807% | 1.343988 |
 
